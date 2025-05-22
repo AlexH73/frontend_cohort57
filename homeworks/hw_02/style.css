@@ -1,0 +1,165 @@
+body {
+  background-color: #e0e0e0;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.list-style-blank ul li {
+  list-style: none;
+}
+/* Шапка */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+header .container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Меню */
+.main-nav {
+  background-color: #34495e;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-nav li {
+  margin: 0;
+}
+
+.main-nav a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main-nav a:hover {
+  background-color: #2c3e50;
+}
+
+/* изображение */
+.figure {
+  position: relative;
+  float: left;
+}
+
+.figure img {
+  max-width: 300px;
+  margin-left: -40px;
+}
+
+/* Секции */
+.section-block {
+  background-color: #ffffff;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+.section-block h2 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.section-block ul,
+.section-block ol {
+  padding-left: 1.2rem;
+}
+
+.abou-me ul li {
+  margin: 0;
+  list-style: none;
+}
+
+/* Контейнер для блоков скиллов */
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Каждый блок внутри */
+.skill-block {
+  flex: 1 1 40%;
+  padding: 1rem;
+}
+
+.skills-container ul li {
+  list-style: circle;
+}
+
+.skills-container li {
+  margin-left: 5px;
+}
+
+/*стили для блока проекты*/
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 390px;
+  text-align: left;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+/* Ссылки */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Футер */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #34495e;
+  min-height: 100px;
+}
+
+.center {
+  text-align: center;
+}
