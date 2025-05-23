@@ -16,6 +16,12 @@ header {
   color: white;
   padding: 1.5rem 0;
   text-align: center;
+  max-width: 965px;
+  margin: 30px auto auto;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-image: url("http://postimg.su/image/SOa0HHi1/8b94f08efbdd44a6627af41bf2f94057.jpg");
+  background-size: contain;
 }
 
 header .container {
@@ -26,6 +32,9 @@ header .container {
 /* Меню */
 .main-nav {
   background-color: #34495e;
+  max-width: 965px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav ul {
@@ -148,19 +157,36 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  color: #aa9e9e;
 }
 
 /* Футер */
 footer {
-  margin-top: 2rem;
   text-align: center;
   font-size: 0.9rem;
   color: white;
   background-color: #34495e;
   min-height: 100px;
+  max-width: 965px;
+  margin: auto auto 30px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  padding: 2rem 0;
 }
 
 .center {
   text-align: center;
+}
+:root {
+  --main-color: #2c3e50;
+  --secondary-color: #34495e;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #0077cc;
+  --link-hover-color: #598db2;
 }
