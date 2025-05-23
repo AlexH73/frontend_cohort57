@@ -27,62 +27,97 @@
       </ul>
     </nav>
     
-    <section class="section-block about-me" id="about">
-      <h2 class="center">Обо мне:</h2>
-      <figure class="figure">
-        <a href="https://www.belm.de/">
-          <img
-            src="https://i.postimg.cc/cLVr7cyH/6c17308124086015159766ddc8855da5489fb7a7.webp"
-            alt="Rathaus Belm"
-          />
-        </a>
-        <figcaption>Ратуша города Belm</figcaption>
-      </figure>
-      <ul>
-        <li>Живу в городе Belm</li>
-        <li>
-          Обучаюсь в
-          <a href="https://www.ait-tr.de/" title="Главная страница AIT TR">
-            AIT TR
+    <section class="section-block" id="about">
+      <h2 class="center">👤 Обо мне</h2>
+      <div class="about-container">
+        <div class="about-image">
+          <a href="https://www.belm.de/" target="_blank">
+            <img
+              src="https://i.postimg.cc/cLVr7cyH/6c17308124086015159766ddc8855da5489fb7a7.webp"
+              alt="Rathaus Belm"
+            />
           </a>
-        </li>
-        <li>Моя цель — стать Full-Stack разработчиком</li>
-      </ul>
-      <p>
-        Меня зовут <strong>Alexander Hermann</strong> — я
-        <em>будущий Full-Stack разработчик</em>, увлечённый
-        <mark>современными web-технологиями</mark> и созданием полезных цифровых
-        продуктов.
-      </p>
-      <p>
-        Изучать программирование я начал с <code>Python</code> и
-        <code>Java</code>, а сейчас изучаю <strong>HTML</strong>, <em>CSS</em> и
-        <u>JavaScript</u>. В ближайших планах — освоить
-        <abbr title="Spring Framework">Spring Boot</abbr> и базы данных.
-      </p>
+          <figcaption>Ратуша города Belm</figcaption>
+        </div>
+        <div class="about-text">
+          <ul>
+            <li>🏡 Живу в городе Belm</li>
+            <li>🎓 Обучаюсь в <a href="https://www.ait-tr.de/">AIT TR</a></li>
+            <li>🎯 Цель — стать Full-Stack разработчиком</li>
+          </ul>
+          <p>
+            Меня зовут <strong>Alexander Hermann</strong> — я
+            <em>будущий Full-Stack разработчик</em>, увлечённый
+            <mark>современными web-технологиями</mark> и созданием полезных цифровых
+            продуктов.
+          </p>
+          <p>
+            Начал с <code>Python</code> и <code>Java</code>, сейчас изучаю
+            <strong>HTML</strong>, <em>CSS</em> и <u>JavaScript</u>. Далее —
+            <abbr title="Spring Framework">Spring Boot</abbr>, базы данных и React.
+          </p>
+        </div>
+      </div>
     </section>
+    
 
     <section class="section-block" id="skills">
-      <h2 class="center">По мере прохождения курса</h2>
-      <div class="skills-container">
-        <div class="skill-block">
-          <h3>Чему мы уже научились</h3>
-          <h4>Модуль 1 — Basic Programming:</h4>
+      <h2 class="center">📘 Прогресс обучения</h2>
+      <div class="progress-container">
+    
+        <div class="progress-step completed">
+          <h3>✅ Модуль 1: Basic Programming</h3>
           <ul>
             <li>Python Basic</li>
             <li>Java Basic</li>
           </ul>
         </div>
-
-        <div class="skill-block">
-          <h3>Чему нам предстоит научиться</h3>
-          <h4>Модуль 2 — Frontend (в процессе):</h4>
-          <ol>
+    
+        <div class="progress-step active">
+          <h3>🔄 Модуль 2: Frontend Basics</h3>
+          <ul>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
-          </ol>
+          </ul>
         </div>
+    
+        <div class="progress-step upcoming">
+          <h3>🔜 Модуль 3: Technologies</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>Linux Basics</li>
+            <li>SQL / NoSQL DBs</li>
+          </ul>
+        </div>
+    
+        <div class="progress-step upcoming">
+          <h3>🔜 Модуль 4: Java Backend</h3>
+          <ul>
+            <li>Spring Boot</li>
+            <li>REST API</li>
+            <li>Security</li>
+          </ul>
+        </div>
+    
+        <div class="progress-step upcoming">
+          <h3>🔜 Модуль 5: Frontend Pro</h3>
+          <ul>
+            <li>React</li>
+            <li>Advanced JS</li>
+            <li>SPA & Routing</li>
+          </ul>
+        </div>
+    
+        <div class="progress-step upcoming">
+          <h3>🎓 Final Project</h3>
+          <ul>
+            <li>Full-Stack приложение</li>
+            <li>Командная работа</li>
+            <li>Презентация</li>
+          </ul>
+        </div>
+    
       </div>
     </section>
 
@@ -114,38 +149,82 @@
             >🔗 GitHub</a
           >
         </div>
+
+        <div class="project-card">
+          <h3>🎬 Cinema Management System</h3>
+          <p><strong>Командная работа.</strong> Проект по управлению кинотеатром: бронирование билетов, отчёты, структура MVC.</p>
+          <p><strong>Технологии:</strong> Java, OOP</p>
+          <a href="https://github.com/AlexH73/cohortCinema" target="_blank">🔗 GitHub</a>
+        </div>
+    
+        <div class="project-card">
+          <h3>🎫 Ticket Booking System</h3>
+          <p><strong>Командная работа.</strong> Система бронирования билетов на авиарейсы, ролевые модели, тестирование, Spring.</p>
+          <p><strong>Технологии:</strong> Java, Spring (в процессе)</p>
+          <a href="https://github.com/AlexH73/booking_project_57_1" target="_blank">🔗 GitHub</a>
+        </div>
       </div>
     </section>
 
-    <section class="section-block list-style-blank" id="contacts">
-      <h2>Контакты</h2>
-      <ul>
-        <li>
-          ✉️ <strong>E-Mail:</strong>
-          <a href="mailto:hermann.belm@ymail.com" target="_blank"
-            >hermann.belm@ymail.com</a
-          >
-        </li>
-        <li>
-          🔗 <strong>GitHub:</strong>
-          <a href="https://github.com/AlexH73" target="_blank">AlexH73</a>
-        </li>
-        <li>
-          🌐 <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/alexander-hermann-655b76353"
-            >Alex</a
-          >
-        </li>
-        <li>
-          💬 <strong>Slack:</strong>
-          <a href="https://ait-tr.slack.com/team/U07V574LHN0">Alex</a>
-        </li>
-      </ul>
+    <section class="section-block" id="contacts">
+      <h2 class="center">📞 Контакты</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="icon">✉️</span>
+          <div>
+            <strong>E-Mail:</strong><br />
+            <a href="mailto:hermann.belm@ymail.com">hermann.belm@ymail.com</a>
+          </div>
+        </div>
+    
+        <div class="contact-card">
+          <span class="icon">🔗</span>
+          <div>
+            <strong>GitHub:</strong><br />
+            <a href="https://github.com/AlexH73" target="_blank">github.com/AlexH73</a>
+          </div>
+        </div>
+    
+        <div class="contact-card">
+          <span class="icon">🌐</span>
+          <div>
+            <strong>LinkedIn:</strong><br />
+            <a href="https://www.linkedin.com/in/alexander-hermann-655b76353" target="_blank">
+              linkedin.com/in/alexander-hermann
+            </a>
+          </div>
+        </div>
+    
+        <div class="contact-card">
+          <span class="icon">💬</span>
+          <div>
+            <strong>Slack:</strong><br />
+            <a href="https://ait-tr.slack.com/team/U07V574LHN0" target="_blank">Alex (AIT TR Slack)</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <span class="icon">🧠</span>
+          <div>
+            <strong>Codewars:</strong><br />
+            <a href="https://www.codewars.com/users/AlexH73" target="_blank">codewars.com/users/AlexH73</a>
+          </div>
+        </div>
+    
+        <div class="contact-card">
+          <span class="icon">🧩</span>
+          <div>
+            <strong>LeetCode:</strong><br />
+            <a href="https://leetcode.com/AlexH73/" target="_blank">leetcode.com/AlexH73</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
       <hr />
+      <a href="#top" class="to-top">🔝 Наверх</a>
       <p>© 2025 Alexander Hermann</p>
     </footer>
-  </body>
+  </body>    
 </html>

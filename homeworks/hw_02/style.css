@@ -22,6 +22,7 @@ body {
 .list-style-blank ul li {
   list-style: none;
 }
+
 /* Шапка */
 header {
   background-color: #2c3e50;
@@ -74,18 +75,6 @@ header .container {
   background-color: #2c3e50;
 }
 
-/* изображение */
-.figure {
-  margin-right: 20px;
-  float: left;
-  max-width: 300px;
-}
-
-.figure img {
-  max-width: 300px;
-  margin-left: -45px;
-}
-
 /* Секции */
 .section-block {
   background-color: #ffffff;
@@ -99,6 +88,9 @@ header .container {
 .section-block h2 {
   color: #2c3e50;
   margin-top: 0;
+  border-radius: 12px 12px 0 0;
+  background-color: #F9F9F9;
+  padding: 1rem;
 }
 
 .section-block ul,
@@ -106,9 +98,81 @@ header .container {
   padding-left: 1.2rem;
 }
 
-.about-me ul li {
-  margin: 0;
+/* Стили для блока "Обо мне" */
+.about-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.about-image {
+  flex: 1 1 280px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.about-text {
+  flex: 2 1 400px;
+}
+
+.about-text ul {
   list-style: none;
+  padding-left: 0;
+}
+
+.about-text ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Стили для блока "Прогресс обучения" */
+.progress-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-around;
+}
+
+.progress-step {
+  flex: 1 1 280px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.progress-step h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.progress-step ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* Состояния прогресса */
+.completed {
+  border-left: 5px solid #27ae60;
+  background-color: #e9f8ef;
+}
+
+.active {
+  border-left: 5px solid #f39c12;
+  background-color: #fff8e6;
+}
+
+.upcoming {
+  border-left: 5px solid #bdc3c7;
+  background-color: #f0f0f0;
 }
 
 /* Контейнер для блоков скиллов */
@@ -151,12 +215,6 @@ header .container {
   text-align: left;
 }
 
-.project-card h2 {
-  border-radius: 12px 12px 0 0;
-  background-color: #F9F9F9;
-  padding: 1rem;
-}
-
 .project-card h3 {
   margin-top: 0;
   color: #2c3e50;
@@ -168,6 +226,32 @@ header .container {
   color: #0077cc;
   font-weight: bold;
 }
+
+/* Стили для блока "Контакты" */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.contact-card {
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  flex: 1 1 300px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-card .icon {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
 
 /* Ссылки */
 a {
@@ -200,4 +284,25 @@ footer p {
 
 .center {
   text-align: center;
+}
+
+.to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.to-top:hover {
+  background-color: #1a252f;
+}
+
+/* Плавный скролл по якорю */
+html {
+  scroll-behavior: smooth;
 }
