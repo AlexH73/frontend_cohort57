@@ -258,6 +258,10 @@ header .container {
   flex-shrink: 0;
 }
 
+.section-block h2:hover, .upcoming:hover, .project-card:hover, .contact-card:hover {
+  color: #000000;
+  background-image: url("https://hostingkartinok.com/images/body_bg.png");
+}
 /* Ссылки */
 a {
   color: #0077cc;
