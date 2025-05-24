@@ -10,13 +10,19 @@
 
 body {
   background-color: #ddd;
-  background-image: url("http://postimg.su/image/120Pjg3B/background.jpg");
+  background-image: url("https://s1.hostingkartinok.com/uploads/images/2025/05/28a9bd79fa3cc64e82112cf4324eef4a.jpg");
   background-size: auto;
   padding: 0;
   margin: 0;
   line-height: 1.6;
   color: #333;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid #000000;
+  margin: 2rem 0;
 }
 
 .list-style-blank ul li {
@@ -30,7 +36,7 @@ header {
   padding: 1.5rem 0;
   text-align: center;
   max-width: 964px;
-  margin: 30px auto auto;
+  margin: 30px auto 0;
   border-radius: 12px 12px 0 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-image: url("https://postimg.su/image/SOa0HHi1/8b94f08efbdd44a6627af41bf2f94057.jpg");
@@ -252,7 +258,6 @@ header .container {
   flex-shrink: 0;
 }
 
-
 /* Ссылки */
 a {
   color: #0077cc;
@@ -272,7 +277,7 @@ footer {
   background-color: #34495e;
   min-height: 100px;
   max-width: 964px;
-  margin: auto auto 30px;
+  margin: 0 auto 30px;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
