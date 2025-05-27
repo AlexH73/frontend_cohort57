@@ -8,6 +8,12 @@
   --link-hover-color: #aa9e9e;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--background-color);
   background-image: url("../../assets/images/background.jpg");
@@ -39,7 +45,7 @@ header {
   color: white;
   padding: 1.5rem 0;
   text-align: center;
-  max-width: 964px;
+  max-width: 900px;
   margin: 30px auto 0;
   border-radius: 12px 12px 0 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -55,7 +61,7 @@ header .container {
 /* Меню */
 .main-nav {
   background-color: #34495e;
-  max-width: 964px;
+  max-width: 900px;
   margin: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -97,7 +103,7 @@ header .container {
 
 .section-block h2 {
   color: #2c3e50;
-  margin-top: 0;
+  margin: 0 0 1.5rem 0;
   border-radius: 12px 12px 0 0;
   background-color: #f9f9f9;
   padding: 1rem;
@@ -138,7 +144,7 @@ figcaption {
 
 .about-image img {
   width: 100%;
-  max-width: 380px;
+  max-width: 265px;
 }
 
 .about-text {
@@ -234,7 +240,7 @@ figcaption {
   border-radius: 0 0 12px 12px;
   padding: 1.5rem;
   width: 100%;
-  max-width: 390px;
+  max-width: 406px;
   text-align: left;
 }
 
@@ -300,7 +306,7 @@ footer {
   color: white;
   background-color: #34495e;
   min-height: 100px;
-  max-width: 964px;
+  max-width: 900px;
   margin: 0 auto 30px;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
