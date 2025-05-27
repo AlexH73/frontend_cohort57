@@ -1,0 +1,63 @@
+/* отключаем поведение по умолчанию для контейнеров */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* теперь внутренние отступы и граница не влияют на физический размер контейнера */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #940c72;
+}
+
+.round {
+  height: 300px;
+  border: 15px dashed salmon;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 60px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  /* указываем все значения по часовой стрелки начиная с top */
+  /* padding: 20px 0px 0px 40px; */
+  /* пара значений: верх/ низ и слева/ справа */
+  padding: 20px 60px;
+}
+
+h3 {
+  color: rgb(97, 0, 94);
+}
+
+li {
+    list-style-type: none;
+}
+
+li::before {
+    content: "⚡️ ";
+}
+
+/* li::after {
+  content: ' ✨';
+} */
+
+.box {
+    width: 300px;
+    height: 200px;
+    background-color: #4CAF50;
+    padding: 30px;
+    border: 10px solid #d64242;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
