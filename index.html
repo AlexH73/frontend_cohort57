@@ -5,14 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥨</text></svg>">
     <title>Frontend cohort 57</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #f0f4f9 0%, #e0e7ef 100%);
+            background-image: url("assets/images/body_bg.png");
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-top: 48px;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #0077cc;
+            text-shadow: 1px 2px 8px #b0c4de60;
+        }
+        .section-list {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .block {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px #b0c4de40;
+            padding: 24px 32px;
+        }
+        .block h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+        .block ul {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .block li {
+            background: #f8fafc;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px #b0c4de30;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 10px;
+        }
+        .block li:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 4px 16px #b0c4de60;
+        }
+        .block a {
+            display: block;
+            padding: 14px 28px;
+            color: #0077cc;
+            text-decoration: none;
+            font-size: 1.08rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .block a:hover {
+            color: #34495e;
+        }
+        @media (max-width: 700px) {
+            .section-list {
+                padding: 0 2vw;
+            }
+            .block ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .block a {
+                text-align: center;
+                padding: 12px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Frontend cohort 57</h1>
-    <ul>
-        <li><a href="lessons/lesson_01/index.html">HTML intro</a></li>
-        <li><a href="lessons/lesson_02/index.html">CSS intro</a></li>
-        <li><a href="lessons/lesson_03/index.html">CSS Box Model</a></li>
-    </ul>
-    
+    <h1>Главная стрница курса Frontend</h1>
+    <div class="section-list">
+        <section class="block">
+            <h2>Лекции</h2>
+            <ul>
+                <li><a href="lessons/lesson_01/index.html">HTML intro</a></li>
+                <li><a href="lessons/lesson_02/index.html">CSS intro</a></li>
+                <li><a href="lessons/lesson_03/index.html">CSS Box Model</a></li>
+            </ul>
+        </section>
+        <section class="block">
+            <h2>Консультации</h2>
+            <ul>
+                <li><a href="consultations/lesson_01/index.html">Lesson 01</a></li>
+            </ul>
+        </section>
+        <section class="block">
+            <h2>Домашняя работа</h2>
+            <ul>
+                <li><a href="homeworks/hw_01/index.html">Домашняя работа 1</a></li>
+                <li><a href="homeworks/hw_02/index.html">Домашняя работа 2</a></li>
+                <li><a href="homeworks/hw_03/index.html">Домашняя работа 3</a></li>
+            </ul>
+        </section>
+        <section class="block">
+            <h2>Другие проекты</h2>
+            <ul>
+                <li><a href="#">Скоро появится</a></li>
+            </ul>
+        </section>
+    </div>
 </body>
 </html>
