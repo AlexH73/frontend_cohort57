@@ -30,7 +30,9 @@ a:hover {
 }
 .blended_grid {
   display: block;
-  width: 1024px;
+  width: 100%;
+  max-width: 1024px;
+  min-width: 224px;
   overflow: auto;
   margin: 30px auto 0 auto;
 }
@@ -39,7 +41,9 @@ a:hover {
   float: left;
   clear: none;
   height: 200px;
+  width: 100%;
   max-width: 1024px;
+  min-width: 224px;
 }
 .pageHeader h1 {
   padding: 20px;
@@ -53,6 +57,8 @@ a:hover {
   float: left;
   clear: none;
   height: 600px;
+  width: 100%;
+  min-width: 224px;
   max-width: 820px;
 }
 .pageLeftMenu {

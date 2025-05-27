@@ -1,20 +1,21 @@
 :root {
   --main-color: #2c3e50;
   --secondary-color: #34495e;
-  --background-color: #ffffff;
-  --text-color: #333333;
+  --section-background-color: #fff;
+  --background-color: #ddd;
+  --text-color: #333;
   --link-color: #0077cc;
-  --link-hover-color: #598db2;
+  --link-hover-color: #aa9e9e;
 }
 
 body {
-  background-color: #ddd;
+  background-color: var(--background-color);
   background-image: url("https://s1.hostingkartinok.com/uploads/images/2025/05/28a9bd79fa3cc64e82112cf4324eef4a.jpg");
   background-size: auto;
   padding: 0;
   margin: 0;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -34,7 +35,7 @@ hr {
 
 /* Шапка */
 header {
-  background-color: #2c3e50;
+  background-color: var(--main-color);
   color: white;
   padding: 1.5rem 0;
   text-align: center;
@@ -43,7 +44,7 @@ header {
   border-radius: 12px 12px 0 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-image: url("https://s.iimg.su/s/24/5RLbocfgo6BRGv0pxe7ogHfXXP8tnA2XuQ1WpJ7H.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
 header .container {
@@ -86,7 +87,7 @@ header .container {
 
 /* Секции */
 .section-block {
-  background-color: #ffffff;
+  background-color: var(--section-background-color);
   margin: 2rem auto;
   padding: 1.5rem 2rem;
   border-radius: 12px;
@@ -245,7 +246,7 @@ figcaption {
 .project-card a {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #0077cc;
+  color: var(--link-color);
   font-weight: bold;
 }
 
@@ -283,13 +284,13 @@ figcaption {
 }
 /* Ссылки */
 a {
-  color: #0077cc;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: none;
-  color: #aa9e9e;
+  color: var(--link-hover-color);
 }
 
 /* Футер */
