@@ -10,7 +10,7 @@
 
 body {
   background-color: var(--background-color);
-  background-image: url("https://s1.hostingkartinok.com/uploads/images/2025/05/28a9bd79fa3cc64e82112cf4324eef4a.jpg");
+  background-image: url("../../assets/images/background.jpg");
   background-size: auto;
   padding: 0;
   margin: 0;
@@ -43,7 +43,7 @@ header {
   margin: 30px auto 0;
   border-radius: 12px 12px 0 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-image: url("https://s.iimg.su/s/24/5RLbocfgo6BRGv0pxe7ogHfXXP8tnA2XuQ1WpJ7H.jpg");
+  background-image: url("../../assets/images/head_background.jpg");
   background-size: cover;
 }
 
@@ -280,7 +280,7 @@ figcaption {
 .project-card:hover,
 .contact-card:hover {
   color: #000000;
-  background-image: url("https://hostingkartinok.com/images/body_bg.png");
+  background-image: url("../../assets/images/body_bg.png");
 }
 /* Ссылки */
 a {
