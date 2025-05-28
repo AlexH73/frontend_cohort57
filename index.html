@@ -9,6 +9,11 @@
     />
     <title>Frontend cohort 57</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            }
       body {
         background: linear-gradient(120deg, #f0f4f9 0%, #e0e7ef 100%);
         background-image: url("assets/images/body_bg.png");
@@ -24,13 +29,67 @@
         margin-top: 48px;
         font-size: 2.5rem;
         letter-spacing: 2px;
-        color: #0077cc;
+        color: white;
         text-shadow: 1px 2px 8px #b0c4de60;
       }
+            
+        /* Шапка */
+        header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 1.5rem 0;
+        text-align: center;
+        max-width: 900px;
+        width: 100%;
+        margin: 30px auto 0;
+        border-radius: 12px 12px 0 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-image: url("assets/images/head_background.jpg");
+        background-size: cover;
+        }
+
+        header .container {
+        max-width: 800px;
+        margin: auto;
+        }
+
+        /* Меню */
+        .main-nav {
+        background-color: #34495e;
+        max-width: 900px;
+        width: 100%;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        }
+
+        .main-nav li {
+        margin: 0;
+        }
+
+        .main-nav a {
+        display: block;
+        padding: 1rem 1.5rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        .main-nav a:hover {
+        background-color: #2c3e50;
+        }
       .section-list {
         width: 100%;
-        max-width: 800px;
-        margin-top: 32px;
+        max-width: 900px;
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
         gap: 32px;
@@ -75,6 +134,46 @@
         font-weight: 500;
         transition: color 0.2s;
       }
+            
+        /* Футер */
+        footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: white;
+        background-color: #34495e;
+        min-height: 100px;
+        max-width: 900px;
+            width: 100%;
+        margin: 30px auto 30px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+        margin: 0;
+        padding: 2rem 0;
+        }
+
+        .to-top {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #2c3e50;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        }
+
+        .to-top:hover {
+        background-color: #1a252f;
+        }
+
+        /* Плавный скролл по якорю */
+        html {
+        scroll-behavior: smooth;
+        }
+
       .block a:hover {
         color: #34495e;
       }
@@ -94,7 +193,24 @@
     </style>
   </head>
   <body>
-    <h1>Главная страница курса Frontend</h1>
+    <body>
+      <header>
+        <div class="container">
+          <h1>Главная страница курса</h1>
+          <p>Frontend & Future Full-Stack Developer</p>
+        </div>
+      </header>
+  
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../../index.html">Главная</a></li>
+          <li><a href="homeworks/hw_02/index.html#about">Обо мне</a></li>
+          <li><a href="homeworks/hw_02/index.html#skills">Навыки</a></li>
+          <li><a href="homeworks/hw_02/index.html#projects">Проекты</a></li>
+          <li><a href="homeworks/hw_02/index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
     <div class="section-list">
       <section class="block">
         <h2>Лекции</h2>
@@ -126,5 +242,10 @@
         </ul>
       </section>
     </div>
+    <footer>
+      <hr />
+      <a href="#top" class="to-top">🔝 Наверх</a>
+      <p>© 2025 Alexander Hermann</p>
+    </footer>
   </body>
 </html>
