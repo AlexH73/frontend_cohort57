@@ -106,6 +106,29 @@
         font-size: 1.4rem;
         letter-spacing: 1px;
       }
+      .block-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+
+      .block-header h2 {
+        margin: 0;
+        font-size: 1.4rem;
+        color: #2c3e50;
+        letter-spacing: 1px;
+      }
+
+      .section-link {
+        border-radius: 8px;
+        box-shadow: 0 1px 6px #b0c4de30;
+        padding: 6px !important;
+      }
+      .section-link:hover {
+        color: #34495e;
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 4px 16px #b0c4de60;
+      }
       .block ul {
         list-style: none;
         padding: 0;
@@ -196,7 +219,7 @@
       }
     </style>
   </head>
-  <body>
+  <body id="top">
     <header>
       <div class="container">
         <h1>Главная страница курса</h1>
@@ -206,6 +229,9 @@
 
     <nav class="main-nav">
       <ul>
+        <li>
+          <a href="https://github.com/AlexH73/frontend_cohort57" target="_blank">🐱 GitHub</a>
+        </li>
         <li><a href="homeworks/hw_02/index.html#about">👤 Обо мне</a></li>
         <li><a href="homeworks/hw_02/index.html#skills">📘 Навыки</a></li>
         <li><a href="homeworks/hw_02/index.html#projects">📁 Проекты</a></li>
@@ -215,7 +241,14 @@
 
     <div class="section-list">
       <section class="block">
-        <h2>Лекции</h2>
+        <div class="block-header">
+          <h2>Лекции</h2>
+          <a
+            href="https://github.com/AlexH73/frontend_cohort57/tree/main/lessons"
+            class="section-link"
+            title="Перейти на GitHub к лекциям" target="_blank">🔗</a
+          >
+        </div>
         <ul>
           <li><a href="lessons/lesson_01/index.html">HTML intro</a></li>
           <li><a href="lessons/lesson_02/index.html">CSS intro</a></li>
@@ -223,14 +256,30 @@
         </ul>
       </section>
       <section class="block">
-        <h2>Консультации</h2>
+        <div class="block-header">
+          <h2>Консультации</h2>
+          <a
+            href="https://github.com/AlexH73/frontend_cohort57/tree/main/consultations"
+            class="section-link"
+            title="Перейти на GitHub к консультациям"
+            target="_blank">🔗</a
+          >
+        </div>
         <ul>
           <li><a href="consultations/lesson_01/index.html">Lesson 01</a></li>
           <li><a href="consultations/lesson_02/index.html">Lesson 02</a></li>
         </ul>
       </section>
       <section class="block">
-        <h2>Домашняя работа</h2>
+        <div class="block-header">
+          <h2>Домашняя работа</h2>
+          <a
+            href="https://github.com/AlexH73/frontend_cohort57/tree/main/homeworks"
+            class="section-link"
+            title="Перейти на GitHub к домашним работам"
+            target="_blank">🔗</a
+          >
+        </div>
         <ul>
           <li><a href="homeworks/hw_01/index.html">Домашняя работа 1</a></li>
           <li><a href="homeworks/hw_02/index.html">Домашняя работа 2</a></li>
@@ -238,7 +287,15 @@
         </ul>
       </section>
       <section class="block">
-        <h2>Другие проекты</h2>
+        <div class="block-header">
+          <h2>Другие проекты</h2>
+          <a
+            href="https://github.com/AlexH73/frontend_cohort57/tree/main/projects"
+            class="section-link"
+            title="Перейти на GitHub к другим проектам"
+            target="_blank">🔗</a
+          >
+        </div>
         <ul>
           <li><a href="#">Скоро появится</a></li>
         </ul>
