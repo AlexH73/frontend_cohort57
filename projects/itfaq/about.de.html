@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Über das Projekt — FAQ IT Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.de.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="index.de.html" class="nav-link">Startseite</a>
+        <a href="questions/java/index.de.html" class="nav-link">Java</a>
+        <a href="questions/html/index.de.html" class="nav-link">HTML</a>
+        <a href="questions/css/index.de.html" class="nav-link">CSS</a>
+        <a href="questions/js/index.de.html" class="nav-link">JS</a>
+        <a href="questions/sql/index.de.html" class="nav-link">SQL</a>
+        <a href="about.de.html" class="nav-link active">Über das Projekt</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru">RU</option>
+          <option value="de" selected>DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="index.de.html">Startseite</a> &rarr;
+      <span>Über das Projekt</span>
+    </nav>
+    <h1>Über das Projekt</h1>
+    <section class="section-block">
+      <h2>Was ist das FAQ IT Portal?</h2>
+      <p>
+        <b>FAQ IT Portal</b> ist ein offenes Nachschlagewerk für häufige Fragen rund um Programmierung und IT. Hier findest du kurze und ausführliche Antworten zu populären Themen: Java, HTML, CSS, JavaScript, SQL, Algorithmen, Git und vieles mehr.
+      </p>
+      <ul>
+        <li>Zwei Sprachen: Russisch und Deutsch (RU/DE).</li>
+        <li>Fragen und Antworten sind thematisch und nach Schwierigkeitsgrad sortiert.</li>
+        <li>Alle Beispiele sind mit Erklärungen und Syntax-Highlighting versehen.</li>
+        <li>Schnelle Suche und klare Navigation.</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>Für wen ist dieses Portal?</h2>
+      <ul>
+        <li>Für Studierende und Lehrende an Hochschulen</li>
+        <li>Für (angehende) Programmiererinnen und Programmierer</li>
+        <li>Für alle, die IT-Materialien auf Russisch oder Deutsch lernen</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>Wie ist das Projekt aufgebaut?</h2>
+      <ul>
+        <li>Statische Seite nur mit HTML und CSS, ganz ohne Server – schnell und überall nutzbar.</li>
+        <li>Open Source auf <a href="https://github.com/AlexH73/frontend_cohort57/tree/main/projects/itfaq" target="_blank">GitHub</a> – Du kannst Fehler melden oder eigene Fragen beitragen!</li>
+        <li>Einfache Struktur: Jede Frage ist eine HTML-Datei, für jede Sprache gibt es eine eigene Datei (z.B. <code>01-hashmap.html</code> und <code>01-hashmap.de.html</code>).</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>Wie kann man eigene Fragen beitragen?</h2>
+      <ol>
+        <li>Forke das Repository auf GitHub (<a href="https://github.com/AlexH73/frontend_cohort57/tree/main/projects/itfaq" target="_blank">github.com</a>).</li>
+        <li>Füge eine neue HTML-Datei mit deiner Frage im passenden Bereich und in der gewünschten Sprache hinzu oder bearbeite eine bestehende.</li>
+        <li>Stelle einen Pull Request – nach Prüfung wird dein Beitrag veröffentlicht.</li>
+      </ol>
+      <p>
+        <b>FAQ IT Portal</b> lebt von der Community – mach mit!
+      </p>
+    </section>
+
+    <section class="section-block">
+      <h2>Feedback</h2>
+      <p>
+        Fehler entdeckt oder Vorschlag? Schreibe ein <a href="https://github.com/AlexH73/frontend_cohort57/issues" target="_blank">Issue auf GitHub</a> oder eine Mail an <a href="mailto:ewebotah@gmail.com">ewebotah@gmail.com</a>
+      </p>
+      <p class="lang-switcher"><a href="about.html">RU</a></p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="index.de.html">Zur Startseite</a></small>
+      <span class="footer-right">Offenes IT-Nachschlagewerk</span>
+    </div>
+  </footer>
+  <script>
+    // Theme
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    // Sprache
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'ru' ? 'about.html' : 'about.de.html';
+    };
+  </script>
+</body>
+</html>

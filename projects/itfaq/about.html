@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>О проекте — FAQ IT Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="questions/java/index.html" class="nav-link">Java</a>
+        <a href="questions/html/index.html" class="nav-link">HTML</a>
+        <a href="questions/css/index.html" class="nav-link">CSS</a>
+        <a href="questions/js/index.html" class="nav-link">JS</a>
+        <a href="questions/sql/index.html" class="nav-link">SQL</a>
+        <a href="about.html" class="nav-link active">О проекте</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru" selected>RU</option>
+          <option value="de">DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="index.html">Главная</a> &rarr;
+      <span>О проекте</span>
+    </nav>
+    <h1>О проекте</h1>
+    <section class="section-block">
+      <h2>Что такое FAQ IT Portal?</h2>
+      <p>
+        <b>FAQ IT Portal</b> — это открытый справочник по самым частым вопросам в области программирования и IT. Здесь собраны короткие и развёрнутые ответы на популярные темы: Java, HTML, CSS, JavaScript, SQL, алгоритмы, Git и многое другое.
+      </p>
+      <ul>
+        <li>Два языка: русский и немецкий (RU/DE).</li>
+        <li>Вопросы и ответы структурированы по тематикам и уровням сложности.</li>
+        <li>Все примеры — с пояснениями и подсветкой кода.</li>
+        <li>Быстрый поиск и навигация.</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>Для кого этот портал?</h2>
+      <ul>
+        <li>Для студентов и преподавателей технических вузов</li>
+        <li>Для начинающих и продолжающих программистов</li>
+        <li>Для всех, кто учит IT-материалы на русском или немецком</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>Как устроен проект?</h2>
+      <ul>
+        <li>Статический сайт на чистом HTML/CSS, без серверной части — работает быстро и везде.</li>
+        <li>Открытый исходный код на <a href="https://github.com/AlexH73/frontend_cohort57/tree/main/projects/itfaq" target="_blank">GitHub</a> — вы можете предложить правки или добавить свой вопрос!</li>
+        <li>Лёгкая структура: вопросы — это обычные HTML-файлы, для каждого языка есть свой файл (например, <code>01-hashmap.html</code> и <code>01-hashmap.de.html</code>).</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <h2>Как добавить свой вопрос?</h2>
+      <ol>
+        <li>Сделайте форк репозитория на GitHub (<a href="https://github.com/AlexH73/frontend_cohort57/tree/main/projects/itfaq" target="_blank">github.com</a>).</li>
+        <li>Добавьте или отредактируйте HTML-файл с вопросом в нужной теме и языке.</li>
+        <li>Сделайте Pull Request — и ваш вклад появится на портале после проверки.</li>
+      </ol>
+      <p>
+        <b>FAQ IT Portal</b> развивается сообществом — присоединяйтесь!
+      </p>
+    </section>
+
+    <section class="section-block">
+      <h2>Обратная связь</h2>
+      <p>
+        Нашли ошибку или есть предложение? Пишите в <a href="https://github.com/AlexH73/frontend_cohort57/issues" target="_blank">issues на GitHub</a> или на <a href="mailto:ewebotah@gmail.com">ewebotah@gmail.com</a>
+      </p>
+      <p class="lang-switcher"><a href="about.de.html">DE</a></p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="index.html">На главную</a></small>
+      <span class="footer-right">Открытый справочник по IT</span>
+    </div>
+  </footer>
+  <script>
+    // Тема
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    // Язык
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'de' ? 'about.de.html' : 'about.html';
+    };
+  </script>
+</body>
+</html>

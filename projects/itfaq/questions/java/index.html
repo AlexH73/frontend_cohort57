@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Java: Вопросы и ответы — FAQ IT Portal</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="../../index.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">Главная</a>
+        <a href="index.html" class="nav-link active">Java</a>
+        <a href="../html/index.html" class="nav-link">HTML</a>
+        <a href="../css/index.html" class="nav-link">CSS</a>
+        <a href="../js/index.html" class="nav-link">JS</a>
+        <a href="../sql/index.html" class="nav-link">SQL</a>
+        <a href="../../about.html" class="nav-link">О проекте</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru" selected>RU</option>
+          <option value="de">DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <h1>Java: Вопросы и ответы</h1>
+    <nav class="toc section-block" aria-label="Оглавление Java">
+      <ul>
+        <li>
+          <a href="01-hashmap.html">Как работает HashMap в Java?</a>
+          <span class="lang-switch"><a href="01-hashmap.de.html">DE</a></span>
+        </li>
+        <li>
+          <a href="02-primitive-vs-reference.html">Примитивные и ссылочные типы данных в Java</a>
+          <span class="lang-switch"><a href="02-primitive-vs-reference.de.html">DE</a></span>
+        </li>
+        <li>
+          <a href="03-oop-principles.html">Основные принципы ООП в Java</a>
+          <span class="lang-switch"><a href="03-oop-principles.de.html">DE</a></span>
+        </li>
+        <li>
+          <a href="04-array-vs-arraylist.html">Массив и ArrayList: различия</a>
+          <span class="lang-switch"><a href="04-array-vs-arraylist.de.html">DE</a></span>
+        </li>
+        <li>
+          <a href="05-exceptions.html">Исключения и обработка ошибок</a>
+          <span class="lang-switch"><a href="05-exceptions.de.html">DE</a></span>
+        </li>
+        <li>
+          <a href="06-collections.html">Java Collections Framework: основные интерфейсы</a>
+          <span class="lang-switch"><a href="06-collections.de.html">DE</a></span>
+        </li>
+        <!-- Добавляйте новые вопросы сюда -->
+      </ul>
+    </nav>
+    <section>
+      <p>Добро пожаловать в раздел вопросов и ответов по Java! Здесь собраны самые частые вопросы, примеры кода, краткие и подробные объяснения.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="../../index.html">На главную</a></small>
+      <span class="footer-right">Java • Вопросы и ответы</span>
+    </div>
+  </footer>
+  <script>
+    // Тема
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    // Язык
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'de' ? 'index.de.html' : 'index.html';
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Java: Fragen und Antworten — FAQ IT Portal</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="../../index.de.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="../../index.de.html" class="nav-link">Startseite</a>
+        <a href="index.de.html" class="nav-link active">Java</a>
+        <a href="../html/index.de.html" class="nav-link">HTML</a>
+        <a href="../css/index.de.html" class="nav-link">CSS</a>
+        <a href="../js/index.de.html" class="nav-link">JS</a>
+        <a href="../sql/index.de.html" class="nav-link">SQL</a>
+        <a href="../../about.de.html" class="nav-link">Über das Projekt</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru">RU</option>
+          <option value="de" selected>DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <h1>Java: Fragen und Antworten</h1>
+    <nav class="toc section-block" aria-label="Java Inhaltsverzeichnis">
+      <ul>
+        <li>
+          <a href="01-hashmap.de.html">Wie funktioniert HashMap in Java?</a>
+          <span class="lang-switch"><a href="01-hashmap.html">RU</a></span>
+        </li>
+        <li>
+          <a href="02-primitive-vs-reference.de.html">Primitive und Referenztypen in Java</a>
+          <span class="lang-switch"><a href="02-primitive-vs-reference.html">RU</a></span>
+        </li>
+        <li>
+          <a href="03-oop-principles.de.html">Grundprinzipien der OOP in Java</a>
+          <span class="lang-switch"><a href="03-oop-principles.html">RU</a></span>
+        </li>
+        <li>
+          <a href="04-array-vs-arraylist.de.html">Array vs ArrayList: Unterschiede</a>
+          <span class="lang-switch"><a href="04-array-vs-arraylist.html">RU</a></span>
+        </li>
+        <li>
+          <a href="05-exceptions.de.html">Exceptions und Fehlerbehandlung</a>
+          <span class="lang-switch"><a href="05-exceptions.html">RU</a></span>
+        </li>
+        <li>
+          <a href="06-collections.de.html">Java Collections Framework: zentrale Schnittstellen</a>
+          <span class="lang-switch"><a href="06-collections.html">RU</a></span>
+        </li>
+        <!-- Weitere Fragen hinzufügen -->
+      </ul>
+    </nav>
+    <section>
+      <p>Willkommen im Bereich Java! Häufig gestellte Fragen, kurze und ausführliche Antworten, Codebeispiele und Erklärungen.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="../../index.de.html">Zur Startseite</a></small>
+      <span class="footer-right">Java • Fragen und Antworten</span>
+    </div>
+  </footer>
+  <script>
+    // Theme
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    // Sprache
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'ru' ? 'index.html' : 'index.de.html';
+    };
+  </script>
+</body>
+</html>

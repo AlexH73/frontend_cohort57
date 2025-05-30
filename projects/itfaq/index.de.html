@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>FAQ IT Portal: Java, HTML, CSS, JS, SQL u.a.</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <h1 class="logo">FAQ IT Portal</h1>
+      <nav class="main-nav">
+        <a href="index.de.html" class="nav-link active">Startseite</a>
+        <a href="questions/java/index.de.html" class="nav-link">Java</a>
+        <a href="questions/html/index.de.html" class="nav-link">HTML</a>
+        <a href="questions/css/index.de.html" class="nav-link">CSS</a>
+        <a href="questions/js/index.de.html" class="nav-link">JS</a>
+        <a href="questions/sql/index.de.html" class="nav-link">SQL</a>
+        <a href="about.de.html" class="nav-link">Über das Projekt</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher" aria-label="Sprache">
+          <option value="ru">RU</option>
+          <option value="de" selected>DE</option>
+        </select>
+        <button id="theme-toggle" aria-label="Theme wechseln">🌙</button>
+      </div>
+    </div>
+  </header>
+  
+  <main class="container main-content">
+    <section class="search-section">
+      <input type="search" id="search" placeholder="Suche nach Fragen, Stichworten..." autocomplete="off" />
+    </section>
+    <section class="categories">
+      <h2>Kategorien</h2>
+      <div class="category-cards">
+        <a class="category-card java" href="questions/java/index.de.html">
+          <span>Java</span>
+        </a>
+        <a class="category-card html" href="questions/html/index.de.html">
+          <span>HTML</span>
+        </a>
+        <a class="category-card css" href="questions/css/index.de.html">
+          <span>CSS</span>
+        </a>
+        <a class="category-card js" href="questions/js/index.de.html">
+          <span>JavaScript</span>
+        </a>
+        <a class="category-card sql" href="questions/sql/index.de.html">
+          <span>SQL</span>
+        </a>
+        <a class="category-card algo" href="questions/algorithms/index.de.html">
+          <span>Algorithmen</span>
+        </a>
+        <a class="category-card git" href="questions/git/index.de.html">
+          <span>Git</span>
+        </a>
+        <a class="category-card other" href="questions/other/index.de.html">
+          <span>Sonstiges</span>
+        </a>
+      </div>
+    </section>
+    <section class="popular-questions">
+      <h2>Beliebte Fragen</h2>
+      <ul>
+        <li>
+          <a href="questions/java/01-hashmap.de.html">Wie funktioniert HashMap in Java?</a>
+          <span class="lang-switch"><a href="questions/java/01-hashmap.html">RU</a></span>
+        </li>
+        <li>
+          <a href="questions/css/01-flexbox.de.html">Was ist Flexbox in CSS?</a>
+          <span class="lang-switch"><a href="questions/css/01-flexbox.html">RU</a></span>
+        </li>
+        <li>
+          <a href="questions/sql/01-select-join.de.html">Wie macht man einen SELECT mit JOIN in SQL?</a>
+          <span class="lang-switch"><a href="questions/sql/01-select-join.html">RU</a></span>
+        </li>
+        <li>
+          <a href="questions/js/01-dom-add.de.html">Wie fügt man ein Element mit JS in den DOM ein?</a>
+          <span class="lang-switch"><a href="questions/js/01-dom-add.html">RU</a></span>
+        </li>
+        <li>
+          <a href="questions/css/02-center-block.de.html">Wie zentriert man einen Block in CSS?</a>
+          <span class="lang-switch"><a href="questions/css/02-center-block.html">RU</a></span>
+        </li>
+      </ul>
+      <a href="questions/java/index.de.html" class="more-link">Alle Fragen ansehen &rarr;</a>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="https://github.com/AlexH73/frontend_cohort57/tree/main/projects/itfaq">GitHub</a> | <a href="about.de.html">Über das Projekt</a></small>
+      <span class="footer-right">Hell-/Dunkelmodus • RU/DE • Open Source</span>
+    </div>
+  </footer>
+  
+  <script>
+    // Theme
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    // Sprache
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'ru' ? 'index.html' : 'index.de.html';
+    };
+  </script>
+</body>
+</html>
