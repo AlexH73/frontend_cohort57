@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Что такое примитивные типы данных в Java? — FAQ IT Portal</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="../../index.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">Главная</a>
+        <a href="index.html" class="nav-link active">Java</a>
+        <a href="../html/index.html" class="nav-link">HTML</a>
+        <a href="../css/index.html" class="nav-link">CSS</a>
+        <a href="../js/index.html" class="nav-link">JS</a>
+        <a href="../sql/index.html" class="nav-link">SQL</a>
+        <a href="../../about.html" class="nav-link">О проекте</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru" selected>RU</option>
+          <option value="de">DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="../../index.html">Главная</a> &rarr;
+      <a href="index.html">Java</a> &rarr;
+      <span>Примитивные типы</span>
+    </nav>
+    <h1>Что такое примитивные типы данных в Java?</h1>
+    <div class="question-meta">
+      <span class="tag tag-java">Java</span>
+      <span class="tag tag-basic">Базовый</span>
+      <span class="lang-switcher"><a href="01-primitive-types.de.html">DE</a></span>
+    </div>
+    <section class="answer-short">
+      <strong>Кратко:</strong>
+      <p>
+        Примитивные типы данных в Java — это встроенные базовые типы, которые не являются объектами. Они очень быстрые, занимают мало памяти и используются для хранения простых значений: чисел, символов, логических значений.
+      </p>
+    </section>
+    <section class="section-block">
+      <h2>Список примитивных типов (8 типов)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Тип</th>
+            <th>Размер</th>
+            <th>Диапазон/Особенности</th>
+            <th>Пример</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>byte</code></td><td>1 байт</td><td>-128 до 127</td><td><code>byte b = 100;</code></td></tr>
+          <tr><td><code>short</code></td><td>2 байта</td><td>-32,768 до 32,767</td><td><code>short s = 10000;</code></td></tr>
+          <tr><td><code>int</code></td><td>4 байта</td><td>-2<sup>31</sup> до 2<sup>31</sup>-1</td><td><code>int i = 123456;</code></td></tr>
+          <tr><td><code>long</code></td><td>8 байт</td><td>-2<sup>63</sup> до 2<sup>63</sup>-1</td><td><code>long l = 123456789L;</code></td></tr>
+          <tr><td><code>float</code></td><td>4 байта</td><td>6–7 знаков после запятой</td><td><code>float f = 3.14f;</code></td></tr>
+          <tr><td><code>double</code></td><td>8 байт</td><td>до 15 знаков после запятой</td><td><code>double d = 3.141592653;</code></td></tr>
+          <tr><td><code>char</code></td><td>2 байта</td><td>Один символ (UTF-16)</td><td><code>char c = 'A';</code></td></tr>
+          <tr><td><code>boolean</code></td><td>1 бит</td><td><code>true</code> или <code>false</code></td><td><code>boolean flag = true;</code></td></tr>
+        </tbody>
+      </table>
+      <h3>Особенности</h3>
+      <ul>
+        <li>Не являются объектами и не имеют методов.</li>
+        <li>Быстрее и экономнее по памяти, чем ссылочные типы (например, <code>Integer</code>).</li>
+        <li>Не могут быть <code>null</code>.</li>
+      </ul>
+      <h3>Обёртки (Wrapper-классы)</h3>
+      <p>Для работы с коллекциями и в некоторых случаях примитивы автоматически преобразуются в объекты-обёртки:</p>
+      <pre><code class="language-java">int i = 10;
+Integer obj = i; // Autoboxing
+int j = obj;     // Unboxing</code></pre>
+      <h3>Где хранятся примитивы?</h3>
+      <ul>
+        <li>В стеке (Stack) — примитивы, объявленные в методах.</li>
+        <li>В куче (Heap) — если это часть объекта или массива.</li>
+      </ul>
+      <h3>Когда использовать примитивы?</h3>
+      <ul>
+        <li>Для быстрого хранения простых значений.</li>
+        <li>Внутри циклов, вычислений, массивов.</li>
+        <li>Когда важна производительность и экономия памяти.</li>
+      </ul>
+      <h3>Итоги</h3>
+      <ul>
+        <li>В Java всего 8 примитивных типов.</li>
+        <li>Они очень быстрые, простые и экономят ресурсы.</li>
+        <li>Для работы с коллекциями используйте обёртки (<code>Integer</code>, <code>Boolean</code> и др.).</li>
+      </ul>
+    </section>
+    <nav class="question-nav-block" aria-label="Навигация между вопросами">
+      <a href="index.html">
+        <span class="nav-icon" aria-hidden="true">🏠</span>
+        <span>К оглавлению Java</span>
+      </a>
+      <div class="nav-sep"></div>
+      <a href="02-char.html" class="next-link">
+        <span>Следующий вопрос</span>
+        <span class="nav-icon" aria-hidden="true">➡️</span>
+      </a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="../../index.html">На главную</a></small>
+      <span class="footer-right">Java • Примитивные типы</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'de' ? '01-primitive-types.de.html' : '01-primitive-types.html';
+    };
+  </script>
+</body>
+</html>

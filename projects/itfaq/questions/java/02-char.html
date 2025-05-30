@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Что такое char в Java? — FAQ IT Portal</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="../../index.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="../../index.html" class="nav-link">Главная</a>
+        <a href="index.html" class="nav-link active">Java</a>
+        <a href="../html/index.html" class="nav-link">HTML</a>
+        <a href="../css/index.html" class="nav-link">CSS</a>
+        <a href="../js/index.html" class="nav-link">JS</a>
+        <a href="../sql/index.html" class="nav-link">SQL</a>
+        <a href="../../about.html" class="nav-link">О проекте</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru" selected>RU</option>
+          <option value="de">DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="../../index.html">Главная</a> &rarr;
+      <a href="index.html">Java</a> &rarr;
+      <span>char</span>
+    </nav>
+    <h1>Что такое <code>char</code> в Java?</h1>
+    <div class="question-meta">
+      <span class="tag tag-java">Java</span>
+      <span class="tag tag-basic">Базовый</span>
+      <span class="lang-switcher"><a href="02-char.de.html">DE</a></span>
+    </div>
+    <section class="answer-short">
+      <strong>Кратко:</strong>
+      <p>
+        <b>char</b> — это примитивный тип данных в Java для хранения одного символа в формате Unicode (UTF-16). Используется для представления букв, цифр и специальных символов.
+      </p>
+    </section>
+    <section class="section-block">
+      <h2>Основные характеристики</h2>
+      <table>
+        <thead>
+          <tr><th>Свойство</th><th>Значение</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Размер</td><td>2 байта (16 бит)</td></tr>
+          <tr><td>Диапазон</td><td>от <code>\u0000</code> до <code>\uffff</code> (0 до 65 535)</td></tr>
+          <tr><td>Тип хранения</td><td>Целочисленный, но интерпретируется как символ</td></tr>
+          <tr><td>Значение по умолчанию</td><td><code>\u0000</code> (нулевой символ)</td></tr>
+        </tbody>
+      </table>
+      <h3>Примеры использования</h3>
+      <pre><code class="language-java">char a = 'A';            // символ 'A'
+char digit = '7';        // символ '7'
+char symbol = '#';       // спецсимвол
+char unicode = '\u03A9'; // символ Омега (Ω) — Unicode
+</code></pre>
+      <h3>char и Unicode</h3>
+      <p>В Java каждый символ — это 16-битное целое число (поддержка Unicode, включая кириллицу и многие языки мира).</p>
+      <pre><code class="language-java">char c = 'Ж'; 
+System.out.println((int)c); // Выведет Unicode-код символа</code></pre>
+      <h3>char как число</h3>
+      <p>Можно использовать <code>char</code> в арифметике:</p>
+      <pre><code class="language-java">char a = 'A';
+int code = a; // 65
+char next = (char) (a + 1); // 'B'</code></pre>
+      <h3>Применения</h3>
+      <ul>
+        <li>Проверка и сравнение символов (<code>if (c == 'y')</code>)</li>
+        <li>Работа с текстом по символам (<code>charAt(i)</code> в <code>String</code>)</li>
+        <li>Хранение Unicode-символов (<code>'\uXXXX'</code>)</li>
+        <li>Перебор алфавита (<code>for (char c = 'A'; c &lt;= 'Z'; c++)</code>)</li>
+      </ul>
+      <h3>Важно</h3>
+      <ul>
+        <li><code>char</code> — это один символ, а не строка (<code>String</code>).</li>
+        <li>Для <b>одного</b> символа используются одинарные кавычки: <code>'A'</code>, для строки — двойные: <code>"A"</code>.</li>
+      </ul>
+    </section>
+    <nav class="question-nav-block" aria-label="Навигация между вопросами">
+      <a href="index.html">
+        <span class="nav-icon" aria-hidden="true">🏠</span>
+        <span>К оглавлению Java</span>
+      </a>
+      <div class="nav-sep"></div>
+      <a href="03-reference-types.html" class="next-link">
+        <span>Следующий вопрос</span>
+        <span class="nav-icon" aria-hidden="true">➡️</span>
+      </a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="../../index.html">На главную</a></small>
+      <span class="footer-right">Java • char</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'de' ? '02-char.de.html' : '02-char.html';
+    };
+  </script>
+</body>
+</html>

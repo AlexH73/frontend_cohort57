@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Was ist <code>char</code> in Java? — FAQ IT Portal</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="../../index.de.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="../../index.de.html" class="nav-link">Startseite</a>
+        <a href="index.de.html" class="nav-link active">Java</a>
+        <a href="../html/index.de.html" class="nav-link">HTML</a>
+        <a href="../css/index.de.html" class="nav-link">CSS</a>
+        <a href="../js/index.de.html" class="nav-link">JS</a>
+        <a href="../sql/index.de.html" class="nav-link">SQL</a>
+        <a href="../../about.de.html" class="nav-link">Über das Projekt</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru">RU</option>
+          <option value="de" selected>DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="../../index.de.html">Startseite</a> &rarr;
+      <a href="index.de.html">Java</a> &rarr;
+      <span>char</span>
+    </nav>
+    <h1>Was ist <code>char</code> in Java?</h1>
+    <div class="question-meta">
+      <span class="tag tag-java">Java</span>
+      <span class="tag tag-basic">Grundlagen</span>
+      <span class="lang-switcher"><a href="02-char.html">RU</a></span>
+    </div>
+    <section class="answer-short">
+      <strong>Kurz:</strong>
+      <p>
+        <b>char</b> ist ein primitiver Datentyp in Java zur Speicherung eines einzelnen Zeichens im Unicode-Format (UTF-16). Er wird verwendet, um Buchstaben, Ziffern und Sonderzeichen darzustellen.
+      </p>
+    </section>
+    <section class="section-block">
+      <h2>Wesentliche Eigenschaften</h2>
+      <table>
+        <thead>
+          <tr><th>Eigenschaft</th><th>Wert</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Größe</td><td>2 Byte (16 Bit)</td></tr>
+          <tr><td>Wertebereich</td><td>von <code>\u0000</code> bis <code>\uffff</code> (0 bis 65.535)</td></tr>
+          <tr><td>Speichertyp</td><td>Ganzzahl, wird aber als Zeichen interpretiert</td></tr>
+          <tr><td>Standardwert</td><td><code>\u0000</code> (Null-Zeichen)</td></tr>
+        </tbody>
+      </table>
+      <h3>Beispiele</h3>
+      <pre><code class="language-java">char a = 'A';            // Zeichen 'A'
+char digit = '7';        // Zeichen '7'
+char symbol = '#';       // Sonderzeichen
+char unicode = '\u03A9'; // Omega-Zeichen (Ω) — Unicode
+</code></pre>
+      <h3>char und Unicode</h3>
+      <p>In Java ist jedes Zeichen eine 16-Bit-Ganzzahl (Unicode-Unterstützung für viele Sprachen, inkl. Kyrillisch).</p>
+      <pre><code class="language-java">char c = 'Ж'; 
+System.out.println((int)c); // Gibt den Unicode-Code des Zeichens aus</code></pre>
+      <h3>char als Zahl</h3>
+      <p><code>char</code> kann wie eine Zahl verwendet werden:</p>
+      <pre><code class="language-java">char a = 'A';
+int code = a; // 65
+char next = (char) (a + 1); // 'B'</code></pre>
+      <h3>Anwendungsfälle</h3>
+      <ul>
+        <li>Vergleich und Prüfung von Zeichen (<code>if (c == 'y')</code>)</li>
+        <li>Zeichenweises Arbeiten mit Text (<code>charAt(i)</code> in <code>String</code>)</li>
+        <li>Speichern von Unicode-Zeichen (<code>'\uXXXX'</code>)</li>
+        <li>Durchlauf des Alphabets (<code>for (char c = 'A'; c &lt;= 'Z'; c++)</code>)</li>
+      </ul>
+      <h3>Wichtig</h3>
+      <ul>
+        <li><code>char</code> ist ein einzelnes Zeichen, kein String (<code>String</code>).</li>
+        <li>Für <b>ein</b> Zeichen werden einfache Anführungszeichen <code>'A'</code> verwendet, für Strings doppelte <code>"A"</code>.</li>
+      </ul>
+    </section>
+    <nav class="question-nav-block" aria-label="Fragen-Navigation">
+      <a href="index.de.html">
+        <span class="nav-icon" aria-hidden="true">🏠</span>
+        <span>Zum Java-Inhaltsverzeichnis</span>
+      </a>
+      <div class="nav-sep"></div>
+      <a href="03-reference-types.de.html" class="next-link">
+        <span>Nächste Frage</span>
+        <span class="nav-icon" aria-hidden="true">➡️</span>
+      </a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="../../index.de.html">Zur Startseite</a></small>
+      <span class="footer-right">Java • char</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'ru' ? '02-char.html' : '02-char.de.html';
+    };
+  </script>
+</body>
+</html>

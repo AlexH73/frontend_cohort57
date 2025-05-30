@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Was sind primitive Datentypen in Java? — FAQ IT Portal</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="../../index.de.html" class="logo">FAQ IT Portal</a>
+      <nav class="main-nav">
+        <a href="../../index.de.html" class="nav-link">Startseite</a>
+        <a href="index.de.html" class="nav-link active">Java</a>
+        <a href="../html/index.de.html" class="nav-link">HTML</a>
+        <a href="../css/index.de.html" class="nav-link">CSS</a>
+        <a href="../js/index.de.html" class="nav-link">JS</a>
+        <a href="../sql/index.de.html" class="nav-link">SQL</a>
+        <a href="../../about.de.html" class="nav-link">Über das Projekt</a>
+      </nav>
+      <div class="header-controls">
+        <select id="lang-switcher">
+          <option value="ru">RU</option>
+          <option value="de" selected>DE</option>
+        </select>
+        <button id="theme-toggle">🌙</button>
+      </div>
+    </div>
+  </header>
+  <main class="container main-content">
+    <nav class="breadcrumbs">
+      <a href="../../index.de.html">Startseite</a> &rarr;
+      <a href="index.de.html">Java</a> &rarr;
+      <span>Primitive Datentypen</span>
+    </nav>
+    <h1>Was sind primitive Datentypen in Java?</h1>
+    <div class="question-meta">
+      <span class="tag tag-java">Java</span>
+      <span class="tag tag-basic">Grundlagen</span>
+      <span class="lang-switcher"><a href="01-primitive-types.html">RU</a></span>
+    </div>
+    <section class="answer-short">
+      <strong>Kurz:</strong>
+      <p>
+        Primitive Datentypen in Java sind die eingebauten Basisdatentypen, die keine Objekte sind. Sie sind besonders schnell, benötigen wenig Speicher und dienen zum Speichern einfacher Werte: Zahlen, Zeichen und boolesche Werte.
+      </p>
+    </section>
+    <section class="section-block">
+      <h2>Liste der primitiven Typen (8 Typen)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Typ</th>
+            <th>Größe</th>
+            <th>Wertebereich/Besonderheiten</th>
+            <th>Beispiel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>byte</code></td><td>1 Byte</td><td>-128 bis 127</td><td><code>byte b = 100;</code></td></tr>
+          <tr><td><code>short</code></td><td>2 Byte</td><td>-32.768 bis 32.767</td><td><code>short s = 10000;</code></td></tr>
+          <tr><td><code>int</code></td><td>4 Byte</td><td>-2<sup>31</sup> bis 2<sup>31</sup>-1</td><td><code>int i = 123456;</code></td></tr>
+          <tr><td><code>long</code></td><td>8 Byte</td><td>-2<sup>63</sup> bis 2<sup>63</sup>-1</td><td><code>long l = 123456789L;</code></td></tr>
+          <tr><td><code>float</code></td><td>4 Byte</td><td>6–7 Nachkommastellen</td><td><code>float f = 3.14f;</code></td></tr>
+          <tr><td><code>double</code></td><td>8 Byte</td><td>bis zu 15 Nachkommastellen</td><td><code>double d = 3.141592653;</code></td></tr>
+          <tr><td><code>char</code></td><td>2 Byte</td><td>Ein Zeichen (UTF-16)</td><td><code>char c = 'A';</code></td></tr>
+          <tr><td><code>boolean</code></td><td>1 Bit</td><td><code>true</code> oder <code>false</code></td><td><code>boolean flag = true;</code></td></tr>
+        </tbody>
+      </table>
+      <h3>Besonderheiten</h3>
+      <ul>
+        <li>Keine Objekte und keine Methoden.</li>
+        <li>Schneller und sparsamer als Referenztypen (z.B. <code>Integer</code>).</li>
+        <li>Können nicht <code>null</code> sein.</li>
+      </ul>
+      <h3>Wrapper-Klassen</h3>
+      <p>Für manche Aufgaben (z.B. in Collections) werden primitive Typen automatisch in Wrapper-Objekte umgewandelt:</p>
+      <pre><code class="language-java">int i = 10;
+Integer obj = i; // Autoboxing
+int j = obj;     // Unboxing</code></pre>
+      <h3>Wo werden Primitive gespeichert?</h3>
+      <ul>
+        <li>Im Stack — primitive Variablen, die in Methoden deklariert sind.</li>
+        <li>Im Heap — als Teil von Objekten oder Arrays.</li>
+      </ul>
+      <h3>Wann Primitive verwenden?</h3>
+      <ul>
+        <li>Für schnelle Speicherung einfacher Werte.</li>
+        <li>In Schleifen, Berechnungen, Arrays.</li>
+        <li>Wenn Performance und Speicherbedarf wichtig sind.</li>
+      </ul>
+      <h3>Fazit</h3>
+      <ul>
+        <li>Java kennt 8 primitive Datentypen.</li>
+        <li>Sie sind sehr schnell, einfach und ressourcenschonend.</li>
+        <li>Für Collections Wrapper-Klassen nutzen (<code>Integer</code>, <code>Boolean</code> usw.).</li>
+      </ul>
+    </section>
+    <nav class="question-nav-block" aria-label="Fragen-Navigation">
+      <a href="index.de.html">
+        <span class="nav-icon" aria-hidden="true">🏠</span>
+        <span>Zum Java-Inhaltsverzeichnis</span>
+      </a>
+      <div class="nav-sep"></div>
+      <a href="02-char.de.html" class="next-link">
+        <span>Nächste Frage</span>
+        <span class="nav-icon" aria-hidden="true">➡️</span>
+      </a>
+    </nav>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <small>© 2025 FAQ IT Portal. <a href="../../index.de.html">Zur Startseite</a></small>
+      <span class="footer-right">Java • Primitive Typen</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.onclick = () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    };
+    document.getElementById('lang-switcher').onchange = e => {
+      window.location.href = e.target.value === 'ru' ? '01-primitive-types.html' : '01-primitive-types.de.html';
+    };
+  </script>
+</body>
+</html>
