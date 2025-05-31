@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #FFF;
+    color: #333;
+}
+
+.cars div {
+    margin: 20px;
+    width: 360px;
+    height: 360px;
+    background-color: #f8f8f8;
+    background-image: url(../../assets/images/forester.png);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out, background-position 0.5s ease-in-out;
+    outline: 1px solid #000;
+    padding: 10px;
+}
+
+.cars div:hover {
+    background-size: 150%;
+    background-position: right 120% top 50%;
+    transition: background-size 0.5s ease-in-out, background-position 0.5s ease-in-out;
+}
+
+.cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.cars div .descr {
+    position: relative;
+    display: inline-block;
+    color: blue;
+    text-decoration: none;
+    border: 2px solid blue;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    opacity: 0;
+    top: 250px;
+    left: 10px;
+    transition:0.5s;
+}
+
+.cars div:hover .descr {
+    opacity: 1;
+    transition: background-size 0.5s ease-in-out, background-position 0.5s ease-in-out;
+}
+
+.cars div .descr:hover {
+    color: #fff;
+    background-color: blue;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.cars div h2 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    color: #333;
+}
