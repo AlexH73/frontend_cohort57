@@ -5,7 +5,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: auto;
+    text-rendering: optimizeLegibility;
+    -webkit-overflow-scrolling: touch;
     line-height: 1.6;
     background-color: #FFF;
     color: #333;
@@ -38,6 +43,27 @@ body {
     position: relative;
 }
 
+.cars div .test-drive {
+    position: relative;
+    opacity: 0;
+    top: 10px;
+    left: 10px;
+    color: #848484;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: .6px;
+    transition:1.5s;
+}
+
+.cars div .test-drive:hover {
+    text-decoration: underline; 
+}
+
+.cars div:hover .test-drive {
+    opacity: 1;
+    transition: 1.8s ease-in-out;
+}
+
 .cars div .descr {
     position: relative;
     display: inline-block;
@@ -49,24 +75,27 @@ body {
     background-color: #fff;
     opacity: 0;
     top: 250px;
-    left: 10px;
+    right: 78px;
     transition:0.5s;
 }
 
 .cars div:hover .descr {
     opacity: 1;
-    transition: background-size 0.5s ease-in-out, background-position 0.5s ease-in-out;
+    transition: 1.5s ease-in-out;
 }
 
-.cars div .descr:hover {
+.cars div .descr:hover{
     color: #fff;
     background-color: blue;
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
 .cars div h2 {
     position: relative;
+    color: #848484;
     top: 10px;
     left: 10px;
-    color: #333;
+    font-size: 23px;
+    font-weight: 300;
+    letter-spacing: .5px;
 }
