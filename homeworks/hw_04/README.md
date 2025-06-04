@@ -4,7 +4,7 @@ _В данном задании мы поработаем с flexbox и сдел
 
 _Пример_
 
-<img src="example.png" >
+<img src="../../assets/images_hw_04/example.png" >
 ### Релиз 0.
 
 У тебя уже есть два пустых файла `index.html` и `style.css`.  
