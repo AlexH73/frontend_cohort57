@@ -24,7 +24,7 @@
         <div class="play">Онлайн-кинотеатр</div>
         <div class="oscar">Оскар-2023</div>
         <div class="search">
-          <input placeholder="Фильмы, сериалы, персоны" type="text">
+          <input placeholder="Фильмы, сериалы, персоны" type="text" />
         </div>
       </div>
     </header>
@@ -32,7 +32,6 @@
     <main>
       <div id="markdown-content"></div>
       <script>
-        // Пример: загружаем README.md через fetch
         fetch("README.md")
           .then((response) => response.text())
           .then((text) => {
@@ -41,5 +40,8 @@
           });
       </script>
     </main>
+    <footer>
+      <p>© 2025 Alexander Hermann</p>
+    </footer>
   </body>
 </html>
