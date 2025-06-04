@@ -60,13 +60,13 @@ footer {
   /* Включаем свойство flex у родителя позиционируемых элементов */
   display: flex;
   /* Выравниваем элементы по центру по главной оси */
-  /* justify-content: center; */
+  justify-content: center;
   /* ровномерное распределение пространстава между */
   /* justify-content: space-between; */
   /* ровномерное распределение пространстава по бокам*/
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   /* задаем пространство между элементами*/
-  gap: 10px;
+  gap: 50px;
 
   /* ! Свойства для поперечной оси */
   /* Выравниваем элементы по центру по поперечной оси */
@@ -85,7 +85,8 @@ footer {
   background-repeat: no-repeat;
 }
 
-.container .play, .container .oscar  {
+.container .play, 
+.container .oscar  {
   color: #9c9c9b;
   width: 200px;
   height: 50px;
@@ -95,18 +96,31 @@ footer {
   font-size: 1.2rem;
 }
 
-.container .play::before {
-  content: url("../../assets/images_hw_04/play.svg");
+.container .play::before,
+.container .oscar::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #9c9c9b;
+  -webkit-mask: var(--icon) no-repeat center;
+  mask: var(--icon) no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
   margin-right: 8px;
 }
 
-/* .container .oscar {
-  width: 50px;
-} */
+.container .play::before { --icon: url("../../assets/images_hw_04/play.svg"); }
+.container .oscar::before { --icon: url("../../assets/images_hw_04/oscar.svg"); }
 
-.container .oscar::before {
-  content: url("../../assets/images_hw_04/oscar.svg");
-  margin-right: 8px;
+
+.container .play:hover,
+.container .oscar:hover {
+  color: #ffffff;
+}
+.container .play:hover::before,
+.container .oscar:hover::before{
+  background-color: #fff;
 }
 
 .container .search {
@@ -121,7 +135,7 @@ footer {
   height: 30px;
   background-color: #ffffffc4;
   padding: 0 10px;
-  border-radius: 8px;
-  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  border: 1px solid #ccc;
   font-size: 1rem;
 }
