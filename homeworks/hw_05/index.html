@@ -32,7 +32,7 @@
     </header>
 
     <main>
-      <div id="markdown-content"></div>
+      <!-- <div id="markdown-content"></div>
       <script>
         fetch("README.md")
           .then((response) => response.text())
@@ -40,60 +40,31 @@
             document.getElementById("markdown-content").innerHTML =
               marked.parse(text);
           });
-      </script>
+      </script> -->
       <article>
         <h2>Новинки</h2>
       <section class="new-movies">
         <div class="poster">
-          <figure>
-            <img src="../../assets/images_hw_05/movie1.webp" alt="">
-          </figure>
-          <div class="reting">9.8</div>
-          <div class="ticket">Билеты</div>
-          <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis commodi perferendis delectus iure fugit quae ex ullam recusandae repellendus vitae est, ad ut, quis placeat minima, eligendi ipsum adipisci laborum.</div>
+          <div class="flip-container">
+            <div class="flipper">
+              <!-- Передняя сторона -->
+              <div class="front">
+                <figure>
+                  <img src="../../assets/images_hw_05/movie1.webp" alt="">
+                </figure>
+                <div class="reting">6.8</div>
+                <div class="ticket">Билеты</div>
+              </div>
+              
+              <!-- Задняя сторона -->
+              <div class="back">
+                <h3 class="film-title">Бешенство (2023)</h3>
+                <div class="descr">В тайге разгорается эпидемия бешенства среди диких животных. В это время отец привозит своего сына в охотничий домик, чтобы передержать его там во время ломки. Вместе они оказываются в смертельной западне.</div>
+                <div class="ticket">Билеты</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="poster">
-          <figure>
-            <img src="../../assets/images_hw_05/movie1.webp" alt="">
-          </figure>
-          <div class="reting">9.8</div>
-          <div class="ticket">Билеты</div>
-          <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis commodi perferendis delectus iure fugit quae ex ullam recusandae repellendus vitae est, ad ut, quis placeat minima, eligendi ipsum adipisci laborum.</div>
-        </div>
-        <div class="poster">
-          <figure>
-            <img src="../../assets/images_hw_05/movie1.webp" alt="">
-          </figure>
-          <div class="reting">9.8</div>
-          <div class="ticket">Билеты</div>
-          <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis commodi perferendis delectus iure fugit quae ex ullam recusandae repellendus vitae est, ad ut, quis placeat minima, eligendi ipsum adipisci laborum.</div>
-        </div>
-        <div class="poster">
-          <figure>
-            <img src="../../assets/images_hw_05/movie1.webp" alt="">
-          </figure>
-          <div class="reting">9.8</div>
-          <div class="ticket">Билеты</div>
-          <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis commodi perferendis delectus iure fugit quae ex ullam recusandae repellendus vitae est, ad ut, quis placeat minima, eligendi ipsum adipisci laborum.</div>
-        </div>
-        <div class="poster">
-          <figure>
-            <img src="../../assets/images_hw_05/movie1.webp" alt="">
-          </figure>
-          <div class="reting">9.8</div>
-          <div class="ticket">Билеты</div>
-          <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis commodi perferendis delectus iure fugit quae ex ullam recusandae repellendus vitae est, ad ut, quis placeat minima, eligendi ipsum adipisci laborum.</div>
-        </div>
-        <div class="poster">
-          <figure>
-            <img src="../../assets/images_hw_05/movie1.webp" alt="">
-          </figure>
-          <div class="reting">9.8</div>
-          <div class="ticket">Билеты</div>
-          <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis commodi perferendis delectus iure fugit quae ex ullam recusandae repellendus vitae est, ad ut, quis placeat minima, eligendi ipsum adipisci laborum.</div>
-        </div>
-      </section>
-
 
       <section class="oscar-movies">
         <!-- Фильмы Оскар -->
