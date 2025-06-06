@@ -18,7 +18,7 @@ main {
   width: min(95%, 1200px);
   flex-grow: 1;
   margin: 0 auto;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -165,4 +165,61 @@ nav .search input {
 
 nav .search input:hover {
   opacity: 1;
+}
+
+.new-movies {
+  background-color: #000;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 20px; 
+  padding: 20px 0; 
+}
+
+.poster {
+  flex: 0 0 auto; 
+  margin: 10px; 
+}
+
+
+.poster > figure {
+  width: 220px; 
+  max-width: 100%; 
+}
+.poster > figure img {
+  width: 100%; 
+  height: auto;
+  display: block; 
+}
+
+.poster .reting {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 10px;
+  width: 20px;
+}
+
+.poster .ticket {
+  background-color: #ff4500;
+  color: #fff;
+  padding: 6px 12px;
+  margin: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  width: 80px;
+}
+
+.poster .ticket:hover {
+  background-color: #e03e00;
+}
+
+.poster .descr {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 8px;
+  width: 220px;
 }
