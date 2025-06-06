@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+ul span {
+  background-color: none;
+  font-weight: bold;
+}
+
+li::before {
+  content: "📍";
+  margin-right: 10px;
+}
+
+header {
+  width: 100%;
+  background-color: rgb(210, 88, 76);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  /* position: fixed; */
+  /* Ппиклееваем header через sticky */
+  position: sticky;
+  /* header приклеется в самом верху страницы */
+  top: 0;
+  /* делаем приоритетным при наложении элементов*/
+  z-index: 2;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+p > span {
+  font-weight: bold;
+  color: white;
+  position: sticky;
+  top: 100px;
+  background-color: rgb(210, 88, 76);
+}
+
+.fixed {
+  width: 100px;
+  height: 100px;
+  top: 300px;
+  left: 50%;
+  background-color: rgb(211, 46, 46);
+  color: white;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(175, 87, 219);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: -2;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(33, 146, 33);
+  color: white;
+  border-radius: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -45px;
+  left: 149px;
+  /* указываем значение глубины относительно других элементов */
+  z-index: -1;
+}
