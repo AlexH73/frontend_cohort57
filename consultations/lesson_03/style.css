@@ -53,7 +53,7 @@ h1 {
 }
 
 .photo {
-  min-width: 25%;
+  min-width: 45%;
   height: auto;
   aspect-ratio: 16 / 9;
   transition: all 0.9s ease;
@@ -68,7 +68,6 @@ h1 {
 
 .photo:hover {
   transform: scale(1.5) rotate(6deg);
-  width: 500px;
   height: auto;
 }
 
