@@ -207,12 +207,31 @@ nav .search input:hover {
 }
 
 .new-movies {
-  background-color: #000;
+  background: #000508;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(204, 204, 204, 0.3) 100%
+  );
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   padding: 20px 0;
+}
+
+.new-movies-title {
+  width: 100%;
+  text-shadow: 3px 1px 3px rgba(0, 0, 0, 0.8);
+  margin-top: -5px;
+  background: #000508;
+  background: linear-gradient(
+    365deg,
+    rgba(0, 5, 8, 0.95) 2%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+  border-radius: 8px 8px 0 0;
+  border-bottom: #000508 solid 1px;
 }
 
 .poster {
