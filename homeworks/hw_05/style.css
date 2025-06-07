@@ -9,6 +9,7 @@
   --text-gray: #9c9c9b;
   --bg-dark: #282629;
   --bg-light: #ffffff;
+  --bg-light-secondary: #dfe1e9;
   --sidebar-width: 250px;
 }
 
@@ -44,9 +45,9 @@ body {
   border: 1px dashed #ccc;
 }
 
-.main-content {
+/* .main-content {
   flex-grow: 1;
-}
+} */
 
 main {
   width: min(95%, 1050px);
@@ -56,11 +57,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-main img {
-  width: 100%;
-  max-width: 1024px;
-  height: auto;
-}
+
 header {
   width: 100%;
   min-height: 147px;
@@ -276,11 +273,6 @@ nav .search input:hover {
   width: 220px;
   max-width: 100%;
 }
-.poster > figure img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 .reting {
   position: absolute;
@@ -324,9 +316,12 @@ nav .search input:hover {
 }
 
 .ticket:hover,
-.ticket:focus {
+.ticket:focus,
+.back .ticket:hover,
+.back .ticket:focus {
   background-color: var(--color-primary-hover);
-  outline: none;
+    outline: 2px solid var(--color-primary-hover);
+  outline-offset: 2px;
 }
 
 .poster img {
@@ -345,6 +340,15 @@ nav .search input:hover {
   padding: 0 15px;
   margin-bottom: 20px;
   scrollbar-width: thin;
+}
+
+.poster .descr::-webkit-scrollbar {
+  width: 5px;
+}
+
+.poster .descr::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
 }
 
 .flip-container {
@@ -379,7 +383,7 @@ nav .search input:hover {
 
 .back {
   transform: rotateY(180deg);
-  background: #dfe1e9;
+  background: var(--bg-light-secondary);
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -388,13 +392,11 @@ nav .search input:hover {
 }
 
 .back .ticket {
-  position: relative;
-  bottom: -18px;
-  left: 54px;
-  transform: none;
-  margin: 0 auto;
+  bottom: 8px;
+    left: 108px;
   display: block;
   width: max-content;
+  transform: none;
 }
 
 .flip-container:hover .flipper {
@@ -424,4 +426,36 @@ nav .search input:hover {
   background: rgba(255, 255, 255, 0.9);
   z-index: 10;
   position: relative;
+}
+
+
+
+
+
+
+
+/* Проба пера, медиазапросы */
+@media (max-width: 900px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+  
+  .poster {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .poster {
+    width: 100%;
+  }
 }
