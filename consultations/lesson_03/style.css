@@ -38,7 +38,7 @@ main {
     0deg,
     rgba(34, 193, 195, 1) 26%,
     rgba(87, 192, 159, 1) 37%,
-    rgba(253, 187, 45, 0.63) 95%
+    rgba(253, 45, 45, 0.63) 95%
   );
 }
 
@@ -46,7 +46,10 @@ h1 {
   width: 100%;
   text-align: center;
   font-size: 48px;
-  text-shadow:  1px 1px 3px #22c0c3c9,
+  background: #00ff00;
+  background: linear-gradient(to left, #00ff00 0%, #ff0000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .photo {
