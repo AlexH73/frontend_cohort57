@@ -1,96 +1,104 @@
 @font-face {
-    font-family: Roboto;
-    src: url("../../assets/consultation_03/fonts/Roboto-Regular.ttf") format("truetype");
-    font-weight: normal;
+  font-family: Roboto;
+  src: url("../../assets/consultation_03/fonts/Roboto-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Roboto, Tahoma, Arial, Verdana, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Tahoma, Arial, Verdana, sans-serif;
 }
 
 body {
-    margin: 20px 0;
-    background-color: #f4f4f4;
-    font-size: clamp(14px, 1.5vw, 16px);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  margin: 20px 0;
+  background-color: #f4f4f4;
+  font-size: clamp(14px, 1.5vw, 16px);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-    width: min(95%, 1050px);
-    flex-grow: 1;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 50px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  width: min(95%, 1050px);
+  flex-grow: 1;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 50px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  background: #22c1c3;
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 26%,
+    rgba(87, 192, 159, 1) 37%,
+    rgba(253, 187, 45, 0.63) 95%
+  );
 }
 
 h1 {
-    width: 100%;
-    text-align: center;
-    font-size: 48px;
+  width: 100%;
+  text-align: center;
+  font-size: 48px;
 }
 
 .photo {
-    width: 45%;
-    aspect-ratio: 16 / 9;
-    margin: 3%;
-    transition: all 0.9s ease;
-    margin: 20px;
-    background-color: orange;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 15px;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  width: 45%;
+  aspect-ratio: 16 / 9;
+  margin: 3%;
+  transition: all 0.9s ease;
+  margin: 20px;
+  background-color: orange;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 }
 
-.photo:hover{
-    transform: scale(1.5) rotate(6deg);
+.photo:hover {
+  transform: scale(1.5) rotate(6deg);
 }
 
 .photo1 {
-    background-image: url(../../assets/consultation_03/img/img1.jpeg);
+  background-image: url(../../assets/consultation_03/img/img1.jpeg);
 }
 .photo2 {
-    background-image: url(../../assets/consultation_03/img/img2.jpeg);
+  background-image: url(../../assets/consultation_03/img/img2.jpeg);
 }
 .photo3 {
-    background-image: url(../../assets/consultation_03/img/img3.jpeg);
+  background-image: url(../../assets/consultation_03/img/img3.jpeg);
 }
 .photo4 {
-    background-image: url(../../assets/consultation_03/img/img4.jpeg);
+  background-image: url(../../assets/consultation_03/img/img4.jpeg);
 }
 .photo5 {
-    background-image: url(../../assets/consultation_03/img/img5.jpeg);
+  background-image: url(../../assets/consultation_03/img/img5.jpeg);
 }
 .photo6 {
-    background-image: url(../../assets/consultation_03/img/img6.jpeg);
+  background-image: url(../../assets/consultation_03/img/img6.jpeg);
 }
 .photo7 {
-    background-image: url(../../assets/consultation_03/img/img7.jpeg);
+  background-image: url(../../assets/consultation_03/img/img7.jpeg);
 }
 .photo8 {
-    background-image: url(../../assets/consultation_03/img/img8.jpeg);
+  background-image: url(../../assets/consultation_03/img/img8.jpeg);
 }
 .photo9 {
-    background-image: url(../../assets/consultation_03/img/img9.jpeg);
+  background-image: url(../../assets/consultation_03/img/img9.jpeg);
 }
 .photo10 {
-    background-image: url(../../assets/consultation_03/img/img10.jpeg);
+  background-image: url(../../assets/consultation_03/img/img10.jpeg);
 }
 .photo11 {
-    background-image: url(../../assets/consultation_03/img/img11.jpg);
+  background-image: url(../../assets/consultation_03/img/img11.jpg);
 }
 .photo12 {
-    background-image: url(../../assets/consultation_03/img/img12.jpeg);
+  background-image: url(../../assets/consultation_03/img/img12.jpeg);
 }
