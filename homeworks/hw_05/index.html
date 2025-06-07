@@ -32,43 +32,261 @@
     </header>
 
     <main>
-      <!-- <div id="markdown-content"></div>
-      <script>
-        fetch("README.md")
-          .then((response) => response.text())
-          .then((text) => {
-            document.getElementById("markdown-content").innerHTML =
-              marked.parse(text);
-          });
-      </script> -->
-      <article>
-        <h2>Новинки</h2>
-      <section class="new-movies">
-        <div class="poster">
-          <div class="flip-container">
-            <div class="flipper">
-              <!-- Передняя сторона -->
-              <div class="front">
-                <figure>
-                  <img src="../../assets/images_hw_05/movie1.webp" alt="">
-                </figure>
-                <div class="reting">6.8</div>
-                <div class="ticket">Билеты</div>
-              </div>
-              
-              <!-- Задняя сторона -->
-              <div class="back">
-                <h3 class="film-title">Бешенство (2023)</h3>
-                <div class="descr">В тайге разгорается эпидемия бешенства среди диких животных. В это время отец привозит своего сына в охотничий домик, чтобы передержать его там во время ломки. Вместе они оказываются в смертельной западне.</div>
-                <div class="ticket">Билеты</div>
+      <article class="content-wrapper">
+        <!-- <aside class="sidebar">
+          Будет добавлено позже
+        </aside> -->
+
+        <div class="main-content">
+          <h2>Новинки</h2>
+          <section class="new-movies">
+
+            <div class="poster">
+              <div class="flip-container">
+                <div class="flipper">
+                  <!-- Передняя сторона -->
+                  <div class="front">
+                    <figure>
+                      <img
+                        src="../../assets/images_hw_05/movie1.webp"
+                        alt="Бешенство (2023)"
+                      />
+                    </figure>
+                    <span class="reting midle">6.8</span>
+                    <button class="ticket">Билеты</button>
+                  </div>
+
+                  <!-- Задняя сторона -->
+                  <div class="back">
+                    <h3 class="film-title">Бешенство (2023)</h3>
+                    <div class="descr">
+                      В тайге разгорается эпидемия бешенства среди диких
+                      животных. В это время отец привозит своего сына в
+                      охотничий домик, чтобы передержать его там во время ломки.
+                      Вместе они оказываются в смертельной западне.
+                    </div>
+                    <button class="ticket">Билеты</button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-      <section class="oscar-movies">
-        <!-- Фильмы Оскар -->
-      </section>
+            <div class="poster">
+              <div class="flip-container">
+                <div class="flipper">
+                  <!-- Передняя сторона -->
+                  <div class="front">
+                    <figure>
+                      <img
+                        src="../../assets/images_hw_05/xolodnoe_leto_300x450.webp"
+                        alt="Холодное лето пятьдесят третьего... (1987)"
+                      />
+                    </figure>
+                    <span class="reting high">8.2</span>
+                    <button class="ticket">Билеты</button>
+                  </div>
+
+                  <!-- Задняя сторона -->
+                  <div class="back">
+                    <h3 class="film-title">
+                      Холодное лето пятьдесят третьего... (1987)
+                    </h3>
+                    <div class="descr">
+                      1953 год. Двое политических ссыльных вступают в схватку с
+                      бандой амнистированных уголовников.
+                    </div>
+                    <button class="ticket">Билеты</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="poster">
+              <div class="flip-container">
+                <div class="flipper">
+                  <!-- Передняя сторона -->
+                  <div class="front">
+                    <figure>
+                      <img
+                        src="../../assets/images_hw_05/movie2.webp"
+                        alt="Нюрнберг (2023)"
+                      />
+                    </figure>
+                    <span class="reting midle">6.0</span>
+                    <button class="ticket">Билеты</button>
+                  </div>
+
+                  <!-- Задняя сторона -->
+                  <div class="back">
+                    <h3 class="film-title">Нюрнберг (2023)</h3>
+                    <div class="descr">
+                      1945 год. В Нюрнберге начинает работу Международный
+                      военный трибунал. На суд, который впоследствии назовут
+                      Процессом Века, съезжается огромное количество людей со
+                      всего мира: город переполнен журналистами, адвокатами,
+                      переводчиками, свидетелями и множеством участников и
+                      сотрудников процесса. Среди тех, кто приезжает в Нюрнберг
+                      работать на Процессе — Игорь Волгин. Он молод, но прошел
+                      войну, имеет награды, владеет несколькими иностранными
+                      языками. Волгину предстоит быть переводчиком в составе
+                      советской делегации под руководством полковника Мигачева.
+                      Однажды на улице Нюрнберга Волгин встречает юную русскую
+                      девушку Лену. Их зарождающееся чувство пройдет через
+                      множество испытаний, но любовь — это единственное, что во
+                      все времена спасало мир от расчеловечивания.
+                    </div>
+                    <button class="ticket">Билеты</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="poster">
+              <div class="flip-container">
+                <div class="flipper">
+                  <!-- Передняя сторона -->
+                  <div class="front">
+                    <figure>
+                      <img
+                        src="../../assets/images_hw_05/milja_300x450.webp"
+                        alt="Зеленая миля (1999)"
+                      />
+                    </figure>
+                    <span class="reting high">9.1</span>
+                    <button class="ticket">Билеты</button>
+                  </div>
+
+                  <!-- Задняя сторона -->
+                  <div class="back">
+                    <h3 class="film-title">Зеленая миля (1999)</h3>
+                    <div class="descr">
+                      Пол Эджкомб — начальник блока смертников в тюрьме
+                      «Холодная гора», каждый из узников которого однажды
+                      проходит «зеленую милю» по пути к месту казни. Пол повидал
+                      много заключённых и надзирателей за время работы. Однако
+                      гигант Джон Коффи, обвинённый в страшном преступлении,
+                      стал одним из самых необычных обитателей блока.
+                    </div>
+                    <button class="ticket">Билеты</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="poster">
+              <div class="flip-container">
+                <div class="flipper">
+                  <!-- Передняя сторона -->
+                  <div class="front">
+                    <figure>
+                      <img
+                        src="../../assets/images_hw_05/interstelar_300x450.webp"
+                        alt="Интерстеллар (2014)"
+                      />
+                    </figure>
+                    <span class="reting high">8.7</span>
+                    <button class="ticket">Билеты</button>
+                  </div>
+
+                  <!-- Задняя сторона -->
+                  <div class="back">
+                    <h3 class="film-title">Интерстеллар (2014)</h3>
+                    <div class="descr">
+                      Когда засуха, пыльные бури и вымирание растений приводят
+                      человечество к продовольственному кризису, коллектив
+                      исследователей и учёных отправляется сквозь червоточину
+                      (которая предположительно соединяет области
+                      пространства-времени через большое расстояние) в
+                      путешествие, чтобы превзойти прежние ограничения для
+                      космических путешествий человека и найти планету с
+                      подходящими для человечества условиями.
+                    </div>
+                    <button class="ticket">Билеты</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="poster">
+              <div class="flip-container">
+                <div class="flipper">
+                  <!-- Передняя сторона -->
+                  <div class="front">
+                    <figure>
+                      <img
+                        src="../../assets/images_hw_05/triger_375x562.webp"
+                        alt="Триггер (сериал 2018 – ...)"
+                      />
+                    </figure>
+                    <span class="reting high">8.5</span>
+                    <button class="ticket">Билеты</button>
+                  </div>
+
+                  <!-- Задняя сторона -->
+                  <div class="back">
+                    <h3 class="film-title">Триггер (сериал 2018 – ...)</h3>
+                    <div class="descr">
+                      Психолог Артём Стрелецкий — сторонник шоковой терапии в
+                      лечении больных. Он считает, что единственный способ для
+                      человека решить свои проблемы — это понять себя и
+                      перестать себе врать. Если большинство психологов нянчатся
+                      с клиентами, по полгода выслушивают жалобы на жизнь,
+                      сочувствуют и получают при этом немалые деньги за цикл
+                      сеансов, то Артём постоянно провоцирует клиентов:
+                      оскорбляет их, смеется над ними, намеренно выталкивает из
+                      зоны комфорта. Практика Артема процветает, пока один из
+                      его пациентов не кончает жизнь самоубийством.
+                    </div>
+                    <button class="ticket">Билеты</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="poster">
+              <div class="flip-container">
+                <div class="flipper">
+                  <!-- Передняя сторона -->
+                  <div class="front">
+                    <figure>
+                      <img
+                        src="../../assets/images_hw_05/ogni_300x450.webp"
+                        alt="Горные огни (2017)"
+                      />
+                    </figure>
+                    <span class="reting low">4.5</span>
+                    <button class="ticket">Билеты</button>
+                  </div>
+
+                  <!-- Задняя сторона -->
+                  <div class="back">
+                    <h3 class="film-title">Горные огни (2017)</h3>
+                    <div class="descr">
+                      Группа студентов американского вуза приезжает в горную
+                      алтайскую деревушку навестить родственников своей бывшей
+                      одногруппницы Карины – девушки, родом из этих мест, убитой
+                      в Америке при загадочных обстоятельствах. Брат Карины
+                      оказывается местным шаманом. После радушного приёма он
+                      предлагает друзьям принять участие в ритуале примирения,
+                      чтобы символически выпустить дух Карины на небеса. Но
+                      что-то идёт не так, и вместо доброго духа Карины друзья
+                      высвобождают злой дух – Курюм. Он начинает вселяться то в
+                      одного, то в другого героя, заставляя их безжалостно
+                      убивать друг друга. Причина этому могла быть только одна –
+                      убийца Карины присутствовал на церемонии. Чтобы выжить,
+                      друзья должны вычислить, кто из них виновен в смерти
+                      девушки.
+                    </div>
+                    <button class="ticket">Билеты</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="oscar-movies">
+            <!-- Фильмы Оскар -->
+          </section>
+        </div>
       </article>
     </main>
     <footer>
