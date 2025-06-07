@@ -46,14 +46,15 @@ h1 {
   width: 100%;
   text-align: center;
   font-size: 48px;
+  text-shadow:  1px 1px 3px #22c0c3c9,
 }
 
 .photo {
-  width: 45%;
+  min-width: 25%;
+  height: auto;
   aspect-ratio: 16 / 9;
-  margin: 3%;
   transition: all 0.9s ease;
-  margin: 20px;
+  margin: 10px;
   background-color: orange;
   background-position: center;
   background-size: cover;
@@ -64,6 +65,8 @@ h1 {
 
 .photo:hover {
   transform: scale(1.5) rotate(6deg);
+  width: 500px;
+  height: auto;
 }
 
 .photo1 {
