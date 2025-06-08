@@ -3,12 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Consultation - Lesson 03 - Gallery</title>
   </head>
   <body>
+    <header>
+      <div class="container">
+        <h1>Consultation - Gallery</h1>
+        <p>Frontend & Future Full-Stack Developer</p>
+      </div>
+    </header>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+    <label for="nav-toggle" class="nav-burger" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../../index.html">🏠 Главная</a></li>
+        <li>
+          <a href="https://github.com/AlexH73/frontend_cohort57" target="_blank"
+            >🐱 GitHub</a
+          >
+        </li>
+        <li><a href="../../homeworks/hw_02/index.html#about">👤 Обо мне</a></li>
+        <li><a href="../../homeworks/hw_02/index.html#skills">📘 Навыки</a></li>
+        <li>
+          <a href="../../homeworks/hw_02/index.html#contacts">📞 Контакты</a>
+        </li>
+      </ul>
+    </nav>
     <main>
-      <h1>Consultation - Gallery</h1>
       <div class="photo photo1"></div>
       <div class="photo photo2"></div>
       <div class="photo photo3"></div>
@@ -22,5 +49,11 @@
       <div class="photo photo11"></div>
       <div class="photo photo12"></div>
     </main>
+
+    <footer>
+      <hr />
+      <a href="#top" class="to-top">🔝 Наверх</a>
+      <p>© 2025 Alexander Hermann</p>
+    </footer>
   </body>
 </html>
