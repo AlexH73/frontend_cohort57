@@ -76,6 +76,13 @@ header .container {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.main-nav svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
 .main-nav ul {
   list-style: none;
   margin: 0;
@@ -238,7 +245,7 @@ header .container {
 
 .icon-link svg {
   fill: currentColor;
-  width: 30px; 
+  width: 24px; 
   height: 24px;
   transition: transform 0.2s ease;
 }
@@ -291,6 +298,15 @@ footer p {
 .to-top:hover {
   background-color: #1a252f;
 }
+
+.to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
 hr {
   border: none;
   border-top: 3px solid #000000;
