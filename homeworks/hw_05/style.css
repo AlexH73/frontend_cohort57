@@ -497,12 +497,21 @@ nav .search input:hover {
     flex-direction: column;
   }
 
-  .sidebar {
-    width: 100%;
+  .sidebar,
+  nav .play, 
+  nav .oscar {
+    display: none;
   }
 
+
   .poster {
-    width: calc(50% - 20px);
+    width: 95%;
+    height: auto;
+  }
+  .flip-container {
+    perspective: revert-layer;
+    width: 100%;
+    max-height: 950px;
   }
 }
 
@@ -512,15 +521,6 @@ nav .search input:hover {
     align-items: center;
   }
 
-  .poster {
-    width: 98%;
-  }
-  .flip-container {
-    perspective: revert-layer;
-    width: 100%;
-  }
 
-  .sidebar {
-    display: none;
-  }
+
 }
