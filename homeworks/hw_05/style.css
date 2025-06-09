@@ -24,7 +24,6 @@
 }
 
 body {
-  margin: 20px 0;
   background-color: var(--bg-light-secondary);
   font-size: clamp(14px, 1.5vw, 16px);
   display: flex;
@@ -258,8 +257,8 @@ nav .search input:hover {
 }
 
 .top {
-  margin: 1px 0;
-  background: #9c9c9b;
+  margin: 0;
+  background: #9c9c9b70;
   background: linear-gradient(
     180deg,
     rgb(156 155 155 / 86%) 5%,
