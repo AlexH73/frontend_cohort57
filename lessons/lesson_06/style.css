@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", sans-serif;
+}
+h3 {
+  margin: 10px;
+}
+.container-grid {
+  display: grid;
+  gap: 5px;
+
+  /* задаем правило для колонок */
+  /* * grid-template-columns: 100px 200px 30px 300px; */
+  /* grid-template-columns: repeat(4, 200px); */
+  /* grid-template-columns: 50% 10% 15% 40%; */
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-columns: 6fr 2fr 1fr 3fr 5fr 1fr; */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.container-iten {
+  background-color: lawngreen;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.container-grid-minmax {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* выцота строк в grid */
+  grid-auto-rows: 80px;
+  gap: 5px;
+}
+
+.grid-item-adapt {
+  background-color: lightpink;
+  border-radius: 8px;
+}
+
+.grid-item-pic {
+  background-image: url("https://www.innovationnewsnetwork.com/wp-content/uploads/2021/02/Primordial-galaxy-1024x576.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.flex-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #251341;
+  color: white;
+  font-size: 14px;
+}
+
+/* пример множественного селектора по классам */
+.container-iten,
+.grid-item-adapt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item-adapt,
+.container-item,
+.header,
+.footer,
+.content,
+.nav,
+.planet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-grid-area {
+  grid-auto-rows: 150px;
+  /* height: 600px; */
+  width: 100%;
+  display: grid;
+  /* создаем схему grid зон */
+  grid-template-areas:
+    "header header header nav"
+    "content content sun nav"
+    "content content 🪐 nav"
+    "footer footer footer footer";
+}
+
+.planet {
+  background-image: url("https://images.theconversation.com/files/615187/original/file-20240822-16-mmtmxi.jpg?ixlib=rb-4.1.0&rect=0%2C178%2C4964%2C2482&q=45&auto=format&w=1356&h=668&fit=crop");
+  grid-area: 🪐;
+}
+
+.header {
+  background-color: #acade8;
+  /* назначаем зону для элемента */
+  grid-area: header;
+}
+
+.footer {
+  background-color: #0a014f;
+  color: white;
+  grid-area: footer;
+}
+
+.content {
+  background-color: #d65780;
+  color: white;
+  grid-area: content;
+}
+
+.nav {
+  background-color: #f3e86f;
+  grid-area: nav;
+}
+
+.sun {
+  background-image: url("https://www.worldatlas.com/r/w1200/upload/50/d4/a6/shutterstock-84203080.jpg");
+  grid-area: sun;
+}
+
+.sun,
+.planet {
+  background-size: cover;
+  background-position: center;
+}

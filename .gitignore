@@ -5,3 +5,5 @@ dist/
 .git/
 .vscode
 .gitignore
+projects/experiments/heped/
+projects/experiments/tests/
