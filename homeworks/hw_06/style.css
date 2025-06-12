@@ -453,14 +453,29 @@
   }
   
   
-
-
-
-
-
-
-
-
+  /*
+  =========================
+   Медиа запросы
+  =========================
+  */
+  @media (max-width: 820px) {
+    /* Переключаем сетку на одну колонку */
+    .container-grid-area {
+      grid-template-areas:
+        "header"
+        "content"
+        "footer";
+      grid-template-columns: 1fr;
+    }
+    aside.sidebar {
+      display: none;
+    }
+    main {
+      grid-area: content;
+      margin: 0 10px;
+    }
+  }
+  
   @media (hover: none) {
     .person-card.overlay-style figcaption {
       opacity: 1;
