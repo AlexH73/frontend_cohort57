@@ -698,8 +698,7 @@ nav.pagination {
 .movie-list-main-interactive {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  align-self: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   margin-top: 0;
   margin-left: auto;
