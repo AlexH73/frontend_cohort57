@@ -17,6 +17,7 @@
   }
   
   header {
+    position: sticky;
     height: 100px;
     background-color: orange;
     color: white;

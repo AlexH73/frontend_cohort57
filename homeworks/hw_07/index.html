@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📽</text></svg>"
+    />
+    <title>Страница домашней работы - Movie - Персоны</title>
+  </head>
+
+  <body class="container-grid-area">
+
+    <!-- =========================
+         HEADER + NAVIGATION
+    ========================== -->
+    <header>
+      <!-- Скрытый чекбокс -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" />
+    
+      <!-- Метка-бургер, привязана к чекбоксу -->
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Открыть меню">
+        <span class="burger-icon"></span>
+      </label>
+    
+      <!-- Навигация -->
+      <nav class="main-nav">
+        <div class="logo" aria-label="КиноПоиск">
+          <a href="/frontend_cohort57/" class="logo-link"></a>
+        </div>
+        <div class="play">Онлайн-кинотеатр</div>
+        <div class="oscar">Оскар-2023</div>
+
+        <!-- 🔍SEARCH BLOCK -->
+        <div class="search">
+          <form action="#" role="search">
+          <button type="button" class="svg_search_icon" aria-label="Найти">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class=""
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              ></path>
+            </svg>
+          </button>
+          <input placeholder="Фильмы, сериалы, персоны" type="text" />
+        </form>
+      </div>
+      <!-- Мобильное меню: пункты из sidebar -->
+      <div class="mobile-menu">
+        <ul class="mobile-menu-list">
+          <li><strong>Популярные персоны</strong></li>
+          <li><a href="#">Киану Ривз</a></li>
+          <li><a href="#">Скарлетт Йоханссон</a></li>
+          <li><a href="#">Том Харди</a></li>
+          <li><strong>Профессия</strong></li>
+          <li><a href="#">Актёр</a></li>
+          <li><a href="#">Режиссёр</a></li>
+          <li><a href="#">Сценарист</a></li>
+          <li><strong>Год рождения</strong></li>
+          <li><a href="#">1980–1989</a></li>
+          <li><a href="#">1990–1999</a></li>
+          <li><a href="#">2000+</a></li>
+          <li><strong>Страна</strong></li>
+          <li><a href="#">США</a></li>
+          <li><a href="#">Великобритания</a></li>
+          <li><a href="#">Индия</a></li>
+          <li><strong>Поиск по сайту</strong></li>
+          <li>
+            <form action="#" aria-label="Поиск">
+              <input type="text" placeholder="Фильмы, сериалы, персоны" />
+              <button type="submit">Найти</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+      </nav>
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main>
+      <article>
+        <h2 class="person-title pers">Персоны</h2>
+
+        <section>
+          <div class="person-cards-grid">
+            <!-- CARD 1 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/DevPatel280x420.webp" alt="Дев Патель" />
+              <figcaption>
+                <h3>Дев Патель</h3>
+                <p><i>Dev Patel</i></p>
+                <p><strong><i class="fa-solid fa-user-tie"></i></strong> - Актер, Продюсер, Режиссер, Сценарист</p>
+                <p><strong><i class="fa-solid fa-cake-candles"></i></strong> - 23.02.1990</p>
+                <p><strong><i class="fa-solid fa-map-pin"></i></strong> - Лондон, Англия, Великобритания</p>
+                <p><strong><i class="fa-solid fa-film"></i></strong> - <a href="../../homeworks/hw_05/index.html">Лев</a>, <a href="../../homeworks/hw_05/index.html">Отель Мумбаи: Противостояние</a>, <a href="../../homeworks/hw_05/index.html">Миллионер из трущоб</a></p>
+              </figcaption>
+            </figure>
+
+            <!-- CARD 2 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/GarthDavis280x420.webp" alt="Гарт Дэвис" />
+              <figcaption>
+                <h3>Гарт Дэвис</h3>
+                <p><i>Garth Davis</i></p>
+                <p><strong>Карьера:</strong> Режиссер, Продюсер, Сценарист, Оператор</p>
+                <p><strong>Дата рождения:</strong> 02.12.1973</p>
+                <p><strong>Место рождения:</strong> Брисбен, Австралия</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Лев</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 3 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/NicoleKidman280x420.webp" alt="Николь Кидман" />
+              <figcaption>
+                <h3>Николь Кидман</h3>
+                <p><i>Nicole Kidman</i></p>
+                <p><strong>Карьера:</strong> Актриса, Продюсер</p>
+                <p><strong>Дата рождения:</strong> 20.06.1967</p>
+                <p><strong>Место рождения:</strong> Гонолулу, Гавайи, США</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Лев</a>, <a href="../../homeworks/hw_05/index.html">Догвилль</a>, <a href="../../homeworks/hw_05/index.html">Другие</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 4 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/GabrieleMuccino280x420.webp" alt="Габриэле Муччино" />
+              <figcaption>
+                <h3>Габриэле Муччино</h3>
+                <p><i>Gabriele Muccino</i></p>
+                <p><strong>Карьера:</strong> Режиссер, Сценарист, Продюсер, Актер</p>
+                <p><strong>Дата рождения:</strong> 20.05.1967</p>
+                <p><strong>Место рождения:</strong> Рим, Италия</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">В погоне за счастьем</a>, <a href="../../homeworks/hw_05/index.html">Семь жизней</a>, <a href="../../homeworks/hw_05/index.html">Лучшие годы</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 5 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/WillSmith280x420.webp" alt="Уилл Смит" />
+              <figcaption>
+                <h3>Уилл Смит</h3>
+                <p><i>Will Smith</i></p>
+                <p><strong>Карьера:</strong> Актер, Продюсер, Композитор, Сценарист, Режиссер</p>
+                <p><strong>Дата рождения:</strong> 25.09.1968</p>
+                <p><strong>Место рождения:</strong> Филадельфия, Пенсильвания, США</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">В погоне за счастьем</a>, <a href="../../homeworks/hw_05/index.html">Семь жизней</a>, <a href="../../homeworks/hw_05/index.html">Люди в чёрном</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 6 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/RosarioDawson280x420.webp" alt="Розарио Доусон" />
+              <figcaption>
+                <h3>Розарио Доусон</h3>
+                <p><i>Rosario Dawson</i></p>
+                <p><strong>Карьера:</strong> Актриса, Продюсер, Режиссер</p>
+                <p><strong>Дата рождения:</strong> 09.05.1979</p>
+                <p><strong>Место рождения:</strong> Нью-Йорк, США</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Город грехов</a>, <a href="../../homeworks/hw_05/index.html">Семь жизней</a>, <a href="../../homeworks/hw_05/index.html">25-й час</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 7 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/balabanov280x420.webp" alt="Алексей Балабанов" />
+              <figcaption>
+                <h3>Алексей Балабанов</h3>
+                <p><strong>Карьера:</strong> Режиссер, Сценарист, Актер, Продюсер, Актер дубляжа</p>
+                <p><strong>Дата рождения:</strong> 25.02.1959</p>
+                <p><strong>Место рождения:</strong> Свердловск, СССР</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Брат</a>, <a href="../../homeworks/hw_05/index.html">Брат 2</a>, <a href="../../homeworks/hw_05/index.html">Груз 200</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 8 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/kuznecova280x420.webp" alt="Агния Кузнецова" />
+              <figcaption>
+                <h3>Агния Кузнецова</h3>
+                <p><strong>Карьера:</strong> Актриса</p>
+                <p><strong>Дата рождения:</strong> 15.07.1985</p>
+                <p><strong>Место рождения:</strong> Новосибирск, СССР</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Пара гнедых</a>, <a href="../../homeworks/hw_05/index.html">Дом, милый дом</a>, <a href="../../homeworks/hw_05/index.html">Груз 200</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 9 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/polujan280x420.webp" alt="Алексей Полуян" />
+              <figcaption>
+                <h3>Алексей Полуян</h3>
+                <p><strong>Карьера:</strong> Актер, Актер дубляжа</p>
+                <p><strong>Дата рождения:</strong> 04.04.1965</p>
+                <p><strong>Место рождения:</strong> Ленинград, СССР</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Чекист</a>, <a href="../../homeworks/hw_05/index.html">Брат</a>, <a href="../../homeworks/hw_05/index.html">Груз 200</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 10 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/Gibson280x420.webp" alt="Мэл Гибсон" />
+              <figcaption>
+                <h3>Мэл Гибсон</h3>
+                <p><i>Mel Gibson</i></p>
+                <p><strong>Карьера:</strong> Актер, Продюсер, Режиссер, Сценарист</p>
+                <p><strong>Дата рождения:</strong> 03.01.1956</p>
+                <p><strong>Место рождения:</strong> Пикскилл, Нью-Йорк, США</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Храброе сердце</a>, <a href="../../homeworks/hw_05/index.html">По соображениям совести</a>, <a href="../../homeworks/hw_05/index.html">Мэверик</a></p>
+              </figcaption>
+            </figure>
+            
+            <!-- CARD 11 -->
+            <figure class="person-card overlay-grow">
+              <img src="../../assets/images_hw_06/SophieMarceau280x420.webp" alt="Софи Марсо" />
+              <figcaption>
+                <h3>Софи Марсо</h3>
+                <p><i>Sophie Marceau</i></p>
+                <p><strong>Карьера:</strong> Актриса, Режиссер, Сценарист</p>
+                <p><strong>Дата рождения:</strong> 11.11.1966</p>
+                <p><strong>Место рождения:</strong> Париж, Франция</p>
+                <p><strong>Фильмы:</strong> <a href="../../homeworks/hw_05/index.html">Храброе сердце</a>, <a href="../../homeworks/hw_05/index.html">Бум</a>, <a href="../../homeworks/hw_05/index.html">Бум 2</a></p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Пагинация -->
+          <nav class="pagination" aria-label="Пагинация">
+            <ul class="pagination-list">
+              <li>
+                <button
+                  class="pagination-prev"
+                  aria-label="Предыдущая страница"
+                  disabled
+                >
+                  ‹
+                </button>
+              </li>
+              <li>
+                <button class="pagination-page active" aria-current="page">
+                  1
+                </button>
+              </li>
+              <li><button class="pagination-page">2</button></li>
+              <li><button class="pagination-page">3</button></li>
+              <li><span class="pagination-ellipsis">…</span></li>
+              <li><button class="pagination-page">10</button></li>
+              <li>
+                <button
+                  class="pagination-next"
+                  aria-label="Следующая страница"
+                >
+                  ›
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </article>
+    </main>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Популярные персоны</h3>
+        <ul>
+          <li><a href="#">Киану Ривз</a></li>
+          <li><a href="#">Скарлетт Йоханссон</a></li>
+          <li><a href="#">Том Харди</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h3>Профессия</h3>
+        <ul>
+          <li><a href="#">Актёр</a></li>
+          <li><a href="#">Режиссёр</a></li>
+          <li><a href="#">Сценарист</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h3>Год рождения</h3>
+        <ul>
+          <li><a href="#">1980–1989</a></li>
+          <li><a href="#">1990–1999</a></li>
+          <li><a href="#">2000+</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h3>Страна</h3>
+        <ul>
+          <li><a href="#">США</a></li>
+          <li><a href="#">Великобритания</a></li>
+          <li><a href="#">Индия</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h3>Подписка</h3>
+        <p>Получайте обновления о новых персоналиях</p>
+        <form aria-label="Форма подписки на персон">
+          <input type="email" placeholder="Ваш email" />
+          <button type="submit">Подписаться</button>
+        </form>
+      </div>
+    </aside>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+      <p>&copy; 2025 КиноПоиск. Все права защищены.</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/c22b7ce94a.js" crossorigin="anonymous"></script>
+  </body>
+</html>
