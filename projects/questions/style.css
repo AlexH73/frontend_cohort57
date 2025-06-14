@@ -400,7 +400,7 @@ pre code span.token.function {
   background-color: #1a1a1a;
 }
 
-[data-theme="dark"] details, details > summary {
+[data-theme="dark"] details > summary {
   background-color: #1d1d1d;
   border-color: #333;
   color: var(--dark-text);
