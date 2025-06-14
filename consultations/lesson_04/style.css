@@ -28,10 +28,12 @@ body {
 }
 
 header {
+    background-color: whitesmoke;
   background-image: url("../../assets/consultation_04/Images/art_coffe.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0 0 10px #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,10 +121,12 @@ article a:hover {
 
 footer {
   height: 150px;
+  background-color: whitesmoke;
   background-image: url("../../assets/consultation_04/Images/bckg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0 0 10px #ccc;
   border-radius: 0 0 8px 8px;
   text-align: center;
   font-size: 0.9rem;
