@@ -156,9 +156,16 @@ p {
   margin: 1em 0;
 }
 
+summary + h2 + p,
 summary + h2 + h3 + p,
-summary + blockquote + h2 + h4 + p,
-summary + h3 + p +hr + h3 + p  {
+summary + h2 + h4 + ul,
+summary + hr + h2 + p,
+summary + h2 + h4 + p,
+summary + h3 + h4 + p,
+summary + hr + h2 + h3 + p,
+summary + h3 + p +hr + h3 + p,
+summary + h2 + hr + h3 + h3 + p,
+summary + blockquote + h2 + h4 + p  {
   background-color: #00ff0021;
   border-left: 4px solid green;
   border-radius: 4px;
