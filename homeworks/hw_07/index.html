@@ -35,7 +35,7 @@
 
         <!-- 🔍SEARCH BLOCK -->
         <div class="search">
-          <form action="#" role="search">
+          <form action="search" role="search">
           <button type="button" class="svg_search_icon" aria-label="Найти">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@
               ></path>
             </svg>
           </button>
-          <input placeholder="Фильмы, сериалы, персоны" type="text" />
+          <input id ="search-main" placeholder="Фильмы, сериалы, персоны" type="text" />
         </form>
       </div>
       <!-- Мобильное меню: пункты из sidebar -->
@@ -71,8 +71,8 @@
           <li><a href="#">Индия</a></li>
           <li><strong>Поиск по сайту</strong></li>
           <li>
-            <form action="#" aria-label="Поиск">
-              <input type="text" placeholder="Фильмы, сериалы, персоны" />
+            <form action="search" aria-label="Поиск">
+              <input id ="search-mobile" type="text" placeholder="Фильмы, сериалы, персоны" />
               <button type="submit">Найти</button>
             </form>
           </li>
@@ -321,7 +321,7 @@
         <h3>Подписка</h3>
         <p>Получайте обновления о новых персоналиях</p>
         <form aria-label="Форма подписки на персон">
-          <input type="email" placeholder="Ваш email" />
+          <input id ="subscription" type="email" placeholder="Ваш email" />
           <button type="submit">Подписаться</button>
         </form>
       </div>

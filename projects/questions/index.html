@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- подключаем шрифты перед css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- подключаем css -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⁉</text></svg>"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <title>Сборник устных вопросов и ответов к ним</title>
+  </head>
+  <body>
+    <header>
+      <span>⁉ Вопросник по темам IT</span>
+      <nav>
+        <a href="https://github.com/AlexH73/cohort_57_1_JAVA/blob/AlexH73/src/Other/questions.md"><i class="fa-brands fa-github"></i></a>
+      </nav>
+      <span class="burger-menu">☰</span>
+    </header>
+    <main>
+      <div id="markdown-content"></div>
+      <script>
+        fetch(
+          "https://raw.githubusercontent.com/AlexH73/cohort_57_1_JAVA/AlexH73/src/Other/questions.md"
+        )
+          .then((response) => response.text())
+          .then((text) => {
+            // Находим индекс начала блока <summary>Можно ли... ?
+            const stopIndex = text.indexOf("<summary>Можно ли");
+
+            // Если такой блок найден — обрезаем всё после него
+            const visibleText =
+              stopIndex !== -1 ? text.slice(0, stopIndex) : text;
+
+            // Преобразуем Markdown до найденного места
+            document.getElementById("markdown-content").innerHTML =
+              marked.parse(visibleText);
+          });
+      </script>
+      <section class="new-movies">
+        <!-- Новинки -->
+      </section>
+
+      <section class="oscar-movies">
+        <!-- Фильмы Оскар -->
+      </section>
+    </main>
+    <footer>
+      <span>© 2025 Alexander Hermann</span>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/7f5b2ca6d8.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
