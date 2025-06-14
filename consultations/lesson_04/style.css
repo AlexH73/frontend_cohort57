@@ -27,6 +27,23 @@ body {
   min-height: 100vh;
 }
 
+body::before {  
+    content: "";  
+    background-image: url("../../assets/consultation_04/Images/coffee.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    opacity: 0.1;  
+    position: absolute;  
+    z-index: -1;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    width: 100%;  
+    height: 100%;  
+} 
+
 header {
   background-color: whitesmoke;
   background-image: url("../../assets/consultation_04/Images/art_coffe.jpg");
@@ -44,7 +61,7 @@ header {
 }
 
 h1 {
-  color: #fffdd0;
+  color: #fffdd005;
   font-family: "Covered By Your Grace", cursive;
   font-size: 4rem;
 }
@@ -56,6 +73,7 @@ h2 {
 
 main {
   flex: 1;
+  background-color: rgba(245, 245, 245, 0.966);
 }
 
 .columns {
