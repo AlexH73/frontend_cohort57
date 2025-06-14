@@ -456,6 +456,7 @@ aside.sidebar {
   padding: 5px 0;
 }
 
+.mobile-menu-list li a,
 .widget a:hover {
   color: var(--color-primary);
   text-shadow: var(--text-shadow);
@@ -483,6 +484,18 @@ aside.sidebar {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+}
+
+.widget .social {
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--text-gray);
+  font-size: 25px;
+}
+
+.widget .social i:hover {
+  color: var(--color-primary-hover);
+  text-shadow: var(--text-shadow);
 }
 
 /*
