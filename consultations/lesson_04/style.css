@@ -1,164 +1,185 @@
-@font-face {
-    font-family: "Coffee";
-    src: url("../../assets/consultation_04/fonts/Coffee.rtf") format("truetype");
-    font-weight: normal;
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Raleway:ital,wght@0,100;0,400;0,500;1,100;1,400;1,500&display=swap");
 
+@font-face {
+  font-family: "Coffee";
+  src: url("../../assets/consultation_04/fonts/Coffee.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: whitesmoke;
-    font-family: "Coffee";
-    font-weight: 500;
-    font-style: italic;
-    margin: 0 auto;
-    max-width: 1200px;
-    width: 100%;
-    box-shadow: 0 0 10px #ccc;
+  background-color: whitesmoke;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
+  font-style: normal;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 0 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-    background-image: url("../../assets/consultation_04/Images/art_coffe.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    justify-self: center;
-    align-items: center;
-    height: 300px;
-    max-width: 1200px;
-    width: 100%;
-    border-radius: 25px 25px 0 0;
+  background-image: url("../../assets/consultation_04/Images/art_coffe.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 25px 25px 0 0;
 }
 
 h1 {
-    color: #fffdd0;
-    font-family: "Covered By Your Grace", cursive;
-    font-size: 4rem;
+  color: #fffdd0;
+  font-family: "Covered By Your Grace", cursive;
+  font-size: 4rem;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
-
+  flex: 1;
 }
 
 .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+article div {
+  overflow-y: auto;
+  height: 150px;
+}
+
+article p {
+  text-align: justify;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 0 5px;
+  color: #454;
+}
+
+article p::first-letter {
+  color: #5d2713b3;
+  font-family: "Covered By Your Grace", cursive;
+  text-indent: 30px;
+  font-size: 40px;
+  line-height: 1;
+  padding-right: 10px;
+  float: left;
+  transform: translateY(6px);
+}
+
+article a {
+  color: #4d1f0f;
+  font-weight: 700;
+}
+
+article a:visited,
+article a:hover {
+  color: #d6572d;
+}
+
+footer {
+  height: 150px;
+  background-image: url("../../assets/consultation_04/Images/bckg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+}
+
+footer p {
+  margin: 0;
+  padding: 2rem 0;
+}
+
+.to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #7f99b3;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.to-top:hover {
+  background-color: #1a252f;
+}
+
+.to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid #000000;
+}
+
+/* Плавный скролл по якорю */
+html {
+  scroll-behavior: smooth;
+}
+
+.block a:hover {
+  color: #34495e;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+  header {
+    height: 200px;
+  }
+
+  .columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+    grid-template-columns: 1fr;
   }
-  
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  article {
-    /* background-color: #f9f3ef; */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-  }
-
-  article div {
-    overflow-y: auto;
-    height: 150px;
-  }
-
-  article p {
-    text-align: justify;
-    line-height: 1.5;
-    font-weight: 600;
-    padding: 0 5px;
-    color: #454;
-  }
-
-  article p::first-letter {
-    color: #5d2713b3;
-    font-family: "Covered By Your Grace", cursive;
-    text-indent: 30px;
-    font-size: 40px;
-    margin-top: -12px;
-    margin-right: 10px;
-
-    float: left;
-  }
-
-  article a {
-    color: #4D1F0F;
-    font-weight: 700;
-  }
-
-  article a:visited, article a:hover {
-    color: #d6572d;
-  }
-  
-  footer {
-    height: 150px;
-    background-image: url("../../assets/consultation_04/Images/bckg.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 0 0 8px 8px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: white;
-  }
-  
-  footer p {
-    margin: 0;
-    padding: 2rem 0;
-  }
-  
-  .to-top {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #7f99b3;
-    color: white;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .to-top:hover {
-    background-color: #1a252f;
-  }
-  
-  .to-top svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    vertical-align: middle;
-    margin-right: 8px;
-  }
-  
-  hr {
-    border: none;
-    border-top: 3px solid #000000;
-  }
-  
-  /* Плавный скролл по якорю */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  .block a:hover {
-    color: #34495e;
-  }
+}
