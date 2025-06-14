@@ -16,8 +16,14 @@
     <header>
       <span>⁉ Вопросник по темам IT</span>
       <nav>
-        <span><a href="https://github.com/AlexH73/cohort_57_1_JAVA/blob/AlexH73/src/Other/questions.md"><i class="fa-brands fa-github"></i></a></span>
-        <span></span><button class="dark-toggle" onclick="toggleTheme()">🌓</button></span>
+        <span
+          ><a
+            href="https://github.com/AlexH73/cohort_57_1_JAVA/blob/AlexH73/src/Other/questions.md"
+            ><i class="fa-brands fa-github"></i></a
+        ></span>
+        <span
+          ><button class="dark-toggle" onclick="toggleTheme()">🌓</button></span
+        >
       </nav>
     </header>
     <main>
@@ -60,12 +66,11 @@
           localStorage.setItem("theme", "dark");
         }
       }
-    
+
       // Загружаем сохранённую тему при открытии страницы
       if (localStorage.getItem("theme") === "dark") {
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    
   </body>
 </html>

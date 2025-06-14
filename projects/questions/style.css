@@ -12,11 +12,11 @@
   --table-border: #ddd;
   --link-color: #0066cc;
   --dark-bg: #121212;
-  --dark-text: #e6e6e6;
+  --dark-text: #e6e6e6BD;
   --dark-accent: #ff914d;
   --dark-header-bg: #1f1f1f;
   --dark-footer-bg: #1a1a1a;
-  --dark-code-bg: #2a2a2a;
+  --dark-code-bg: #0202023d;
   --dark-quote-bg: #1c1c1c;
   --font-serif: 'Georgia', serif;
   --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,10 +57,9 @@ header {
 
 .dark-toggle {
   background: none;
-  border: 2px solid white;
-  border-radius: 5px;
+  border: none;
   color: white;
-  font-size: 16px;
+  font-size: 22px;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -89,14 +88,18 @@ h1 {
 nav a {
   color: white;
   text-decoration: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 nav i:hover {
   color: rgb(0, 0, 0);
 }
 
-nav span:hover {
-  text-decoration: underline;
+nav a:hover,
+nav .dark-toggle:hover {
+  border: 2px solid white;
+  border-radius: 5px;
 }
 
 .burger-menu {
@@ -356,6 +359,11 @@ pre code span.token.function {
   background-color: var(--dark-bg);
   color: var(--dark-text);
 }
+
+
+/* ========================
+   Темная тема
+======================== */
 [data-theme="dark"] main {
   background-color: #121212e3;
   color: var(--dark-text);
@@ -363,6 +371,20 @@ pre code span.token.function {
 
 [data-theme="dark"] header {
   background-color: var(--dark-header-bg);
+}
+
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6 {
+  color: var(--dark-text);
+}
+
+[data-theme="dark"] hr {
+  border-block-color: #3a39397a;
 }
 
 [data-theme="dark"] footer {
@@ -401,7 +423,7 @@ pre code span.token.function {
 }
 
 [data-theme="dark"] details > summary {
-  background-color: #1d1d1d;
+  /* background-color: #1d1d1d; */
   border-color: #333;
   color: var(--dark-text);
 }
@@ -409,6 +431,7 @@ pre code span.token.function {
 [data-theme="dark"] details, details > summary[open] {
   background-color: #262626;
   color: var(--dark-text);
+  border: 1px solid #dddddd33;
 }
 
 [data-theme="dark"] .dark-toggle {
