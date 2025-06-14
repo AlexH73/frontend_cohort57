@@ -15,7 +15,7 @@
 
 body {
   background-color: whitesmoke;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 100;
   font-style: normal;
   margin: 0 auto;
@@ -28,7 +28,7 @@ body {
 }
 
 header {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
   background-image: url("../../assets/consultation_04/Images/art_coffe.jpg");
   background-position: center;
   background-size: cover;
@@ -74,16 +74,16 @@ section {
 }
 
 article {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px #ccc;
 }
 
 article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  }
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
 article div {
   overflow-y: auto;
