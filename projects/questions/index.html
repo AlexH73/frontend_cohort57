@@ -16,7 +16,8 @@
     <header>
       <span>⁉ Вопросник по темам IT</span>
       <nav>
-        <a href="https://github.com/AlexH73/cohort_57_1_JAVA/blob/AlexH73/src/Other/questions.md"><i class="fa-brands fa-github"></i></a>
+        <span><a href="https://github.com/AlexH73/cohort_57_1_JAVA/blob/AlexH73/src/Other/questions.md"><i class="fa-brands fa-github"></i></a></span>
+        <span></span><button class="dark-toggle" onclick="toggleTheme()">🌓</button></span>
       </nav>
     </header>
     <main>
@@ -47,5 +48,24 @@
       src="https://kit.fontawesome.com/7f5b2ca6d8.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const current = html.getAttribute("data-theme");
+        if (current === "dark") {
+          html.removeAttribute("data-theme");
+          localStorage.removeItem("theme");
+        } else {
+          html.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      }
+    
+      // Загружаем сохранённую тему при открытии страницы
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    
   </body>
 </html>
