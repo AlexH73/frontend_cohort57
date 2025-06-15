@@ -27,23 +27,36 @@
       </nav>
     </header>
     <main>
-      <div id="markdown-content"></div>
-      <script>
+      <div id="markdown-content"></div><script>
         fetch(
           "https://raw.githubusercontent.com/AlexH73/cohort_57_1_JAVA/AlexH73/src/Other/questions.md"
         )
           .then((response) => response.text())
           .then((text) => {
             // Находим индекс начала блока <summary>Можно ли... ?
-            const stopIndex = text.indexOf("<summary>Можно ли");
-
-            // Если такой блок найден — обрезаем всё после него
-            const visibleText =
-              stopIndex !== -1 ? text.slice(0, stopIndex) : text;
-
-            // Преобразуем Markdown до найденного места
-            document.getElementById("markdown-content").innerHTML =
-              marked.parse(visibleText);
+            const summaryIndex = text.indexOf("<summary>Можно ли");
+      
+            if (summaryIndex !== -1) {
+              // Ищем индекс предыдущего тега <details>
+              const detailsIndex = text.lastIndexOf("<details>", summaryIndex);
+      
+              if (detailsIndex !== -1) {
+                // Обрезаем всё, начиная с тега <details>
+                const visibleText = text.slice(0, detailsIndex);
+      
+                // Преобразуем Markdown до найденного места
+                document.getElementById("markdown-content").innerHTML =
+                  marked.parse(visibleText);
+              } else {
+                // Если <details> не найден, значит обрезаем до <summary>, как и раньше
+                  const visibleText = text.slice(0, summaryIndex);
+                  document.getElementById("markdown-content").innerHTML =
+                    marked.parse(visibleText);
+              }
+            } else {
+              // Если <summary>Можно ли не найден, то показываем весь текст
+              document.getElementById("markdown-content").innerHTML = marked.parse(text);
+            }
           });
       </script>
     </main>
