@@ -75,7 +75,7 @@ footer {
 }
 
 main {
-  padding: 10px 50px;
+  padding: 10px 5px;
   flex: 1;
 }
 
@@ -164,6 +164,7 @@ p {
 }
 
 summary + h2 + p,
+summary + h3 + p,
 summary + h2 + h3 + p,
 summary + h2 + h4 + ul,
 summary + hr + h2 + p,
@@ -260,8 +261,8 @@ details {
   background: var(--bg-color);
   border: 1px solid var(--table-border);
   border-radius: 6px;
-  padding: 1em;
-  margin: 1em 0;
+  padding: 0.2em;
+  margin: 1em;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -436,7 +437,7 @@ pre code span.token.function {
 [data-theme="dark"] details, details > summary[open] {
   background-color: #262626;
   color: var(--dark-text);
-  border: 1px solid #dddddd33;
+  border: none;
 }
 
 [data-theme="dark"] .dark-toggle {
