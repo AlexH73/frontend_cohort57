@@ -393,7 +393,12 @@ pre code span.token.function {
 }
 
 [data-theme="dark"] a {
-  color: var(--dark-accent);
+  color: var(--dark-text);
+}
+
+[data-theme="dark"] a:hover,
+[data-theme="dark"] .dark-toggle:hover {
+  border-color: var(--dark-text);
 }
 
 [data-theme="dark"] blockquote {
