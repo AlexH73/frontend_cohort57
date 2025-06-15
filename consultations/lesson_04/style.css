@@ -33,6 +33,7 @@ body::before {
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
+    background-attachment: fixed;
     opacity: 0.1;  
     position: absolute;  
     z-index: -1;  
