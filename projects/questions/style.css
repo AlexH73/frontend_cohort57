@@ -2,7 +2,7 @@
    Базовые переменные и шрифты
 ======================== */
 :root {
-  --bg-color: #F1F2EE;
+  --bg-color: #f1f2ee;
   --text-color: #141301;
   --accent-color: #0a0a0a;
   --header-bg: #ffa447;
@@ -12,14 +12,14 @@
   --table-border: #ddd;
   --link-color: #0066cc;
   --dark-bg: #121212;
-  --dark-text: #e6e6e6BD;
+  --dark-text: #e6e6e6bd;
   --dark-accent: #ff914d;
   --dark-header-bg: #000000;
   --dark-footer-bg: #1a1a1a;
   --dark-code-bg: #0202023d;
   --dark-quote-bg: #1c1c1c;
-  --font-serif: 'Georgia', serif;
-  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-serif: "Georgia", serif;
+  --font-sans: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -120,21 +120,50 @@ nav .dark-toggle:hover {
   header {
     background-color: rgb(85, 148, 249);
   }
-  nav {
-    display: none;
-  }
-  .burger-menu {
-    display: inline;
+  details {
+    padding: 0.05em;
+    margin: 0.05em;
   }
   h1 {
     font-size: 25px;
+  }
+
+
+  } 
+  @media (max-width: 550px) {
+  table {
+    display: block; /* Делаем таблицу блочным элементом */
+  }
+
+  thead {
+    display: none; /* Скрываем заголовок */
+  }
+
+  tbody {
+    display: block; /* Делаем тело таблицы блочным элементом */
+  }
+
+  tr {
+    display: block; /* Делаем строки блочными элементами */
+    margin-bottom: 10px; /* Добавляем отступ между строками */
+  }
+
+  td {
+    display: block; /* Делаем ячейки блочными элементами */
+    border: 1px solid #ddd;
+    padding: 5px;
   }
 }
 
 /* ========================
    Заголовки и структура
 ======================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   margin-top: 1.5em;
   margin-bottom: 0.5em;
@@ -172,16 +201,17 @@ summary + hr + h2 + p,
 summary + h2 + h4 + p,
 summary + h3 + h4 + p,
 summary + hr + h2 + h3 + p,
-summary + h3 + p +hr + h3 + p,
+summary + h3 + p + hr + h3 + p,
 summary + h2 + hr + h3 + h3 + p,
-summary + blockquote + h2 + h4 + p  {
+summary + blockquote + h2 + h4 + p {
   background-color: #00ff0021;
   border-left: 4px solid green;
   border-radius: 4px;
   padding: 20px;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.5em;
   margin: 1em 0;
 }
@@ -241,7 +271,8 @@ table {
   margin: 1em 0;
 }
 
-th, td {
+th,
+td {
   border: 1px solid var(--table-border);
   padding: 0.75em;
   text-align: left;
@@ -296,7 +327,8 @@ details[open] {
     border-left-color: #555;
   }
 
-  code, pre code {
+  code,
+  pre code {
     background-color: #222;
     color: #e6e6e6;
   }
@@ -305,7 +337,8 @@ details[open] {
     border-color: #444;
   }
 
-  th, td {
+  th,
+  td {
     border-color: #444;
   }
 
@@ -357,11 +390,10 @@ pre code span.token.function {
   color: #66ccff;
 }
 
-[data-theme="dark"]  {
+[data-theme="dark"] {
   background-color: var(--dark-bg);
   color: var(--dark-text);
 }
-
 
 /* ========================
    Темная тема
@@ -375,12 +407,11 @@ pre code span.token.function {
   background-color: var(--dark-header-bg);
 }
 
-
-[data-theme="dark"] h1, 
-[data-theme="dark"] h2, 
-[data-theme="dark"] h3, 
-[data-theme="dark"] h4, 
-[data-theme="dark"] h5, 
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
 [data-theme="dark"] h6 {
   color: var(--dark-text);
   text-shadow: 3px 3px black;
@@ -437,7 +468,8 @@ pre code span.token.function {
   text-shadow: 2px 2px 7px #000000;
 }
 
-[data-theme="dark"] details, details > summary[open] {
+[data-theme="dark"] details,
+details > summary[open] {
   background-color: #262626;
   color: var(--dark-text);
   border: none;
@@ -448,4 +480,3 @@ pre code span.token.function {
   color: var(--dark-accent);
   background-color: transparent;
 }
-
