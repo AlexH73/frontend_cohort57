@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourismus & Hotels – Berlin.de</title>
+    <meta
+      name="description"
+      content="Tourismus in Berlin - Alle Informationen für Berlin-Touristen. Sightseeing, Hotels, Stadtführungen, Schiffstouren &amp; mehr"
+    />
+
+    <!-- Favicon & Icons -->
     <link
       rel="icon"
       href="../../assets/berlin_project/images/favicon.ico"
@@ -13,14 +20,16 @@
       href="../../assets/berlin_project/images/Berlin_de-500x500.svg"
       type="image/svg+xml"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
-    <title>Tourismus & Hotels – Berlin.de</title>
-    <meta
-      name="description"
-      content="Tourismus in Berlin - Alle Informationen für Berlin-Touristen. Sightseeing, Hotels, Stadtführungen, Schiffstouren &amp; mehr"
-    />
   </head>
+
   <body>
+    <!-- Anker für "Zum Seitenanfang" -->
+    <a id="top"></a>
+
+    <!-- Topbar: Logo -->
     <div class="topbar">
       <a href="#">
         <img
@@ -29,8 +38,11 @@
         />
       </a>
     </div>
+
+    <!-- Header mit Hauptnavigation -->
     <header class="site-header">
       <nav class="main_nav">
+        <!-- Berlin.de Titel -->
         <div class="header_nav_logo">
           <p class="textlogo">
             <a href="#">
@@ -39,45 +51,49 @@
             </a>
           </p>
         </div>
-        <div class="header_nav_quicklinks">
-          <ul>
-            <li><a href="#">Politik und Verwaltung</a></li>
-            <li><a href="#">Kultur</a></li>
-            <li><a href="#">Tourismus</a></li>
-            <li><a href="#">Stadtleben</a></li>
-          </ul>
-        </div>
+
+        <!-- Hauptkategorien -->
+        <ul class="header_nav_quicklinks">
+          <li><a href="#">Politik und Verwaltung</a></li>
+          <li><a href="#">Kultur</a></li>
+          <li><a href="#">Tourismus</a></li>
+          <li><a href="#">Stadtleben</a></li>
+        </ul>
+
+        <!-- Service-Schaltflächen -->
         <div class="header_nav_services">
-          <div class="service_button_overlay">
-            <button type="button" class="icon-button">
-              <i class="icon fas fa-universal-access"></i>
-              <span class="text">Barrierefrei</span>
-            </button>
-          </div>
-          <div class="service_button_search">
-            <label for="search-toggle" class="icon-button">
-              <i class="icon fa fa-search"></i>
-              <span class="aural">Öffnen: Suche</span>
-              <span class="text">Suche</span>
-            </label>
-          </div>
-          <div class="service_button_menu">
-            <label for="menu-toggle" class="icon-button">
-              <i class="icon fa fa-bars"></i>
-              <span class="aural">Öffnen: Menü</span>
-              <span class="text">Menü</span>
-            </label>
-          </div>
+          <label for="barrier-toggle" class="icon-button">
+            <i class="fas fa-universal-access" aria-hidden="true"></i>
+            <span>Barrierefrei</span>
+          </label>
+
+          <label for="search-toggle" class="icon-button">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <span>Suche</span>
+          </label>
+
+          <label for="menu-toggle" class="icon-button">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <span>Menü</span>
+          </label>
         </div>
       </nav>
     </header>
-    <div class="header_layout">
-      <div class="inner"><h1 class="title">Zu Gast in Berlin</h1></div>
+
+    <!-- Header-Bereich mit Titelbild -->
+    <section class="header_layout">
+      <div class="inner">
+        <h1 class="title">Zu Gast in Berlin</h1>
+      </div>
       <p class="image_copyright">Bild: Mistervlad/Shutterstock.com</p>
-    </div>
+    </section>
+
+    <!-- Hauptinhalt: Abschnitt Sehenswürdigkeiten + Berlin-Informationen -->
     <main>
-      <h2 class="title heading-channel">Sehenswürdigkeiten</h2>
+      <!-- Sehenswürdigkeiten -->
       <section class="section_flex">
+        <h2 class="title heading-channel">Sehenswürdigkeiten</h2>
+
         <article class="modul_label">
           <figure class="article_image">
             <img
@@ -92,14 +108,8 @@
           <div class="inner">
             <p class="text">
               Die Highlights unter den Sehenswürdigkeiten: Diese Attraktionen
-              müssen Berlin-Besucher unbedingt gesehen haben.&nbsp;
-              <a
-                href="#"
-                target="_top"
-                class="more"
-                title="Link zu: »Highlights: Sehenswürdigkeiten in Berlin«"
-                >mehr</a
-              >
+              müssen Berlin-Besucher unbedingt gesehen haben.
+              <a href="#" class="more">mehr</a>
             </p>
           </div>
         </article>
@@ -118,14 +128,8 @@
           <div class="inner">
             <p class="text">
               Die wichtigsten Sehenswürdigkeiten Berlins sortiert nach Thema,
-              wie Architektur, Parks, NS-Zeit und Gedenkstätten.&nbsp;
-              <a
-                href="#"
-                target="_top"
-                class="more"
-                title="Link zu: »Sehenswürdigkeiten nach Thema«"
-                >mehr</a
-              >
+              wie Architektur, Parks, NS-Zeit und Gedenkstätten.
+              <a href="#" class="more">mehr</a>
             </p>
           </div>
         </article>
@@ -146,21 +150,17 @@
           <div class="inner">
             <p class="text">
               Berlins Sehenswürdigkeiten, Schlösser und Denkmäler mit Adresse,
-              Informationen, Fotos und Verkehrsverbindung.&nbsp;
-              <a
-                href="#"
-                target="_top"
-                class="more"
-                title="Link zu: »Sehenswürdigkeiten in Berlin«"
-                >mehr</a
-              >
+              Informationen, Fotos und Verkehrsverbindung.
+              <a href="#" class="more">mehr</a>
             </p>
           </div>
         </article>
       </section>
 
-      <h2 class="title heading-channel">Berlin-Informationen</h2>
+      <!-- Berlin-Informationen -->
       <section class="section_flex">
+        <h2 class="title heading-channel">Berlin-Informationen</h2>
+
         <article class="modul_label">
           <figure class="article_image">
             <img
@@ -169,21 +169,12 @@
             />
             <figcaption class="image_copyright">© dpa</figcaption>
           </figure>
-          <h3 class="article_title">
-            <a href="#">Öffentlicher Nahverkehr</a>
-          </h3>
+          <h3 class="article_title"><a href="#">Öffentlicher Nahverkehr</a></h3>
           <div class="inner">
             <p class="text">
-              Schnell und unkompliziert durch Berlin mit S-Bahn, U-Bahn, Bus und
-              Tram. Informationen zum Berliner Nahverkehr mit Fahrpreisen und
-              Liniennetzen.&nbsp;
-              <a
-                href="#"
-                target="_top"
-                class="more"
-                title="Link zu: »ÖPNV: Öffentlicher Nahverkehr in Berlin«"
-                >mehr</a
-              >
+              Schnell durch Berlin mit S-Bahn, U-Bahn, Bus und Tram. Fahrpreise
+              und Liniennetz.
+              <a href="#" class="more">mehr</a>
             </p>
           </div>
         </article>
@@ -201,16 +192,9 @@
           </h3>
           <div class="inner">
             <p class="text">
-              Ob E-Scooter, Fahrrad, E-Roller oder Mietauto: Zahlreiche Anbieter
-              in Berlin bieten Sharing unterschiedlicher Verkehrsmittel
-              an.&nbsp;
-              <a
-                href="#"
-                target="_top"
-                class="more"
-                title="Link zu: »Car-, Scooter- und Bikesharing«"
-                >mehr</a
-              >
+              E-Scooter, Fahrrad, E-Roller oder Mietauto: Sharing-Angebote in
+              Berlin.
+              <a href="#" class="more">mehr</a>
             </p>
           </div>
         </article>
@@ -219,31 +203,23 @@
           <figure class="article_image">
             <img
               src="../../assets/berlin_project/images/siegessäule-laternen-wetter_dpa.jpg"
-              alt="Pfingsten im Tiergarten"
+              alt="Wetter in Berlin"
             />
             <figcaption class="image_copyright">© dpa</figcaption>
           </figure>
-          <h3 class="article_title">
-            <a href="#">Berlin-Wetter</a>
-          </h3>
+          <h3 class="article_title"><a href="#">Berlin-Wetter</a></h3>
           <div class="inner">
             <p class="text">
-              Das aktuelle Wetter in Berlin mit Vorhersagen, Regenradar,
-              Unwetterwarnungen und weiteren Wetterdaten.&nbsp;
-              <a
-                href="#"
-                target="_top"
-                class="more"
-                title="Link zu: »Wetter in Berlin: Vorhersage und Regenradar«"
-                >mehr</a
-              >
+              Aktuelles Wetter, Regenradar, Vorhersagen und Unwetterwarnungen.
+              <a href="#" class="more">mehr</a>
             </p>
           </div>
         </article>
       </section>
 
-      <h2 class="title heading-channel">Touren durch Berlin</h2>
+      <!-- Touren durch Berlin -->
       <section class="section_flex">
+        <h2 class="title heading-channel">Touren durch Berlin</h2>
         <article class="modul_label">
           <figure class="article_image">
             <img
@@ -330,8 +306,9 @@
         </article>
       </section>
 
-      <h2 class="title heading-channel">Insider-Tipps</h2>
+      <!-- Insider-Tipps -->
       <section class="section_flex">
+        <h2 class="title heading-channel">Insider-Tipps</h2>
         <article class="modul_label">
           <figure class="article_image">
             <img
@@ -411,8 +388,9 @@
         </article>
       </section>
 
-      <h2 class="title heading-channel">Berlin entdecken</h2>
+      <!-- Berlin entdecken -->
       <section class="section_flex">
+        <h2 class="title heading-channel">Berlin entdecken</h2>
         <article class="modul_label">
           <figure class="article_image">
             <img
@@ -491,52 +469,100 @@
           </div>
         </article>
       </section>
+    </main>
 
-      <input type="checkbox" id="menu-toggle" hidden />
-      <aside class="menu-panel">
-        <label for="menu-toggle" class="close-button">&times;</label>
-        <h2>Menü</h2>
-        <details open>
-          <summary>Politik und Verwaltung</summary>
-          <ul>
-            <li><a href="#">Bezirksämter</a></li>
-            <li><a href="#">Verwaltung A-Z</a></li>
-          </ul>
-        </details>
-        <details open>
-          <summary>Service</summary>
-          <ul>
-            <li><a href="#">Bürgerämter</a></li>
-            <li><a href="#">Terminvereinbarung</a></li>
-            <li><a href="#">Online-Verfahren</a></li>
-          </ul>
-        </details>
-        <details>
-          <summary>Karriere & Ausbildung</summary>
-          <ul>
-            <li><a href="#">Aktuelle Stellenangebote</a></li>
-            <li><a href="#">Berufsvielfalt</a></li>
-            <li><a href="#">Gefragte Fachberufe</a></li>
-          </ul>
-        </details>
-        <details>
-          <summary>Presse & Newsletter</summary>
-          <ul>
-            <li><a href="#">Pressemitteilungen</a></li>
-            <li><a href="#">Newsletter</a></li>
-          </ul>
-        </details>
-      </aside>
-      <!-- Переключатель поиска -->
-      <input type="checkbox" id="search-toggle" hidden />
+    <!-- Overlays (Panels) -->
+    <input type="checkbox" id="barrier-toggle" class="panel-toggle" hidden />
+    <input type="checkbox" id="menu-toggle" class="panel-toggle" hidden />
+    <input type="checkbox" id="search-toggle" class="panel-toggle" hidden />
 
-      <!-- Панель поиска -->
-      <div class="search-panel">
-        <label for="search-toggle" class="close-button">&times;</label>
-        <form class="search-form" action="#" method="get">
+    <!-- Panel: Barrierefreiheit -->
+    <aside class="panel barrier-panel">
+      <div class="overlay_header">
+        <h2 class="heading">Barrierefreiheit</h2>
+        <label for="barrier-toggle" class="close_button">
+          <i class="fas fa-times" aria-hidden="true"></i>
+          <span class="aural">Schließen</span>
+        </label>
+      </div>
+      <div class="overlay_body">
+        <h3>Wie barrierefrei ist diese Webseite?</h3>
+        <a href="#">Erklärung zur Barrierefreiheit</a>
+        <h3>Haben Sie Anmerkungen oder Fragen zur Barrierefreiheit?</h3>
+        <a href="#">Kontakt zur Ansprechperson</a>
+        <h3>Weitere Informationen zur Barrierefreiheit in Berlin</h3>
+        <a href="#">Informations- und Kommunikationstechnik (IKT)</a>
+      </div>
+    </aside>
+
+    <!-- Panel: Menü -->
+    <aside class="panel menu-panel">
+      <div class="overlay_header">
+        <h2 class="heading">Menü</h2>
+        <label for="menu-toggle" class="close_button">
+          <i class="fas fa-times" aria-hidden="true"></i>
+          <span class="aural">Schließen</span>
+        </label>
+      </div>
+      <div class="overlay_body">
+        <nav class="menu_navigation" aria-label="Hauptmenü">
+          <ul class="navigation_tree tree_root">
+            <li class="has_subtree">
+              <div class="subtree_header">
+                <a href="#">Politik und Verwaltung</a>
+                <button class="subtree_toggler" aria-label="Untermenü öffnen">
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+              </div>
+              <ul class="tree_subtree">
+                <li><a href="#">Bürgerämter</a></li>
+                <li><a href="#">Terminvereinbarung</a></li>
+                <li><a href="#">Online-Verfahren</a></li>
+              </ul>
+            </li>
+            <li class="has_subtree">
+              <div class="subtree_header">
+                <a href="#">Kultur</a>
+                <button class="subtree_toggler" aria-label="Untermenü öffnen">
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+              </div>
+              <ul class="tree_subtree">
+                <li><a href="#">Museen</a></li>
+                <li><a href="#">Ausstellungen</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Tourismus</a></li>
+            <li><a href="#">Stadtleben</a></li>
+          </ul>
+        </nav>
+
+        <div class="navigation_meta">
+          <h3 class="heading">Sprache wählen</h3>
+          <ul class="language_switcher">
+            <li><a href="/" hreflang="de">Deutsch</a></li>
+            <li><a href="/en/" hreflang="en">English</a></li>
+            <li><a href="/fr/" hreflang="fr">Français</a></li>
+            <li><a href="/it/" hreflang="it">Italiano</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Panel: Suche -->
+    <aside class="panel search-panel">
+      <div class="overlay_header">
+        <h2 class="heading">Suche</h2>
+        <label for="search-toggle" class="close_button">
+          <i class="fas fa-times" aria-hidden="true"></i>
+          <span class="aural">Schließen</span>
+        </label>
+      </div>
+      <div class="overlay_body">
+        <form class="search-form" action="/suche/" method="get">
           <label for="query"><strong>Suche auf Berlin.de</strong></label>
           <div class="search-field">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search" aria-hidden="true"></i>
             <input
               type="text"
               id="query"
@@ -545,19 +571,19 @@
               required
             />
             <button type="submit" class="submit-btn">
-              <i class="fa fa-arrow-right" style="color: #e40422"></i>
+              <i class="fa fa-arrow-right"></i>
             </button>
           </div>
         </form>
       </div>
-    </main>
+    </aside>
 
-    <div class="section_prefooter">
-      <div class="section_prefooter_content">
+    <!-- Prefooter Section -->
+    <section class="prefooter_section">
+      <div class="prefooter_section_content">
         <h2 class="aural">Weitere Informationen zu diesem Auftritt</h2>
-        <div class="prefooter_content_brand"></div>
-        <a class="to-top" href="#top">Zum Seitenanfang</a>
-        <nav class="prefooter_content_links" aria-label="Weiterführende Links">
+        <nav class="prefooter_content_links">
+          <a class="to-top" href="#top">Zum Seitenanfang</a>
           <ul>
             <li class="">
               <h3 class="heading">Touren</h3>
@@ -584,7 +610,7 @@
               </ul>
             </li>
             <li class="">
-              <h3 class="heading#">Sehenswürdigkeiten</h3>
+              <h3 class="heading">Sehenswürdigkeiten</h3>
               <ul>
                 <li><a href="#">Highlights</a></li>
                 <li><a href="#">Gedenkstätten</a></li>
@@ -626,12 +652,17 @@
           </ul>
         </nav>
       </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
       <h2 class="aural">Weitere Informationen zu Berlin.de</h2>
       <div class="footer_brand">
         <a href="-" title="Zur Startseite von Berlin.de"
-          ><img src="../../assets/berlin_project/images/logo_berlin_m_negativ.svg" alt="Berlin" />
+          ><img
+            src="../../assets/berlin_project/images/logo_berlin_m_negativ.svg"
+            alt="Berlin"
+          />
         </a>
       </div>
       <nav class="footer_links" aria-label="Weitere Bereiche auf Berlin.de">
@@ -699,6 +730,8 @@
         <p>Berlin.de ist ein Angebot des Landes Berlin.</p>
       </div>
     </footer>
+
+    <!-- FontAwesome Icons -->
     <script
       src="https://kit.fontawesome.com/7f5b2ca6d8.js"
       crossorigin="anonymous"
