@@ -1,0 +1,19 @@
+pre {
+    background: #23272e;
+    color: #d4d4d4;
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 1em;
+    line-height: 1.5;
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+    margin-top: 2em;
+}
+body {
+    background: #181a1b;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #ffb300;
+}
