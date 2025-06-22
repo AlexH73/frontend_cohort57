@@ -578,8 +578,9 @@ footer .footer_brand img {
   height: auto;
 }
 
+.prefooter_content_links > ul li,
 footer .footer_links > ul > li {
-  flex: 1 1 180px;
+  flex: 1 1 14vw;
 }
 
 footer .footer_links h3 {
@@ -594,10 +595,12 @@ footer .footer_links ul ul {
   margin: 0;
 }
 
+.prefooter_content_links > ul li,
 footer .footer_links ul ul li {
   margin-bottom: 0.4rem;
 }
 
+.prefooter_content_links > ul li,
 footer .footer_links ul ul li a {
   font-size: 0.95rem;
   text-decoration: none;
