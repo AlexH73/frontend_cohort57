@@ -7,7 +7,7 @@
   --font-size-base: 16px;
   --line-height-base: 1.5;
   --color-primary: #e40422;
-  --color-text: #1a1a1a;
+  --color-text: #000;
   --color-bg: #ffffff;
   --overlay-bg: var(--color-bg);
   --color-text-white: var(--color-bg);
@@ -60,8 +60,12 @@ a {
 /* ========================================
      Typography & Headings
   ======================================== */
-.heading,
 .heading-channel {
+  grid-area: title;
+  font-size: 1.5rem;
+}
+
+.heading {
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
@@ -166,22 +170,20 @@ footer {
 article h3 a,
 .textlogo a {
   text-decoration: none;
-  color: #000;
+  color: var(--color-text);
 }
 
-.institution,
-.title {
+.institution + .title {
   display: block;
   padding: 3px;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 120%;
-  color: #000;
+  color: var(--color-text);
 }
 
-.title {
+.textlogo .title {
   font-weight: 700;
-  grid-area: title;
 }
 
 /* Quicklinks */
@@ -207,7 +209,7 @@ article h3 a,
 
 .header_nav_quicklinks li a {
   text-decoration: none;
-  color: #000;
+  color: var(--color-text);
 }
 
 .header_nav_quicklinks li a:hover,
@@ -372,7 +374,7 @@ article h3 a,
   margin-top: 1em;
   margin-bottom: 0.4em;
   line-height: 1.353em;
-  color: #000;
+  color: var(--color-text);
   font-weight: 700;
 }
 
