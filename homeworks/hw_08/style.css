@@ -611,7 +611,7 @@ footer .footer_claim {
   color: #ccc;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1195px) {
   .header_nav_quicklinks {
     display: none;
   }
@@ -655,7 +655,9 @@ footer .footer_links > ul {
 }
 
 @media (max-width: 500px) {
-
+  .header_layout .title {
+  font-size: 1.5rem;
+}
   .header_nav_logo{
     min-width: 150px;
   }
