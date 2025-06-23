@@ -109,7 +109,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -164,6 +164,7 @@ footer {
 .textlogo {
   overflow: hidden;
   word-break: break-word;
+  font-size: 1.2rem;
 }
 
 article h3 a,
@@ -188,7 +189,7 @@ article h3 a,
 /* Quicklinks */
 .header_nav_quicklinks {
   justify-content: flex-end;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   flex: 1 1 50%;
   overflow: hidden;
   height: 31px;
@@ -252,8 +253,12 @@ article h3 a,
   padding: 0.1em 0.5em;
 }
 
+.icon-button span {
+  font-size: 0.7rem;
+}
+
 .icon-button i {
-  font-size: 4em;
+  font-size: 2rem;
   line-height: 1;
   margin-bottom: 0.1em;
 }
@@ -302,7 +307,7 @@ article h3 a,
 
 .header_layout .image_copyright {
   position: absolute;
-  bottom: 3rem;
+  bottom: 0.5rem;
   right: 4em;
   font-size: 11px;
   color: rgba(255, 255, 255, 0.55);
