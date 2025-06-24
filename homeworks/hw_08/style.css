@@ -116,7 +116,7 @@ footer {
 .section_flex {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1200px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
