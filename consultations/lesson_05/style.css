@@ -13,7 +13,28 @@ body {
     background: #181a1b;
     color: #fff;
     font-family: Arial, sans-serif;
+    font-size: larger;
 }
 h1 {
     color: #ffb300;
+}
+
+.tasks {
+    color: aqua;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+.tasks::before {
+    content: ">>>";
+    color: red;
+}
+
+.tasks::after {
+    content: "<<<";
+    color: red;
+}
+
+.tasks:hover {
+    text-decoration: underline;
 }
