@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💁</text></svg>"
+    />
+    <link rel="stylesheet" href="../../consultations/lesson_05/style.css">
+    <title>JavaScript Array Methods</title>
+</head>
+<body>
+    <h1>JavaScript Array Methods 💁</h1>
+    <pre id="code-block"><code>Загрузка кода...</code></pre>
+    <script>
+        fetch('script.js')
+            .then(res => res.text())
+            .then(text => {
+                // Экранируем спецсимволы для HTML
+                const escaped = text
+                  .replace(/&/g, '&amp;')
+                  .replace(/</g, '&lt;')
+                  .replace(/>/g, '&gt;');
+                document.getElementById('code-block').innerHTML = `<code>${escaped}</code>`;
+            });
+    </script>
+    <script src="script.js"></script> 
+</body>
+</html>
