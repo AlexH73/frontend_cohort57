@@ -4,18 +4,33 @@ const ages = [18, 27, 74, 34]; // создание массива с возра�
 
 const persons = []; // новый массив для персон
 
+// * вариант решения циклом for
 // итерация с наполнением нового массива
 for (let i = 0; i < names.length; i++) {
   persons.push(`${names[i]} ${ages[i]} лет/годов`);
 }
 
+// * вариант решения циклом while
+while (persons.length != names.length) {
+  persons.push(`${names[i]} ${ages[i]} лет/годов`);
+  i++;
+}
+
 //====== Задание 2 ======//
 const personsReversed = []; // новый массив для персон reversed
 
+// * вариант решения циклом for
 // перебор с наполнением массива
 for (let i = persons.length - 1; i >= 0; i--) {
   personsReversed.push(persons[i]);
 }
+
+// * вариант решения циклом while
+while (persons.length != personsReversed.length) {
+  personsReversed.push(persons[i]);
+  i--;
+}
+
 
 //====== Задание 3 ======//
 const fruits = []; // создаем пустой массив fruits
@@ -32,11 +47,14 @@ let or = fruits.pop();
 fruits.unshift(or);
 
 //====== Задание 4 ======//
-//в массив fruitsAndVeggies объединяем массив fruits с новыми строками
-const fruitsAndVeggies = [...fruits, "Морковь", "Помидор", "Огурец"];
+const vegis = ["Морковь", "Помидор"]; // новый массив с овощами
+
+//в массив fruitsAndVeggies объединяем массивы fruits и vegis с добавлением новой строки
+const fruitsAndVeggies = [...fruits, ...vegis, "Огурец"];
 
 // деструктуризируем массив fruitsAndVeggies
 const [orange, apple, banana, carrot, tomato, cucumber] = fruitsAndVeggies;
 
 // выводим массив fruitsAndVeggies
 console.log(fruitsAndVeggies);
+
