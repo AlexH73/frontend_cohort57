@@ -11,9 +11,12 @@ for (let i = 0; i < names.length; i++) {
 }
 
 // * вариант решения циклом while
-while (persons.length != names.length) {
-  persons.push(`${names[i]} ${ages[i]} лет/годов`);
-  i++;
+const persons1 = [];
+let p = 0;
+
+while (persons1.length != names.length) {
+  persons1.push(`${names[p]} ${ages[p]} лет/годов`);
+  p++;
 }
 
 //====== Задание 2 ======//
@@ -26,11 +29,13 @@ for (let i = persons.length - 1; i >= 0; i--) {
 }
 
 // * вариант решения циклом while
-while (persons.length != personsReversed.length) {
-  personsReversed.push(persons[i]);
-  i--;
-}
+const personsReversed2 = [];
+let j = persons.length;
 
+while (persons.length != personsReversed2.length) {
+  personsReversed2.push(persons[j - 1]);
+  j--;
+}
 
 //====== Задание 3 ======//
 const fruits = []; // создаем пустой массив fruits
@@ -57,4 +62,3 @@ const [orange, apple, banana, carrot, tomato, cucumber] = fruitsAndVeggies;
 
 // выводим массив fruitsAndVeggies
 console.log(fruitsAndVeggies);
-
