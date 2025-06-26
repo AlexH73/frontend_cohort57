@@ -1,40 +1,44 @@
 pre {
-    background: #23272e;
-    color: #d4d4d4;
-    padding: 1em;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-size: 1em;
-    line-height: 1.5;
-    font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
-    margin-top: 2em;
+  background: #23272e;
+  color: #d4d4d4;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 1em;
+  line-height: 1.5;
+  font-family: "Fira Mono", "Consolas", "Menlo", monospace;
+  margin-top: 2em;
 }
 body {
-    background: #181a1b;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: larger;
+  margin: 25px;
+  background: #181a1b;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: larger;
 }
 h1 {
-    color: #ffb300;
+  color: #ffb300;
 }
 
 .tasks {
-    color: aqua;
-    font-size: 1.5rem;
-    font-weight: 800;
-    text-decoration: none;
+  color: aqua;
+  display: flex;
+  justify-content: center;
+  font-family: inherit;
+  font-size: xx-large;
+  font-weight: 800;
+  text-decoration: none;
 }
 .tasks::before {
-    content: ">>>";
-    color: red;
+  content: ">>>";
+  color: red;
 }
 
 .tasks::after {
-    content: "<<<";
-    color: red;
+  content: "<<<";
+  color: red;
 }
 
 .tasks:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
