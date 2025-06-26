@@ -8,13 +8,15 @@ const starWarsHeroes = [
   { name: "Obi-Wan Kenobi", age: 60, isJedi: true },
 ];
 
-// Создаем новый массив с джедаями младше 40 лет 
-const warsHeroesAges = starWarsHeroes.filter((el) => el.age < 40);
+// Создаем новый массив с джедаями младше 40 лет
+const youngJediHeroes = starWarsHeroes.filter((el) => el.isJedi && el.age < 40);
 
-// Посчет возраста всех с джедаев
-sumOfAges = starWarsHeroes.reduce((acc, el) => acc + el.age, 0);
+// Посчет возраста всех джедаев
+let sumOfJediAges = starWarsHeroes
+  .filter((el) => el.isJedi)
+  .reduce((acc, el) => acc + el.age, 0);
 
-// Повышаем возраст героев на 10 лет
+// Повышаем возраст всех героев на 10 лет
 const updatedAgesHeroes = starWarsHeroes.map((el) => ({
   ...el,
   age: el.age + 10,
