@@ -169,7 +169,7 @@ h6 {
   margin-bottom: 0.5em;
   color: var(--accent-color);
   transition: color 0.3s;
-  text-shadow: 2px 2px 7px black;
+  text-shadow: 1px 1px 5px #0000009e;;
 }
 
 h1 {
