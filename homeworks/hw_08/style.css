@@ -78,6 +78,31 @@ a {
   margin-bottom: 0.75rem;
 }
 
+.overlay_header .heading {
+  font-size: 1.375em;
+  line-height: 1.182em;
+}
+
+.overlay_body h3 {
+  font-size: 1.0625em;
+  margin-top: 1em;
+  margin-bottom: .4em;
+  line-height: 1.353em;
+  font-weight: 700;
+}
+
+.overlay_body {
+  overflow-y: auto;
+  background-color: #fff;
+  height: 100vh;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  max-width: 100%;
+  padding: .5em 12px;
+}
+
 h1.title {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -227,7 +252,7 @@ article h3 a,
 .header_nav_quicklinks,
 .header_nav_services {
   display: flex;
-  gap: 1rem;
+  gap: .01rem;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -272,14 +297,28 @@ article h3 a,
 
 .fa-universal-access {
   content: var(--bicon-universal-access);
+  width: 2rem;
 }
 
 .fa-search {
   content: var(--bicon-search);
+  width: 1.8rem;
+}
+
+.search-field >.fa-search {
+  /* padding: 3px; */
+  margin-right: 10px;
+  width: 1rem;
 }
 
 .fa-bars {
   content: var(--bicon-bars);
+  width: 1.8rem;
+}
+
+.fa-times {
+  content: var(--bicon-times);
+  width: 1.8rem;
 }
 
 .icon-button .text {
@@ -468,6 +507,15 @@ a.more::after {
   padding: 2rem 1.5rem;
 }
 
+.search-panel {
+  min-width: var(--overlay-width);
+  
+}
+
+.search-form{
+  margin-top: 50%;
+}
+
 /* Activated panels */
 #barrier-toggle:checked ~ .barrier-panel,
 #menu-toggle:checked ~ .menu-panel,
@@ -514,6 +562,16 @@ a.more::after {
   border: none;
   outline: none;
   font-size: 1rem;
+
+  /* width: 100%;
+  max-width: none;
+  outline: 0;
+  border: 0 none;
+  box-shadow: none;
+  background-color: rgba(0,0,0,0);
+  color: #000;
+  padding: 0 50px 0 40px;
+  z-index: 1; */
 }
 
 .search-field .submit-btn {
@@ -682,24 +740,41 @@ footer .footer_claim {
     display: block;
   }
 
+  footer .footer_links li > .heading {
+    background-color: #545454;
+    border: #7a7a7a 1px solid;
+    box-shadow: none;
+    padding: 1em 12px;
+    margin: 0;
+    display: block;
+    cursor: pointer;
+  }
+
+  footer .footer_links > ul > li > ul {
+    background-color: rgb(0, 0, 0);
+  }
+
+  footer .footer_links > ul > li > ul > li,
   .prefooter_content_links > ul > li > ul > li {
     padding: 1em 12px;
     margin: 0;
     display: block;
   }
 
+  footer .footer_links,
   .prefooter_content_links {
     margin-left: -24px;
     margin-right: -24px;
   }
 
+  footer .footer_links li > .heading::after,
   .prefooter_content_links li > .heading::after {
     display: inline-block;
     font-family: "Font Awesome 5 Free";
     line-height: 1;
     font-size: inherit;
     content: "";
-    /* float: right; */
+    float: inline-end;
     transition: transform 0.2s;
   }
 }
