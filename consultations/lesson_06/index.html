@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎳</text></svg>">
     <link rel="stylesheet" href="../lesson_05/style.css">
-    <title>Consultation </title>
+    <title>Consultation 06</title>
 </head>
 <body>
-    <h1>Consultation JS intro 🎲</h1>
+    <h1>Consultation JS 🎳</h1>
     <pre id="code-block"><code>Загрузка кода...</code></pre>
     <script>
-        fetch('index.js')
-            .then(res => res.text())
-            .then(text => {
-                // Экранируем спецсимволы для HTML
-                const escaped = text
-                  .replace(/&/g, '&amp;')
-                  .replace(/</g, '&lt;')
-                  .replace(/>/g, '&gt;');
-                document.getElementById('code-block').innerHTML = `<code>${escaped}</code>`;
-            });
-    </script>
+        const files = ['index.js', 'arrays.js', 'destr.js'];
+        
+        Promise.all(files.map(file => fetch(file).then(res => res.text())))
+          .then(texts => {
+            const joined = texts.map((text, i) =>
+              `<span class="span-title">// --- ${files[i]} ---</span>\n` +
+              text
+            ).join('\n\n');
+            const escaped = joined
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;');
+            const highlighted = escaped.replace(/&lt;span class="span-title"&gt;(.*?)&lt;\/span&gt;/g,
+              '<span class="span-title">$1</span>');
+            document.getElementById('code-block').innerHTML = `<code>${highlighted}</code>`;
+          });
+        </script>
     <script src="index.js"></script>
+    <script src="arrays.js"></script>
+    <script src="destr.js"></script>
 </body>
 </html>

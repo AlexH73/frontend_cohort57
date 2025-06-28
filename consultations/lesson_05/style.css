@@ -42,3 +42,11 @@ h1 {
 .tasks:hover {
   text-decoration: underline;
 }
+
+.span-title {
+  color: #ffb300;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: block;
+  margin: 1em 0 0.5em;
+}

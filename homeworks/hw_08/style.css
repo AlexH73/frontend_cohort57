@@ -14,13 +14,21 @@
   --color-light: #f5f5f5;
   --bd-dark: #545454;
   --color-link: #0047d3;
+  --color-accent: #f0f0f0;
   --overlay-width: 90vw;
   --overlay-max-width: 500px;
   --box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.3);
   --text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   --transition-default: 0.3s ease;
   --z-index-overlay: 1000;
+
+  /* icons */
+  --bicon-universal-access: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iYXV0byIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGQ9Ik0yNTYgNDhjMTE0Ljk1MyAwIDIwOCA5My4wMjkgMjA4IDIwOCAwIDExNC45NTMtOTMuMDI5IDIwOC0yMDggMjA4LTExNC45NTMgMC0yMDgtOTMuMDI5LTIwOC0yMDggMC0xMTQuOTUzIDkzLjAyOS0yMDggMjA4LTIwOG0wLTQwQzExOS4wMzMgOCA4IDExOS4wMzMgOCAyNTZzMTExLjAzMyAyNDggMjQ4IDI0OCAyNDgtMTExLjAzMyAyNDgtMjQ4UzM5Mi45NjcgOCAyNTYgOHptMCA1NkMxNDkuOTYxIDY0IDY0IDE0OS45NjEgNjQgMjU2czg1Ljk2MSAxOTIgMTkyIDE5MiAxOTItODUuOTYxIDE5Mi0xOTJTMzYyLjAzOSA2NCAyNTYgNjR6bTAgNDRjMTkuODgyIDAgMzYgMTYuMTE4IDM2IDM2cy0xNi4xMTggMzYtMzYgMzYtMzYtMTYuMTE4LTM2LTM2IDE2LjExOC0zNiAzNi0zNnptMTE3Ljc0MSA5OC4wMjNjLTI4LjcxMiA2Ljc3OS01NS41MTEgMTIuNzQ4LTgyLjE0IDE1LjgwNy44NTEgMTAxLjAyMyAxMi4zMDYgMTIzLjA1MiAyNS4wMzcgMTU1LjYyMSAzLjYxNyA5LjI2LS45NTcgMTkuNjk4LTEwLjIxNyAyMy4zMTUtOS4yNjEgMy42MTctMTkuNjk5LS45NTctMjMuMzE2LTEwLjIxNy04LjcwNS0yMi4zMDgtMTcuMDg2LTQwLjYzNi0yMi4yNjEtNzguNTQ5aC05LjY4NmMtNS4xNjcgMzcuODUxLTEzLjUzNCA1Ni4yMDgtMjIuMjYyIDc4LjU0OS0zLjYxNSA5LjI1NS0xNC4wNSAxMy44MzYtMjMuMzE1IDEwLjIxNy05LjI2LTMuNjE3LTEzLjgzNC0xNC4wNTYtMTAuMjE3LTIzLjMxNSAxMi43MTMtMzIuNTQxIDI0LjE4NS01NC41NDEgMjUuMDM3LTE1NS42MjEtMjYuNjI5LTMuMDU4LTUzLjQyOC05LjAyNy04Mi4xNDEtMTUuODA3LTguNi0yLjAzMS0xMy45MjYtMTAuNjQ4LTExLjg5NS0xOS4yNDlzMTAuNjQ3LTEzLjkyNiAxOS4yNDktMTEuODk1Yzk2LjY4NiAyMi44MjkgMTI0LjI4MyAyMi43ODMgMjIwLjc3NSAwIDguNTk5LTIuMDMgMTcuMjE4IDMuMjk0IDE5LjI0OSAxMS44OTUgMi4wMjkgOC42MDEtMy4yOTcgMTcuMjE5LTExLjg5NyAxOS4yNDl6Ii8+PC9zdmc+);
+  --bicon-bars: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iYXV0byIgdmlld0JveD0iMCAwIDQ0OCA1MTIiPjxwYXRoIGQ9Ik0xNiAxMzJoNDE2YzguODM3IDAgMTYtNy4xNjMgMTYtMTZWNzZjMC04LjgzNy03LjE2My0xNi0xNi0xNkgxNkM3LjE2MyA2MCAwIDY3LjE2MyAwIDc2djQwYzAgOC44MzcgNy4xNjMgMTYgMTYgMTZ6bTAgMTYwaDQxNmM4LjgzNyAwIDE2LTcuMTYzIDE2LTE2di00MGMwLTguODM3LTcuMTYzLTE2LTE2LTE2SDE2Yy04LjgzNyAwLTE2IDcuMTYzLTE2IDE2djQwYzAgOC44MzcgNy4xNjMgMTYgMTYgMTZ6bTAgMTYwaDQxNmM4LjgzNyAwIDE2LTcuMTYzIDE2LTE2di00MGMwLTguODM3LTcuMTYzLTE2LTE2LTE2SDE2Yy04LjgzNyAwLTE2IDcuMTYzLTE2IDE2djQwYzAgOC44MzcgNy4xNjMgMTYgMTYgMTZ6Ii8+PC9zdmc+);
+  --bicon-search: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iYXV0byIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGQ9Ik01MDUgNDQyLjdMNDA1LjMgMzQzYy00LjUtNC41LTEwLjYtNy0xNy03SDM3MmMyNy42LTM1LjMgNDQtNzkuNyA0NC0xMjhDNDE2IDkzLjEgMzIyLjkgMCAyMDggMFMwIDkzLjEgMCAyMDhzOTMuMSAyMDggMjA4IDIwOGM0OC4zIDAgOTIuNy0xNi40IDEyOC00NHYxNi4zYzAgNi40IDIuNSAxMi41IDcgMTdsOTkuNyA5OS43YzkuNCA5LjQgMjQuNiA5LjQgMzMuOSAwbDI4LjMtMjguM2M5LjQtOS40IDkuNC0yNC42LjEtMzR6TTIwOCAzMzZjLTcwLjcgMC0xMjgtNTcuMi0xMjgtMTI4IDAtNzAuNyA1Ny4yLTEyOCAxMjgtMTI4IDcwLjcgMCAxMjggNTcuMiAxMjggMTI4IDAgNzAuNy01Ny4yIDEyOC0xMjggMTI4eiIvPjwvc3ZnPg==);
+  --bicon-times: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iYXV0byIgdmlld0JveD0iMCAwIDM1MiA1MTIiPjxwYXRoIGQ9Ik0yNDIuNzIgMjU2bDEwMC4wNy0xMDAuMDdjMTIuMjgtMTIuMjggMTIuMjgtMzIuMTkgMC00NC40OGwtMjIuMjQtMjIuMjRjLTEyLjI4LTEyLjI4LTMyLjE5LTEyLjI4LTQ0LjQ4IDBMMTc2IDE4OS4yOCA3NS45MyA4OS4yMWMtMTIuMjgtMTIuMjgtMzIuMTktMTIuMjgtNDQuNDggMEw5LjIxIDExMS40NWMtMTIuMjggMTIuMjgtMTIuMjggMzIuMTkgMCA0NC40OEwxMDkuMjggMjU2IDkuMjEgMzU2LjA3Yy0xMi4yOCAxMi4yOC0xMi4yOCAzMi4xOSAwIDQ0LjQ4bDIyLjI0IDIyLjI0YzEyLjI4IDEyLjI4IDMyLjIgMTIuMjggNDQuNDggMEwxNzYgMzIyLjcybDEwMC4wNyAxMDAuMDdjMTIuMjggMTIuMjggMzIuMiAxMi4yOCA0NC40OCAwbDIyLjI0LTIyLjI0YzEyLjI4LTEyLjI4IDEyLjI4LTMyLjE5IDAtNDQuNDhMMjQyLjcyIDI1NnoiLz48L3N2Zz4=);
   --bicon-arrow-right: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iYXV0byIgdmlld0JveD0iMCAwIDQ0OCA1MTIiPjxwYXRoIGQ9Ik0xOTAuNSA2Ni45bDIyLjItMjIuMmM5LjQtOS40IDI0LjYtOS40IDMzLjkgMEw0NDEgMjM5YzkuNCA5LjQgOS40IDI0LjYgMCAzMy45TDI0Ni42IDQ2Ny4zYy05LjQgOS40LTI0LjYgOS40LTMzLjkgMGwtMjIuMi0yMi4yYy05LjUtOS41LTkuMy0yNSAuNC0zNC4zTDMxMS40IDI5NkgyNGMtMTMuMyAwLTI0LTEwLjctMjQtMjR2LTMyYzAtMTMuMyAxMC43LTI0IDI0LTI0aDI4Ny40TDE5MC45IDEwMS4yYy05LjgtOS4zLTEwLTI0LjgtLjQtMzQuM3oiLz48L3N2Zz4=);
+  --bicon-chevron-right: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iYXV0byIgdmlld0JveD0iMCAwIDMyMCA1MTIiPjxwYXRoIGQ9Ik0yODUuNDc2IDI3Mi45NzFMOTEuMTMyIDQ2Ny4zMTRjLTkuMzczIDkuMzczLTI0LjU2OSA5LjM3My0zMy45NDEgMGwtMjIuNjY3LTIyLjY2N2MtOS4zNTctOS4zNTctOS4zNzUtMjQuNTIyLS4wNC0zMy45MDFMMTg4LjUwNSAyNTYgMzQuNDg0IDEwMS4yNTVjLTkuMzM1LTkuMzc5LTkuMzE3LTI0LjU0NC4wNC0zMy45MDFsMjIuNjY3LTIyLjY2N2M5LjM3My05LjM3MyAyNC41NjktOS4zNzMgMzMuOTQxIDBMMjg1LjQ3NSAyMzkuMDNjOS4zNzMgOS4zNzIgOS4zNzMgMjQuNTY4LjAwMSAzMy45NDF6Ii8+PC9zdmc+);
 }
 
 * {
@@ -118,10 +126,6 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   max-width: 980px;
   margin: 0 auto;
-}
-
-.section_flex {
-  display: grid;
   gap: 1.5rem;
   padding: 2rem;
   width: 100%;
@@ -261,6 +265,21 @@ article h3 a,
   font-size: 2rem;
   line-height: 1;
   margin-bottom: 0.1em;
+  display: inline-block;
+  padding: 0;
+  background: none;
+}
+
+.fa-universal-access {
+  content: var(--bicon-universal-access);
+}
+
+.fa-search {
+  content: var(--bicon-search);
+}
+
+.fa-bars {
+  content: var(--bicon-bars);
 }
 
 .icon-button .text {
@@ -657,13 +676,11 @@ footer .footer_claim {
 
   .prefooter_content_links > ul > li > .heading {
     background-color: #eee;
-    box-shadow: 0 4px 4px rgba(144,144,144,.5);
+    box-shadow: 0 4px 4px rgba(144, 144, 144, 0.5);
     padding: 1em 12px;
     margin: 0;
     display: block;
   }
-
-  
 
   .prefooter_content_links > ul > li > ul > li {
     padding: 1em 12px;
@@ -682,8 +699,8 @@ footer .footer_claim {
     line-height: 1;
     font-size: inherit;
     content: "";
-    float: right;
-    transition: transform .2s;
+    /* float: right; */
+    transition: transform 0.2s;
   }
 }
 
@@ -700,10 +717,6 @@ footer .footer_claim {
   .section_flex {
     display: grid;
     grid-template-columns: 1fr;
-  }
-
-  .section_flex {
-    display: grid;
     grid-template-areas:
       "title"
       "article";
