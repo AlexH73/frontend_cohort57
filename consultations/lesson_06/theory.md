@@ -1,10 +1,3 @@
----
-created: 2025-06-29T13:51:49 (UTC +02:00)
-tags: []
-source: moz-extension://2d54aa5a-567e-4187-a9cd-f064f1a4592d/
-author:
----
-
 ## Методы массивов
 
 ## Метод map()
@@ -19,6 +12,7 @@ author:
 const new_array = arr.map(function callback( currentValue[, index[, array]]) {
     // Возвращает элемент для new_array
 }[, thisArg])
+
 ```
 
 Параметры
