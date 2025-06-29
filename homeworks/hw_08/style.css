@@ -86,7 +86,7 @@ a {
 .overlay_body h3 {
   font-size: 1.0625em;
   margin-top: 1em;
-  margin-bottom: .4em;
+  margin-bottom: 0.4em;
   line-height: 1.353em;
   font-weight: 700;
 }
@@ -100,7 +100,7 @@ a {
   top: 0;
   width: 100vw;
   max-width: 100%;
-  padding: .5em 12px;
+  padding: 0.5em 12px;
 }
 
 h1.title {
@@ -252,7 +252,7 @@ article h3 a,
 .header_nav_quicklinks,
 .header_nav_services {
   display: flex;
-  gap: .01rem;
+  gap: 0.01rem;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -306,7 +306,7 @@ article h3 a,
   width: 1.8rem;
 }
 
-.search-field >.fa-search {
+.search-field > .fa-search {
   /* padding: 3px; */
   margin-right: 10px;
   width: 1rem;
@@ -510,10 +510,9 @@ a.more::after {
 
 .search-panel {
   min-width: var(--overlay-width);
-  
 }
 
-.search-form{
+.search-form {
   margin-top: 50%;
 }
 
