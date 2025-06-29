@@ -283,7 +283,8 @@ article h3 a,
 }
 
 .icon-button span {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+  word-break: initial;
 }
 
 .icon-button i {
@@ -783,11 +784,22 @@ footer .footer_claim {
   .header_layout {
     height: 360px;
   }
+  .section_flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "title title"
+      "article article";
+  }
 }
 
 @media (max-width: 600px) {
   .header_layout {
     height: 250px;
+  }
+
+  .icon-button span {
+    font-size: 0.5rem;
   }
   .section_flex {
     display: grid;
