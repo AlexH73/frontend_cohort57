@@ -1,0 +1,57 @@
+button {
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px 8px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(255, 128, 55);
+  }
+  
+  span {
+    font-size: 25px;
+  }
+  
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .heading {
+    color: orangered;
+    font-style: italic;
+  }
+  
+  h1 {
+    cursor: pointer;
+  
+  }
+  
+  h1:hover {
+    color: orangered;
+    text-decoration: underline;
+  }
+  
+  .btn-create {
+    margin-top: 5px;
+    background-color: cornflowerblue;
+  }
+  
+  .btn-create:hover {
+    background-color: rgb(133, 171, 240);
+  }
+  
+  img {
+    margin-top: 10px;
+    height: 150px;
+  }
+  
+  p {
+    color: rgb(133, 171, 240);
+  
+  }
