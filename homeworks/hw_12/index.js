@@ -5,16 +5,13 @@ btn.style.cursor = "pointer";
 const clonedBtn = btn.cloneNode(true);
 // задали id
 clonedBtn.id = "magic-btn-2";
+// задали class
+clonedBtn.className = "second-btn";
 // меняем текст
 clonedBtn.textContent = "Я изменю тебя";
 // применяем новые стили
 clonedBtn.style.backgroundColor = "#a78b71";
 clonedBtn.style.color = "white";
-clonedBtn.style.fontSize = "20px";
-clonedBtn.style.margin = "20px";
-clonedBtn.style.borderRadius = "10px";
-clonedBtn.style.border = "none";
-clonedBtn.style.padding = "15px";
 
 btn.addEventListener("click", () => {
   // при нажатии на первую кнопку
