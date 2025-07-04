@@ -98,3 +98,29 @@ li.done::after {
 li:hover {
   background: #f3e5f5;
 }
+
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+    padding: 0 1rem;
+  }
+
+  input[type="text"], button, #clear-btn {
+    width: 100%;
+    font-size: 1rem;
+    box-sizing: border-box;
+    max-width: 93vw;
+  }
+
+  ul#list-book {
+    max-width: 98vw;
+    padding: 0 1vw;
+  }
+
+  li {
+    font-size: 1rem;
+    padding: 10px 10px;
+  }
+}
