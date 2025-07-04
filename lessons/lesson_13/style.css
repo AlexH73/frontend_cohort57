@@ -1,0 +1,28 @@
+button {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  li {
+    list-style: none;
+    cursor: pointer;
+  }
+  
+  .done {
+    color: dodgerblue;
+    text-decoration: line-through;
+  }
+  
+  li:hover {
+    color: black;
+    text-decoration: line-through;
+  }
+  
+  li::before {
+    content: '✨ ';
+  }
+  
