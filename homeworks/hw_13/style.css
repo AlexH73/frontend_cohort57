@@ -1,0 +1,100 @@
+/* Основные стили */
+body {
+  background: linear-gradient(120deg, #f5e7d4 0%, #e0c3fc 100%);
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #6d4c41;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #b39ddb;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #7e57c2;
+}
+
+button,
+#clear-btn {
+  background-color: #7e57c2;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+button:hover,
+#clear-btn:hover {
+  background-color: #5e35b1;
+}
+
+#clear-btn {
+  display: block;
+  margin: 0 auto 1.5rem auto;
+}
+
+ul#list-book {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+li::before {
+  content: "📗: ";
+}
+
+li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 12px 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(126, 87, 194, 0.08);
+  font-size: 1.1rem;
+  color: #4e342e;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+li.done {
+  text-decoration: line-through;
+  color: #bdbdbd;
+  background: #ede7f6;
+}
+
+li.done::before {
+  content: "📕: ";
+}
+
+li.done::after {
+  content: "  ✔";
+  color: green;
+}
+
+li:hover {
+  background: #f3e5f5;
+}
