@@ -1,6 +1,7 @@
 // * 1. находим интерактивные элементы и кладем в переменные
 const form = document.querySelector("#form-book");
 const ul = document.querySelector("#list-book");
+const input = document.querySelectorAll(".input");
 
 // массив под список книг
 const bookList = [
@@ -35,6 +36,22 @@ function renderList() {
 
 // первый рендер при загрузке страницы
 renderList();
+
+// обнуляем placeholder при клике в поле и возвращаем при клике в другое место
+if (input) {
+  for (let i = 0; i < input.length; i++) {
+    input[i].addEventListener("click", function () {
+      let thisElement = this;
+
+      let savePlaceholder = this.getAttribute("placeholder");
+
+      this.setAttribute("placeholder", " ");
+      document.addEventListener("mouseup", function () {
+        thisElement.setAttribute("placeholder", savePlaceholder);
+      });
+    });
+  }
+}
 
 // обработка события формы
 form.addEventListener("submit", (event) => {
