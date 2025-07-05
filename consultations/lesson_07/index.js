@@ -54,11 +54,16 @@ form.addEventListener("submit", (event) => {
 
   // проверка на дубликаты
   const check = personList.find(
-    (el) => el.nickname.toLowerCase() === person.nickname.toLowerCase() && el.place.toLowerCase() === person.place.toLowerCase()
+    (el) =>
+      el.nickname.toLowerCase() === person.nickname.toLowerCase() &&
+      el.place.toLowerCase() === person.place.toLowerCase()
   );
 
   if (check) {
-    alert("Этот человек уже в списке! 🙅‍♂️");
+    alert(
+      `Место: ${person.place}, Ник: ${person.nickname}` +
+        "\nЭтот человек уже в списке! 🙅‍♂️"
+    );
   } else {
     personList.push(person);
     renderList();
@@ -87,10 +92,9 @@ function changeStatus(event) {
 
 // чистим только верхнюю персону
 clearOneBtn.addEventListener("click", () => {
-  personList.shift(); 
+  personList.shift();
   renderList();
 });
-
 
 //чистим весь список
 clearBtn.addEventListener("click", () => {
