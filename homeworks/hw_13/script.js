@@ -22,7 +22,9 @@ function toUpper(str) {
   return str
     .toLowerCase()
     .split(" ")
-    .map((word) => word[0].toUpperCase() + word.substr(1))
+    .map(
+      (word) => (word.length > 3 ? word[0].toUpperCase() + word.slice(1) : word) // возвращаем слово как есть, если оно короткое
+    )
     .join(" ");
 }
 
