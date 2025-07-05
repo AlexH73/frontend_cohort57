@@ -66,10 +66,10 @@ form.addEventListener("submit", (event) => {
 
   // забираем данные из input, причесываем регистр
   const book = {
-    book: event.target.book.value.replace(/^[^a-zа-яё]*([a-zа-яё])/i, (m) =>
-      m.toUpperCase()
-    ),
-    author: toUpper(event.target.author.value),
+    book: event.target.book.value
+      .trim()
+      .replace(/^[^a-zа-яё]*([a-zа-яё])/i, (m) => m.toUpperCase()),
+    author: toUpper(event.target.author.value.trim()),
   };
 
   // чистим input
@@ -78,7 +78,7 @@ form.addEventListener("submit", (event) => {
 
   // проверка на дубликаты
   const check = bookList.find(
-    (el) => el.author === book.author && el.book === book.book
+    (el) => el.author.toLowerCase() === book.author.toLowerCase() && el.book.toLowerCase() === book.book.toLowerCase()
   );
 
   if (check) {
