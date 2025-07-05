@@ -54,7 +54,7 @@ form.addEventListener("submit", (event) => {
 
   // проверка на дубликаты
   const check = personList.find(
-    (el) => el.nickname === person.nickname && el.place === person.place
+    (el) => el.nickname.toLowerCase() === person.nickname.toLowerCase() && el.place.toLowerCase() === person.place.toLowerCase()
   );
 
   if (check) {
@@ -65,13 +65,24 @@ form.addEventListener("submit", (event) => {
   }
 });
 
+// формируем и выводим список элементов
 function renderList() {
   ul.innerHTML = "";
   personList.forEach((person) => {
     const li = document.createElement("li");
     li.textContent = `Место: ${person.place}, Ник: ${person.nickname}`;
+    li.onclick = changeStatus;
     ul.appendChild(li);
   });
+}
+
+// меняем стили по клику на элемент
+function changeStatus(event) {
+  if (event.target.style.textDecoration === "line-through") {
+    event.target.style.textDecoration = "none";
+  } else {
+    event.target.style.textDecoration = "line-through";
+  }
 }
 
 // чистим только верхнюю персону
