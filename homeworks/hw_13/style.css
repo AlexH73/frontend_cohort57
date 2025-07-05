@@ -36,7 +36,8 @@ input[type="text"]:focus {
 }
 
 button,
-#clear-btn {
+#clear-btn,
+#clear-done-btn {
   background-color: #7e57c2;
   color: white;
   border: none;
@@ -48,11 +49,13 @@ button,
 }
 
 button:hover,
-#clear-btn:hover {
+#clear-btn:hover,
+#clear-done-btn:hover {
   background-color: #5e35b1;
 }
 
-#clear-btn {
+#clear-btn,
+#clear-done-btn {
   display: block;
   margin: 0 auto 1.5rem auto;
 }
@@ -107,7 +110,7 @@ li:hover {
     padding: 0 1rem;
   }
 
-  input[type="text"], button, #clear-btn {
+  input[type="text"], button, #clear-btn, #clear-done-btn {
     width: 100%;
     font-size: 1rem;
     box-sizing: border-box;

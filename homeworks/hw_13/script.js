@@ -2,6 +2,8 @@
 const form = document.querySelector("#form-book");
 const ul = document.querySelector("#list-book");
 const input = document.querySelectorAll(".input");
+const clearBtn = document.getElementById("clear-btn");
+const clearDoneBtn = document.getElementById("clear-done-btn");
 
 // массив под список книг
 const bookList = [
@@ -82,10 +84,26 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-//чистим список
-const clearBtn = document.getElementById("clear-btn");
+//чистим весь список
 
 clearBtn.addEventListener("click", () => {
   bookList.length = 0;
+  renderList();
+});
+
+// чистим список прочитанных
+clearDoneBtn.addEventListener("click", () => {
+  // Получаем все li с классом done
+  const doneItems = document.querySelectorAll("#list-book li.done");
+  doneItems.forEach((li) => {
+    // Получаем текст книги из li
+    const text = li.textContent.replace(/"(.+)" от (.+)/, "$1|$2");
+    const [book, author] = text.split("|");
+    // Удаляем из массива bookList соответствующую книгу
+    const idx = bookList.findIndex(
+      (el) => el.book === book && el.author === author
+    );
+    if (idx !== -1) bookList.splice(idx, 1);
+  });
   renderList();
 });
