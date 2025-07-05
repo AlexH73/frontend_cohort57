@@ -15,7 +15,8 @@ h1 {
   letter-spacing: 1px;
 }
 
-form {
+form,
+.buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -57,7 +58,7 @@ button:hover,
 #clear-btn,
 #clear-done-btn {
   display: block;
-  margin: 0 auto 1.5rem auto;
+  /* margin: 0 auto 1.5rem auto; */
 }
 
 ul#list-book {
@@ -103,7 +104,8 @@ li:hover {
 }
 
 @media (max-width: 600px) {
-  form {
+  form,
+  .buttons {
     flex-direction: column;
     gap: 0.5rem;
     align-items: stretch;

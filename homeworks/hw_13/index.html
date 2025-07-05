@@ -15,12 +15,26 @@
     <body>
       <h1>Список любимых книг 📖</h1>
       <form id="form-book">
-        <input type="text" class="input" name="book" placeholder="Название книги" required />
-        <input type="text" class="input" name="author" placeholder="Имя автора" required />
+        <input
+          type="text"
+          class="input"
+          name="book"
+          placeholder="Название книги"
+          required
+        />
+        <input
+          type="text"
+          class="input"
+          name="author"
+          placeholder="Имя автора"
+          required
+        />
         <button type="submit">Добавить</button>
       </form>
-      <button id="clear-btn">Очистить весь список</button>
-      <button id="clear-done-btn">Очистить список прочитанных</button>
+      <div class="buttons">
+        <button id="clear-btn">Очистить весь список</button>
+        <button id="clear-done-btn">Очистить список прочитанных</button>
+      </div>
       <ul id="list-book"></ul>
     </body>
     <ul id="list-book">
