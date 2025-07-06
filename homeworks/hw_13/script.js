@@ -72,17 +72,27 @@ form.addEventListener("submit", (event) => {
     author: toUpper(event.target.author.value.trim()),
   };
 
+  // проверка на пустую строку
+  if (!event.target.book.value.trim() || !event.target.author.value.trim()) {
+    alert("Поля не должны быть пустыми!");
+    return;
+  }
+
   // чистим input
   event.target.book.value = "";
   event.target.author.value = "";
 
   // проверка на дубликаты
   const check = bookList.find(
-    (el) => el.author.toLowerCase() === book.author.toLowerCase() && el.book.toLowerCase() === book.book.toLowerCase()
+    (el) =>
+      el.author.toLowerCase() === book.author.toLowerCase() &&
+      el.book.toLowerCase() === book.book.toLowerCase()
   );
 
   if (check) {
-    alert("Эта книга уже в списке! 🙅‍♂️");
+    alert(
+      `"${book.book}" от ${book.author}` + "\n\n" + "Эта книга уже в списке! 🙅‍♂️"
+    );
   } else {
     bookList.push(book);
     renderList();
