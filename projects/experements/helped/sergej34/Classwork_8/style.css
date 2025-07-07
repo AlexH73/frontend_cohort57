@@ -1,0 +1,205 @@
+body {
+  margin: 0px;
+  /* width: 100%; */
+  box-sizing: border-box;
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  color: black;
+  padding: 20px;
+}
+.pageheader_logo {
+  flex-direction: column;
+  font-size: 20px;
+  padding: 0px;
+}
+.pageheader_logo > p {
+  padding: 0px;
+  margin: 0px;
+}
+.bold {
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 20px;
+  align-items: center;
+}
+.pageheader_services > div > span {
+  font-size: 11px;
+}
+.pageheader_services {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  gap: 20px;
+}
+.service1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.service2 {
+  display: flex;
+  flex-direction: column;
+}
+.service3 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* footer {
+  position: sticky;
+  bottom: 0px;
+  height: 50px;
+  background-color: darkgray;
+  color: white;
+} */
+
+main {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  width: 100%;
+
+  /* padding: 10px 50px; */
+  /* ! растягиваем main по размеру body */
+  /* flex: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 980px;
+  height: 2360px;  */
+}
+
+header {
+  padding: 10px 50px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  font-size: 40px;
+}
+
+/* .image {
+
+} */
+
+.image-image {
+  position: relative;
+  background-color: #f0f0f0;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  overflow: hidden;
+}
+
+.image-image img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(76%);
+  z-index: 0;
+}
+
+.image__copyright {
+  font-size: 11px;
+  display: block;
+  margin-bottom: 0.25em;
+  line-height: 1.2;
+  word-break: break-word;
+  position: absolute;
+  right: 3rem;
+  bottom: 4rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.image .inner {
+  position: absolute;
+  bottom: 10rem;
+  left: 10rem;
+}
+/* общий контейнер */
+.container {
+  padding: 40px;
+  max-width: 1200px; /* ширина не привышает 1200px */
+  margin: 0 auto; /* горизонтальное центрирование блока */
+}
+
+/* контейнер для карточек */
+.card-container {
+  display: flex; /* Flex-контейнеры выстраиваются в ряд */
+  gap: 20px; /* отступы между карточками */
+  flex-wrap: wrap; /* перенос на следующию строку при нехватке места */
+}
+
+/* карточки */
+.card {
+  width: 30%; /* каждая карточка занимает 30% ширины от родителя */
+  background-color: #fff; /* белый фон */
+}
+
+.img-wrapper {
+  position: relative; /* нужно для позиционирования стрелки поверх изображения. */
+}
+
+.img-wrapper img {
+  /*  Изображение растягивается на всю ширину карточки.*/
+  width: 100%;
+  height: auto;
+  display: block; /* display: block; — убирает лишние отступы снизу. */
+}
+
+.arrow {
+  position: absolute; /* Абсолютное позиционирование: правый верхний угол.*/
+  top: 0px;
+  right: 0px;
+  background-color: #d8001d;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+/* .grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .container {
+ 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 313.33px);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+
+/* .container > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 313.33px;
+  height: 234.98px;
+} */
+/* 
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}  */
