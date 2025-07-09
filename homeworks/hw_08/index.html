@@ -82,7 +82,11 @@
 
     <!-- Header-Bereich mit Titelbild -->
     <section class="header_layout">
-      <img loading="lazy" src="../../assets/berlin_project/images/shutterstock.jpg" alt="Shutterstock">
+      <img
+        loading="lazy"
+        src="../../assets/berlin_project/images/shutterstock.jpg"
+        alt="Shutterstock"
+      />
       <div class="inner">
         <h1 class="title">Zu Gast in Berlin</h1>
       </div>
@@ -579,54 +583,32 @@
       </div>
     </aside>
 
-
-    <div class="acor-container">          
-    
-      <input type="checkbox" name="chacor" id="chacor1" checked="checked" />
-      <label for="chacor1">Заголовок вкладки</label>
-      <div class="acor-body">
-          <p>Описание вкладки</p>
-      </div>
-      
-      <input type="checkbox" name="chacor" id="chacor2" />
-      <label for="chacor2">Заголовок вкладки</label>
-      <div class="acor-body">
-          <p>Описание вкладки</p>
-      </div>
-      
-      <input type="checkbox" name="chacor" id="chacor3" />
-      <label for="chacor3">Заголовок вкладки</label>
-      <div class="acor-body">
-          <p>Описание вкладки</p>
-      </div>
-   
-  </div>
-
     <!-- Prefooter Section -->
     <section class="prefooter_section">
       <div class="prefooter_section_content">
         <h2 class="aural">Weitere Informationen zu diesem Auftritt</h2>
         <nav class="prefooter_content_links">
           <a class="to-top" href="#top">Zum Seitenanfang</a>
-          <ul>
-            <input type="checkbox" name="chacor" id="chacor1" checked="checked" />
-            <li class="acor-body">
-              <h3 class="heading" for="chacor1">Touren</h3>
-              <ul>
+          <ul class="collapse-container">
+            <li>
+              <input type="checkbox" id="collapse-1" checked />
+              <label for="collapse-1" class="heading">
+                <h3>Touren</h3>
+              </label>
+              <ul class="collapse-body">
                 <li><a href="#">Dampferfahrten</a></li>
-                <li>
-                  <a href="#">Stadtführungen</a>
-                </li>
-                <li>
-                  <a href="#">Stadtrundfahrten</a>
-                </li>
+                <li><a href="#">Stadtführungen</a></li>
+                <li><a href="#">Stadtrundfahrten</a></li>
                 <li><a href="#">Fahrradtouren</a></li>
                 <li><a href="#">Alle Touren</a></li>
               </ul>
             </li>
-            <li class="">
-              <h3 class="heading">Berlin-Informationen</h3>
-              <ul>
+            <li>
+              <input type="checkbox" id="collapse-2" />
+              <label for="collapse-2" class="heading">
+                <h3>Berlin-Informationen</h3>
+              </label>
+              <ul class="collapse-body">
                 <li><a href="#">Nahverkehr</a></li>
                 <li><a href="#">Flughafen</a></li>
                 <li><a href="#">Bahnhöfe</a></li>
@@ -634,9 +616,12 @@
                 <li><a href="#">Infos A-Z</a></li>
               </ul>
             </li>
-            <li class="">
-              <h3 class="heading">Sehenswürdigkeiten</h3>
-              <ul>
+            <li>
+              <input type="checkbox" id="collapse-3" />
+              <label for="collapse-3" class="heading">
+                <h3>Sehenswürdigkeiten</h3>
+              </label>
+              <ul class="collapse-body">
                 <li><a href="#">Highlights</a></li>
                 <li><a href="#">Gedenkstätten</a></li>
                 <li><a href="#">Regierungsbauten</a></li>
@@ -644,9 +629,12 @@
                 <li><a href="#">Alle Sehenswürdigkeiten</a></li>
               </ul>
             </li>
-            <li class="">
-              <h3 class="heading">Insider-Tipps</h3>
-              <ul>
+            <li>
+              <input type="checkbox" id="collapse-4" />
+              <label for="collapse-4" class="heading">
+                <h3>Insider-Tipps</h3>
+              </label>
+              <ul class="collapse-body">
                 <li><a href="#">Für Abenteurer</a></li>
                 <li><a href="#">Für Foodies</a></li>
                 <li><a href="#">Für Romantiker</a></li>
@@ -654,9 +642,12 @@
                 <li><a href="#">Alle Insidertipps</a></li>
               </ul>
             </li>
-            <li class="">
-              <h3 class="heading">Unterkünfte</h3>
-              <ul>
+            <li>
+              <input type="checkbox" id="collapse-5" />
+              <label for="collapse-5" class="heading">
+                <h3>Unterkünfte</h3>
+              </label>
+              <ul class="collapse-body">
                 <li><a href="#">Hotels</a></li>
                 <li><a href="#">Pensionen</a></li>
                 <li><a href="#">Hostels</a></li>
@@ -664,9 +655,12 @@
                 <li><a href="#">Alle Unterkünfte</a></li>
               </ul>
             </li>
-            <li class="">
-              <h3 class="heading">Brandenburg</h3>
-              <ul>
+            <li>
+              <input type="checkbox" id="collapse-6" checked />
+              <label for="collapse-6" class="heading">
+                <h3>Brandenburg</h3>
+              </label>
+              <ul class="collapse-body">
                 <li><a href="#">Potsdam</a></li>
                 <li><a href="#">Spreewald</a></li>
                 <li><a href="#">Veranstaltungen</a></li>
