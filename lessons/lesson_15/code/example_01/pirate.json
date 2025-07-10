@@ -1,0 +1,12 @@
+{
+  "name": "Jack Sparrow",
+  "isSingleEye": false,
+  "numberOfLegs": 2,
+  "age": 34,
+  "hat": "triangular hat",
+  "ship": {
+    "title": "Blacke Pearl",
+    "numberOfCanons": 30
+  },
+  "weapons": ["pistole", "saber"]
+}
