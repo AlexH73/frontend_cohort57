@@ -5,7 +5,7 @@ fetch("https://api.escuelajs.co/api/v1/products")
   .then((res) => res.json())
   .then((products) => {
     console.log(products);
-    products.slice(2).forEach((product) => {
+    products.forEach((product) => {
       // destructuring assignment
       const { title, price, images } = product;
       const productItem = document.createElement("li");
