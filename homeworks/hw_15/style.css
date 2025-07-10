@@ -1,0 +1,40 @@
+#my-book-title {
+  width: fit-content;
+  display: block;
+  background: #23272e;
+  color: #ffb300;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#my-book-author,
+#my-book-year {
+  width: fit-content;
+  display: block;
+  background: #23272e;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  margin: 0.2em 0.5em 0.8em 0;
+  font-size: 1.1em;
+}
+
+#my-book-author u,
+#my-book-year i {
+  color: #ffb300;
+}
+
+@media (max-width: 600px) {
+  #my-book-title,
+  #my-book-author,
+  #my-book-year {
+    display: block;
+    width: 100%;
+    margin: 0.3em 0;
+    text-align: left;
+    font-size: 1em;
+  }
+}
