@@ -201,9 +201,26 @@ figcaption {
   background-color: #e9f8ef;
 }
 
+.completed li {
+  list-style: none;
+}
+
+.completed li::before {
+  content: "✔ ";
+  color: green;
+}
+
 .active {
   border-left: 5px solid #f39c12;
   background-color: #fff8e6;
+}
+
+.active li {
+  list-style: none;
+}
+
+.active li::before {
+  content: "⌛ ";
 }
 
 .upcoming {
