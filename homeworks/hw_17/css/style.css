@@ -1,0 +1,131 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+/* Loading and error states */
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.loading {
+  color: #3498db;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  border-radius: 8px;
+}
+
+/* Category grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Чередование задержек для анимации */
+.category-card:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+.category-card:nth-child(even) {
+  animation-delay: 0.3s;
+}
+
+.category-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: #ecf0f1;
+}
+
+.category-content {
+  padding: 18px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.category-id {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}
