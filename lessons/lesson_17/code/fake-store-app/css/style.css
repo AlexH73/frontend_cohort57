@@ -24,11 +24,13 @@ body {
 .products-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   gap: 24px;
 }
 
 .product-card {
+  position: relative;
   width: 300px;
   background-color: lightgray;
   padding: 10px;
@@ -37,6 +39,29 @@ body {
   align-items: center;
 }
 
+.product-card > h2 {
+    font-size: large;
+    width: 98%;
+    display: block;
+    overflow: hidden;
+    height: 22px;
+}
+
 .product-card > img {
   width: 80%;
+}
+
+.product-price {
+    display: block;
+    position: absolute;
+    top: 62px;
+    right: 40px;
+    color: white;
+    background-color: #f76982c2;
+    padding: 10px;
+}
+
+.product-price:hover {
+    color: rgb(0, 0, 0);
+    background-color: #f7002dd8;
 }
