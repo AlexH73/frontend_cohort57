@@ -70,7 +70,7 @@ body {
     font-weight: 500;
 }
 
-/* Стили для сетки вин (из предыдущего решения) */
+/* Стили для сетки вин*/
 .wines-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
