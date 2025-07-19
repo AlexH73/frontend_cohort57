@@ -9,12 +9,54 @@ function getPlaceholderImage() {
   return "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23f0f0f0'/%3E%3Cpath d='M21 5v14H5V5h16m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12H8v-2h10v2zm-4 4H8v-2h6v2zm4-8H8V7h10v2z' fill='%23ccc'/%3E%3C/svg%3E";
 }
 
-// Функция для проверки изображения 
+// Функция для проверки изображения
 function getProductImage(product) {
-  // Проверка наличия изображений в продукте
-  return product.images && product.images.length > 0 && !product.images[0].ok && !product.images[0].onerror
-    ? product.images[0]
-    : getPlaceholderImage();
+  // Базовые проверки
+  if (!product.images || !Array.isArray(product.images)) {
+    return getPlaceholderImage();
+  }
+
+  if (product.images.length === 0) {
+    return getPlaceholderImage();
+  }
+
+  const imageUrl = product.images[0];
+
+  // Дополнительные проверки URL
+  if (typeof imageUrl !== "string") {
+    return getPlaceholderImage();
+  }
+
+  if (imageUrl.trim() === "") {
+    return getPlaceholderImage();
+  }
+
+  // Проверка известных проблемных паттернов
+  const badPatterns = [
+    '["',
+    '"]',
+    "placeholder",
+    "example.com",
+    "dummyimage",
+    "fakestoreapi",
+  ];
+
+  if (badPatterns.some((pattern) => imageUrl.includes(pattern))) {
+    return getPlaceholderImage();
+  }
+
+  return imageUrl;
+}
+
+// Функция для замены битых изображений
+function replaceBrokenImage(img) {
+  const placeholder = getPlaceholderImage();
+  img.src = placeholder;
+
+  const bg = img.parentNode.querySelector(".product-image-bg");
+  if (bg) {
+    bg.style.backgroundImage = `url(${placeholder})`;
+  }
 }
 
 // Функция показа/скрытия индикатора загрузки
@@ -74,16 +116,16 @@ function renderProducts(products) {
 
   // Формирование HTML для списка товаров
   productsList.innerHTML = products
-    .map(
-      (product) => {
-        const imgUrl = getProductImage(product);
-        return `
+    .map((product) => {
+      const imgUrl = getProductImage(product);
+      return `
     <li class="product-card">
       <div class="product-image">
         <div class="product-image-bg" style="background-image: url('${imgUrl}')"></div>
         <img src="${imgUrl}" 
              alt="${product.title}" 
              referrerpolicy="no-referrer"
+             onerror="replaceBrokenImage(this)"
              loading="lazy">
         <span class="product-price">$${product.price.toFixed(2)}</span>
       </div>
@@ -94,7 +136,7 @@ function renderProducts(products) {
       </div>
     </li>
   `;
-      })
+    })
     .join("");
 }
 
