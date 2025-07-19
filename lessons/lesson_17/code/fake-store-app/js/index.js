@@ -69,10 +69,10 @@ function renderProducts(products) {
     .map(
       (product) => `
     <li class="product-card">
-      <div class="product-image" style="background-image: url('${
-        product.images[0] || getPlaceholderImage()
-      }')
-      ">
+      <div class="product-image">
+        <div class="product-image-bg" style="background-image: url('${
+          product.images[0] || getPlaceholderImage()
+        }')"></div>
         <img src="${product.images[0] || getPlaceholderImage()}" 
              alt="${product.title}" 
              loading="lazy"
