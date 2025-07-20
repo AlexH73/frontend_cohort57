@@ -60,7 +60,7 @@ function replaceBrokenImage(img) {
 // Функция показа/скрытия индикатора загрузки
 function showLoading(isLoading) {
   loadingEl.style.display = isLoading ? "block" : "none";
-  productsList.style.display = isLoading ? "none" : "grid";
+  productsList.style.display = isLoading ? "none" : "";
 }
 
 // Основная функция получения товаров
