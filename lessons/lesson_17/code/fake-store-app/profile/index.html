@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Online store with various products - Profile"
+    />
     <link
       rel="icon"
       type="image/svg+xml"
@@ -10,12 +14,81 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/profile.js" defer></script>
-    <title>Profile</title>
+    <title>Fake Store | Profile</title>
   </head>
   <body>
-    <h2 id="heading"></h2>
+    <header class="header">
+      <nav class="nav-bar">
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../../../../../assets/fake-store-app/images/fake-store-app-favicon.svg"
+              alt="Logotype-FakeStore"
+            />
+            FakeStore
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="../signin/">Signin</a>
+          <a href="../signup/">Signup</a>
+          <a href="#" class="active">Profile</a>
+          <a href="../add-product/">Add product</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="main-content">
+  <div class="profile-container">
+    <h2 class="page-title" id="heading"></h2>
     <img src="" alt="avatar" id="avatar" />
-    <p id="email"></p>
-    <a href="../">Back to homepage</a>
+    
+    <div class="profile-info">
+      <p>
+        <strong>Role:</strong>
+        <span id="role"></span>
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <span id="email"></span>
+      </p>
+    </div>
+    
+    <div class="profile-actions">
+      <button class="profile-btn edit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+        </svg>
+        Edit Profile
+      </button>
+      <button class="profile-btn logout">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+        </svg>
+        Logout
+      </button>
+    </div>
+  </div>
+</main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </div>
+        <p class="copyright">© 2025 FakeStore. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

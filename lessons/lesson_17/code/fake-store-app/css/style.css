@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Шапка и навигация */
@@ -50,6 +51,11 @@ body {
   font-weight: 700;
 }
 
+.logo a {
+  color: white;
+  text-decoration: none;
+}
+
 .logo img {
   width: 30px;
   height: 30px;
@@ -69,6 +75,7 @@ body {
   border-radius: 4px;
 }
 
+.nav-links .active,
 .nav-links a:hover {
   color: var(--primary);
   background: rgba(255, 255, 255, 0.1);
@@ -90,7 +97,6 @@ body {
   margin: 5px 0;
   transition: all 0.3s;
 }
-
 /* Основное содержимое */
 .main-content {
   flex: 1;
@@ -229,6 +235,354 @@ body {
   font-size: 1.1rem;
 }
 
+/* Стили для формы */
+#add-product-form,
+#login-form,
+#register-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+#add-product-form:hover,
+#login-form:hover,
+#register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+#add-product-form input,
+#login-form input,
+#register-form input {
+  padding: 1.1rem 1.5rem;
+  border: 2px solid var(--gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+}
+
+#add-product-form input:focus,
+#login-form input:focus,
+#register-form input:focus {
+  border-color: var(--secondary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+  outline: none;
+}
+
+#add-product-form input::placeholder,
+#login-form input::placeholder,
+#register-form input::placeholder {
+  color: #999;
+}
+
+#add-product-form button[type="submit"],
+#login-form button[type="submit"],
+#register-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--secondary) 0%, #3db9b0 100%);
+  color: white;
+  border: none;
+  padding: 1.1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+#add-product-form button[type="submit"]:hover,
+#login-form button[type="submit"]:hover,
+#register-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #3db9b0 0%, #2da69e 100%);
+  box-shadow: 0 6px 15px rgba(78, 205, 196, 0.4);
+  transform: translateY(-2px);
+}
+
+#add-product-form button[type="submit"]:active,
+#login-form button[type="submit"]:active,
+#register-form button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Стили для сообщений */
+#message {
+  text-align: center;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  max-width: 500px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#message.success {
+  background-color: rgba(46, 204, 113, 0.15);
+  color: #27ae60;
+  border: 1px solid #2ecc71;
+}
+
+#message.error {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: #c0392b;
+  border: 1px solid #e74c3c;
+}
+
+/* Анимация для инпутов при фокусе */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(78, 205, 196, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(78, 205, 196, 0); }
+}
+
+#add-product-form input:focus,
+#login-form input:focus,
+#register-form input:focus {
+  animation: pulse 1.5s infinite;
+}
+
+/* Добавьте эти стили в конец файла */
+
+/* Общие стили для select */
+#add-product-form select,
+#login-form select,
+#register-form select {
+  padding: 1.1rem 1.5rem;
+  border: 2px solid var(--gray);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235f5b58' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.5rem center;
+  background-size: 16px;
+  cursor: pointer;
+  padding-right: 3.5rem;
+}
+
+/* Состояния select */
+#add-product-form select:focus,
+#login-form select:focus,
+#register-form select:focus {
+  border-color: var(--secondary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+  outline: none;
+  animation: pulse 1.5s infinite;
+}
+
+#add-product-form select:hover,
+#login-form select:hover,
+#register-form select:hover {
+  background-color: #f5f5f5;
+  border-color: #bdbdbd;
+}
+
+/* Стили для опций */
+#add-product-form option,
+#login-form option,
+#register-form option {
+  padding: 0.8rem 1rem;
+  background: white;
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+#add-product-form option:hover,
+#login-form option:hover,
+#register-form option:hover {
+  background: var(--secondary) !important;
+  color: white !important;
+}
+
+#add-product-form option:checked,
+#login-form option:checked,
+#register-form option:checked {
+  background: var(--secondary);
+  color: white;
+  font-weight: 600;
+}
+
+/* Стили для выпадающего списка */
+#add-product-form select option:first-child,
+#login-form select option:first-child,
+#register-form select option:first-child {
+  color: #999;
+  font-style: italic;
+}
+
+/* Кастомная стрелка для select */
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 1.8rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--dark);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#add-product-form select:focus ~ .select-wrapper::after,
+#login-form select:focus ~ .select-wrapper::after,
+#register-form select:focus ~ .select-wrapper::after {
+  border-top-color: var(--secondary);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Добавьте эти стили в конец файла */
+
+/* Стили для страницы профиля */
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+#avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--secondary);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  margin: 0 auto 1.5rem;
+  transition: all 0.4s ease;
+}
+
+#avatar:hover {
+  transform: scale(1.05);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info {
+  margin-top: 2rem;
+}
+
+.profile-info p {
+  margin-bottom: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--light);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.profile-info p:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.profile-info strong {
+  color: var(--dark);
+  font-weight: 600;
+  min-width: 100px;
+  text-align: right;
+}
+
+.profile-info span {
+  color: var(--dark);
+  font-weight: 500;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.profile-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.profile-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-btn.edit {
+  background: var(--secondary);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3);
+}
+
+.profile-btn.logout {
+  background: var(--primary);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.profile-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-btn.edit:hover {
+  background: #3db9b0;
+  box-shadow: 0 6px 15px rgba(78, 205, 196, 0.4);
+}
+
+.profile-btn.logout:hover {
+  background: #ff5252;
+  box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Иконки в кнопках */
+.profile-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+
 /* Подвал */
 .footer {
   background: var(--dark);
@@ -308,10 +662,97 @@ body {
   .products-list {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
+
+  #add-product-form select,
+  #login-form select,
+  #register-form select {
+    padding: 1rem;
+    background-position: right 1rem center;
+    padding-right: 3rem;
+  }
+  
+  .select-wrapper::after {
+    right: 1.3rem;
+  }
+  
+  #add-product-form,
+  #login-form,
+  #register-form {
+    padding: 1.8rem;
+  }
+  
+  #add-product-form input,
+  #login-form input,
+  #register-form input {
+    padding: 1rem;
+  }
+  
+  .profile-container {
+    padding: 1.8rem;
+  }
+  
+  #avatar {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-info p {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.3rem;
+  }
+  
+  .profile-info strong {
+    text-align: center;
+    min-width: auto;
+  }
 }
 
 @media (max-width: 480px) {
   .products-list {
     grid-template-columns: 1fr;
+  }
+
+  #add-product-form select,
+  #login-form select,
+  #register-form select {
+    padding: 1rem 0.8rem;
+    background-position: right 0.8rem center;
+    padding-right: 2.5rem;
+  }
+  
+  .select-wrapper::after {
+    right: 1rem;
+  }
+  
+  #add-product-form,
+  #login-form,
+  #register-form {
+    padding: 1.5rem 1.2rem;
+  }
+
+  #add-product-form button[type="submit"],
+  #login-form button[type="submit"],
+  #register-form button[type="submit"] {
+    padding: 1rem;
+  }
+
+  .profile-container {
+    padding: 1.5rem 1.2rem;
+  }
+  
+  #avatar {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .profile-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

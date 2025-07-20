@@ -3,16 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Online store with various products - Add Product" />
     <link
       rel="icon"
       type="image/svg+xml"
       href="../../../../../assets/fake-store-app/images/fake-store-app-favicon.svg"
     />
+    <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/add-product.js" defer></script>
-    <title>Add Product</title>
+    <title>Fake Store | Add Product</title>
   </head>
   <body>
-    <h2>Add Product</h2>
+    <header class="header">
+      <nav class="nav-bar">
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../../../../../assets/fake-store-app/images/fake-store-app-favicon.svg"
+              alt="Logotype-FakeStore"
+            />
+            FakeStore
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="../signin/">Signin</a>
+          <a href="../signup/">Signup</a>
+          <a href="../profile/">Profile</a>
+          <a href="#" class="active">Add product</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h2 class="page-title">Add Product</h2>
     <form id="add-product-form">
       <input type="text" placeholder="Title" name="title" />
       <input type="text" placeholder="Price" name="price" />
@@ -24,6 +52,22 @@
       <input type="text" placeholder="Image" name="image" />
       <button type="submit">Submit</button>
     </form>
-    <a href="../">Back to homepage</a>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Twitter">Twitter</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+        </div>
+        <p class="copyright">© 2025 FakeStore. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
