@@ -28,7 +28,13 @@ async function fetchRegister(newUser) {
 
   if (res.ok) {
     messageEl.textContent = "Successfully registered!";
+    messageEl.style.color = "green";
+    // через 3 секунды перенаправляем на главную страницу
+    setTimeout(() => {
+    window.location.href = "../";
+    }, 3000);
   } else {
     messageEl.textContent = "Registration error!";
+    messageEl.style.color = "red";
   }
 }

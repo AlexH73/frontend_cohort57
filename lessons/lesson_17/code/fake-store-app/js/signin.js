@@ -44,10 +44,15 @@ async function fetchLogin(credentials) {
     messageEl.style.color = "red";
   } else {
     const tokenObj = await res.json();
-    console.log(tokenObj);
     const { access_token } = tokenObj;
     localStorage.setItem("accessToken", access_token);
+    messageEl.textContent = "Successfully logged in!";
+    messageEl.style.color = "green";
+
+    // через 3 секунды перенаправляем на страницу профиля
+    setTimeout(() => {
     window.location.href = "../profile";
+    }, 3000);
   }
 }
 
