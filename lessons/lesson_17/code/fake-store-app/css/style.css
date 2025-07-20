@@ -453,8 +453,6 @@ body {
   transform: translateY(-50%) rotate(180deg);
 }
 
-/* Добавьте эти стили в конец файла */
-
 /* Стили для страницы профиля */
 .profile-container {
   max-width: 600px;
@@ -675,6 +673,7 @@ body {
     right: 1.3rem;
   }
   
+  .profile-container,
   #add-product-form,
   #login-form,
   #register-form {
@@ -685,10 +684,6 @@ body {
   #login-form input,
   #register-form input {
     padding: 1rem;
-  }
-  
-  .profile-container {
-    padding: 1.8rem;
   }
   
   #avatar {
