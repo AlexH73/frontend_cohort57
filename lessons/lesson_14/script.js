@@ -2,7 +2,7 @@ const files = [
   "lessons/lesson_14/code/example1/index.js",
   "lessons/lesson_14/code/example2/index.js",
   "lessons/lesson_14/code/example3/index.js",
-  "lessons/lesson_14/code/example4/index.js",
+  "lessons/lesson_14/code/example4/script.js",
   "lessons/lesson_14/code/example4/index.html",
   "lessons/lesson_14/code/hw/js/script.js",
   "lessons/lesson_14/code/hw/index.html",
