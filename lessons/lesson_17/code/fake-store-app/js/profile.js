@@ -16,6 +16,11 @@ async function fetchProfile() {
   img.src = avatar;
   img.alt = `Avatar of ${name}`;
   img.title = `Avatar of ${name}`;
+  onerror = () => {
+    img.src = "../../../../../assets/images/avatar-placeholder.png";
+    img.alt = "Placeholder avatar";
+    img.title = "Placeholder avatar";
+  };
   emailEl.textContent = email;
   roleEl.textContent = role;
 }
