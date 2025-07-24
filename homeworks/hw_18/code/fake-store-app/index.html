@@ -23,6 +23,305 @@
         font-size: 0.85rem;
         margin-bottom: 10px;
       }
+
+      
+    /* Новые стили для секции категорий */
+    .categories-section-wrapper {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 20px;
+      padding: 40px 30px;
+      margin: 40px 0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    
+    .categories-section-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%234ecdc4" stroke-width="2" stroke-dasharray="5,5" opacity="0.2"/></svg>');
+      opacity: 0.4;
+    }
+    
+    .categories-section-wrapper::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" fill="none" stroke="%23ff6b6b" stroke-width="2" stroke-dasharray="5,5" opacity="0.2"/></svg>');
+      opacity: 0.3;
+    }
+    
+    .categories-header {
+      text-align: center;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #6c757d;
+      max-width: 600px;
+      margin: 15px auto 0;
+      line-height: 1.6;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      color: #343a40;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+      border-radius: 2px;
+    }
+    
+    /* Улучшения слайдера */
+    .categories-slider {
+      position: relative;
+      padding: 10px 0 30px;
+      overflow: hidden;
+    }
+    
+    .slider-container {
+      position: relative;
+      width: 95%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .slider-track {
+      display: flex;
+      gap: 25px;
+      padding: 15px 20px;
+      transition: transform 0.5s ease;
+    }
+    
+    .category-slider-card {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 220px;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .category-slider-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    
+    .category-slider-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .category-slider-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .category-slider-card h3 {
+      margin: 0;
+      padding: 18px 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #343a40;
+      background: white;
+      transition: background 0.3s ease;
+    }
+    
+    .category-slider-card:hover h3 {
+      background: #f8f9fa;
+    }
+    
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+      color: #343a40;
+    }
+    
+    .slider-btn:hover {
+      background: #4ecdc4;
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+    }
+    
+    .slider-btn.prev {
+      left: -25px;
+    }
+    
+    .slider-btn.next {
+      right: -25px;
+    }
+    
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      gap: 10px;
+    }
+    
+    .dot {
+      width: 14px;
+      height: 14px;
+      background: #ced4da;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .dot.active {
+      background: #4ecdc4;
+      transform: scale(1.3);
+      box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.3);
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 992px) {
+      .categories-section-wrapper {
+        padding: 30px 20px;
+      }
+      
+      .section-title {
+        font-size: 1.9rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1rem;
+      }
+      
+      .category-slider-card {
+        width: 180px;
+        height: 200px;
+      }
+      
+      .category-slider-card img {
+        height: 130px;
+      }
+      
+      .slider-btn {
+        width: 45px;
+        height: 45px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .categories-section-wrapper {
+        padding: 25px 15px;
+        margin: 30px 0;
+      }
+      
+      .section-title {
+        font-size: 1.7rem;
+      }
+      
+      .section-title::after {
+        width: 60px;
+        bottom: -8px;
+      }
+      
+      .category-slider-card {
+        width: 160px;
+        height: 180px;
+      }
+      
+      .category-slider-card img {
+        height: 120px;
+      }
+      
+      .category-slider-card h3 {
+        padding: 15px 8px;
+        font-size: 1.1rem;
+      }
+      
+      .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .slider-btn.prev {
+        left: -15px;
+      }
+      
+      .slider-btn.next {
+        right: -15px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .categories-section-wrapper {
+        padding: 20px 10px;
+        margin: 20px 0;
+        border-radius: 15px;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
+      
+      .section-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+      }
+      
+      .slider-container {
+        width: 100%;
+      }
+      
+      .category-slider-card {
+        width: 140px;
+        height: 160px;
+      }
+      
+      .category-slider-card img {
+        height: 100px;
+      }
+      
+      .slider-dots {
+        margin-top: 20px;
+      }
+    }
     </style>
   </head>
   <body>
@@ -53,25 +352,30 @@
 
     <main class="main-content">
       <h1 class="page-title underline">Products</h1>
-      <section class="categories-section">
-        <h2 class="section-title">Browse by Category</h2>
-        <div class="categories-slider">
-          <div class="slider-container">
-            <div class="slider-track" id="slider-track">
-              <!-- Категории будут добавлены динамически -->
-            </div>
-            <button class="slider-btn prev" aria-label="Previous Category">
-              ❮
-            </button>
-            <button class="slider-btn next" aria-label="Next Category">
-              ❯
-            </button>
+          <!-- Обновленная секция категорий -->
+    <div class="categories-section-wrapper">
+      <div class="categories-header">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-subtitle">Discover our curated collections and find exactly what you're looking for</p>
+      </div>
+      
+      <div class="categories-slider">
+        <div class="slider-container">
+          <div class="slider-track" id="slider-track">
+            <!-- Категории будут добавлены динамически -->
           </div>
-          <div class="slider-dots" id="slider-dots">
-            <!-- Точки навигации будут добавлены динамически -->
-          </div>
+          <button class="slider-btn prev" aria-label="Previous Category">
+            ❮
+          </button>
+          <button class="slider-btn next" aria-label="Next Category">
+            ❯
+          </button>
         </div>
-      </section>
+        <div class="slider-dots" id="slider-dots">
+          <!-- Точки навигации будут добавлены динамически -->
+        </div>
+      </div>
+    </div>
 
       <div class="loading-indicator" id="loading">Loading products...</div>
 
