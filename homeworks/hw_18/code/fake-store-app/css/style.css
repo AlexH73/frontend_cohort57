@@ -1299,12 +1299,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  .category-card {
+  .category-slider-card {
     width: 120px;
     height: 160px;
   }
 
-  .category-card img {
+  .category-slider-card img {
     height: 100px;
   }
 }
@@ -1319,16 +1319,16 @@ body {
         font-size: 1.6rem;
       }
       
-      .category-card {
+      .category-slider-card {
         width: 140px;
         height: 170px;
       }
       
-      .category-card img {
+      .category-slider-card img {
         height: 110px;
       }
       
-      .category-card h3 {
+      .category-slider-card h3 {
         font-size: 1rem;
         padding: 12px 8px;
       }
@@ -1341,12 +1341,12 @@ body {
         font-size: 1.1rem;
       }
       
-      .category-card {
+      .category-slider-card {
         width: 130px;
         height: 160px;
       }
       
-      .category-card img {
+      .category-slider-card img {
         height: 100px;
       }
       
