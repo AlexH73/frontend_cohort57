@@ -967,25 +967,6 @@ body {
 
 /* Адаптивность */
     @media (max-width: 992px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .nav-toggle {
-        display: block;
-      }
-      
-      .category-card {
-        width: 160px;
-        height: 190px;
-      }
-      
-      .category-card img {
-        height: 130px;
-      }
-    }
-
-@media (max-width: 768px) {
   .nav-links {
     position: absolute;
     top: 60px;
@@ -1007,6 +988,19 @@ body {
   .nav-toggle {
     display: block;
   }
+      
+      .category-slider-card {
+        width: 160px;
+        height: 190px;
+      }
+      
+      .category-slider-card img {
+        height: 130px;
+      }
+    }
+
+@media (max-width: 768px) {
+
 
   .nav-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 6px);
