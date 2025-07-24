@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Wetter App</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Wetterbericht</h1>
+      </header>
+
+      <main>
+        <div class="weather-card">
+          <div class="location-info">
+            <h2 id="city">Standort wird ermittelt...</h2>
+            <div id="coordinates"></div>
+          </div>
+
+          <div class="weather-main">
+            <div id="temperature" class="temperature">-- °C</div>
+            <div id="weather-description" class="weather-description">--</div>
+          </div>
+
+          <div class="weather-details">
+            <div class="detail">
+              <span>Windgeschwindigkeit</span>
+              <span id="wind">-- km/h</span>
+            </div>
+            <div class="detail">
+              <span>Windböen</span>
+              <span id="gusts">-- km/h</span>
+            </div>
+            <div class="detail">
+              <span>Windrichtung</span>
+              <div class="wind-direction">
+                <span id="wind-direction">--</span>
+                <div id="wind-arrow" class="wind-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>Daten von Open-Meteo</p>
+      </footer>
+    </div>
+  </body>
+</html>
