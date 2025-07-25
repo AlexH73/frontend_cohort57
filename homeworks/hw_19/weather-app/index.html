@@ -9,6 +9,7 @@
     <title>Wetter App</title>
   </head>
   <body>
+    <div id="weather-bg"></div>
     <div class="container">
       <header>
         <h1>Wetterbericht</h1>
@@ -23,6 +24,10 @@
 
           <div class="weather-main">
             <div id="temperature" class="temperature">-- °C</div>
+            <div class="temp-range">
+              <span id="max-temp">H: --°</span>
+              <span id="min-temp">T: --°</span>
+            </div>
             <div id="weather-description" class="weather-description">--</div>
           </div>
 
@@ -39,7 +44,26 @@
               <span>Windrichtung</span>
               <div class="wind-direction">
                 <span id="wind-direction">--</span>
-                <div id="wind-arrow" class="wind-arrow"></div>
+                <div id="wind-arrow" class="wind-arrow">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <circle
+                      cx="14"
+                      cy="14"
+                      r="12"
+                      fill="#e0f2ff"
+                      stroke="#3498db"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M14 7L14 21M14 7L18 11M14 7L10 11"
+                      stroke="#3498db"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="14" cy="14" r="1.5" fill="#3498db" />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
