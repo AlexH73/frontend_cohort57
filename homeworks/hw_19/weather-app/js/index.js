@@ -35,7 +35,7 @@ async function fetchWeather() {
     const { data: weatherInfo } = await axios.get(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min&current=temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code&timezone=auto`
     );
-    console.log(weatherInfo);
+    
     const { current_units, current, daily } = weatherInfo;
     const {
       temperature_2m,
