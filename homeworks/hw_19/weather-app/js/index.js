@@ -10,6 +10,7 @@ const weatherBg = document.getElementById("weather-bg");
 const weatherCart = document.querySelector(".container");
 const maxTempEl = document.getElementById("max-temp");
 const minTempEl = document.getElementById("min-temp");
+const hourlyContainer = document.getElementById("hourly-container");
 
 async function fetchWeather() {
   try {
@@ -26,18 +27,18 @@ async function fetchWeather() {
     }
 
     cityEl.textContent = locationName;
-    // я нашел ка управлять округлением 😀😊😉
+    // я нашел как управлять округлением 😀😊😉
     coordinatesEl.textContent = `${latitude.toFixed(4)}, ${longitude.toFixed(
       4
     )}`;
 
     // Запрос погоды по локации
     const { data: weatherInfo } = await axios.get(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min&current=temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code&timezone=auto`
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weather_code,precipitation_probability&daily=temperature_2m_max,temperature_2m_min&current=temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code&timezone=auto&forecast_days=2`
     );
-    
-    const { current_units, current, daily } = weatherInfo;
-    const {
+
+    const { current_units, current, daily, hourly } = weatherInfo;
+    let {
       temperature_2m,
       wind_gusts_10m,
       wind_speed_10m,
@@ -74,11 +75,71 @@ async function fetchWeather() {
     weatherCart.style.background = getWeatherBackground(weather_code);
     maxTempEl.textContent = `H: ${Math.round(maxTemp)}°`;
     minTempEl.textContent = `T: ${Math.round(minTemp)}°`;
+    renderHourlyForecast(hourly);
   } catch (error) {
     console.error("Fehler beim Abrufen der Wetterdaten:", error);
     cityEl.textContent = "Standort nicht verfügbar";
     temperature.textContent = "-- °C";
     weatherDescriptionEl.textContent = "Daten nicht verfügbar";
+  }
+}
+
+// Функция прогноза на 24 часа
+function renderHourlyForecast(hourlyData) {
+  hourlyContainer.innerHTML = "";
+
+  const now = new Date();
+  const currentHour = now.getHours();
+
+  // Берем прогноз на 24 часа, начиная с текущего часа
+  for (let i = currentHour; i < currentHour + 24; i++) {
+    const temp = hourlyData.temperature_2m[i];
+    const weatherCode = hourlyData.weather_code[i];
+    const time = new Date(hourlyData.time[i]);
+    const precipitation = hourlyData.precipitation_probability[i] || 0;
+
+    const hourItem = document.createElement("div");
+    hourItem.className = "hourly-item";
+
+    const timeElement = document.createElement("div");
+    timeElement.className = "hourly-time";
+    timeElement.textContent = formatHour(time, i === currentHour);
+
+    const iconElement = document.createElement("div");
+    iconElement.className = "hourly-icon";
+    iconElement.innerHTML = getWeatherIcon(weatherCode);
+
+    const tempElement = document.createElement("div");
+    tempElement.className = "hourly-temp";
+    tempElement.textContent = `${Math.round(temp)}°`;
+
+    const weatherElement = document.createElement("div");
+    weatherElement.className = "hourly-weather";
+    weatherElement.textContent = getShortWeatherDescription(weatherCode);
+
+    hourItem.appendChild(timeElement);
+    hourItem.appendChild(iconElement);
+
+    if (precipitation > 0) {
+      const precipElement = document.createElement("div");
+      precipElement.className = "hourly-precip";
+      precipElement.textContent = `${precipitation}mm`;
+      precipElement.style.color = precipitation > 5 ? "#2980b9" : "#3498db";
+      hourItem.appendChild(precipElement);
+    }
+
+    hourItem.appendChild(tempElement);
+    hourItem.appendChild(weatherElement);
+
+    hourlyContainer.appendChild(hourItem);
+
+    if (i === currentHour) {
+      hourItem.classList.add("current-hour");
+
+      const progressBar = document.createElement("div");
+      progressBar.className = "hour-progress";
+      hourItem.appendChild(progressBar);
+    }
   }
 }
 
@@ -118,6 +179,43 @@ function interpretWeatherCode(code) {
   return weatherCodes[code] || "Unbekannter Wetterkennwert";
 }
 
+// Сокращенный вариант
+function getShortWeatherDescription(code) {
+  const shortDescriptions = {
+    0: "Klar",
+    1: "Klar",
+    2: "Teilw. bew.",
+    3: "Bedeckt",
+    45: "Nebel",
+    48: "Reifnebel",
+    51: "Niesel",
+    53: "Niesel",
+    55: "Niesel",
+    56: "Niesel",
+    57: "Niesel",
+    61: "Regen",
+    63: "Regen",
+    65: "Stark Regen",
+    66: "Frostregen",
+    67: "Frostregen",
+    71: "Schnee",
+    73: "Schnee",
+    75: "Stark Schnee",
+    77: "Schneegriesel",
+    80: "Schauer",
+    81: "Schauer",
+    82: "Stark Schauer",
+    85: "Schneeschauer",
+    86: "Stark Schneeschauer",
+    95: "Gewitter",
+    96: "Gewitter Hagel",
+    99: "Stark Gewitter",
+  };
+
+  return shortDescriptions[code] || "--";
+}
+
+// Направление ветра
 function getWindDirection(degrees) {
   // N = Nord(Север);
   // O = Ost(Восток);
@@ -138,6 +236,7 @@ function getWindDirection(degrees) {
   return directions[index];
 }
 
+// Создаем фон по коду
 function getWeatherBackground(code) {
   const backgrounds = {
     0: "linear-gradient(135deg, rgb(135 206 235 / 60%), rgb(30 144 255 / 29%))", // ясно
@@ -173,6 +272,7 @@ function getWeatherBackground(code) {
   return backgrounds[code] || "linear-gradient(135deg, #6e8efb, #a777e3)";
 }
 
+// Получаем изображения по коду
 function getWeatherImage(code) {
   const images = {
     0: 'url("../../../assets/weather-app/images/0.jpeg")',
@@ -208,6 +308,7 @@ function getWeatherImage(code) {
   return images[code] || images[0];
 }
 
+// Получаем иконки по коду
 function getWeatherIcon(code) {
   const icons = {
     0: "☀️",
@@ -239,8 +340,13 @@ function getWeatherIcon(code) {
     96: "⛈️",
     99: "⛈️",
   };
-
   return icons[code] || "❓";
+}
+
+// Форматируем дату
+function formatHour(date, isCurrent) {
+  const hour = date.getHours();
+  return isCurrent ? "Jetzt" : `${hour}:00`;
 }
 
 // Запуск
