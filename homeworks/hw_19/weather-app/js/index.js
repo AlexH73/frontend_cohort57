@@ -11,6 +11,17 @@ const weatherCart = document.querySelector(".container");
 const maxTempEl = document.getElementById("max-temp");
 const minTempEl = document.getElementById("min-temp");
 const hourlyContainer = document.getElementById("hourly-container");
+const dailyContainer = document.getElementById("daily-container");
+// Переменные для модального окна
+const modal = document.getElementById("daily-detail-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalWeatherIcon = document.getElementById("modal-weather-icon");
+const modalWeatherDesc = document.getElementById("modal-weather-description");
+const modalTempMax = document.getElementById("modal-temp-max");
+const modalTempMin = document.getElementById("modal-temp-min");
+const modalPrecipProb = document.getElementById("modal-precip-prob");
+const modalPrecipSum = document.getElementById("modal-precip-sum");
+const closeModal = document.querySelector(".close");
 
 async function fetchWeather() {
   try {
@@ -34,7 +45,7 @@ async function fetchWeather() {
 
     // Запрос погоды по локации
     const { data: weatherInfo } = await axios.get(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weather_code,precipitation_probability&daily=temperature_2m_max,temperature_2m_min&current=temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code&timezone=auto&forecast_days=2`
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weather_code,precipitation_probability&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max&current=temperature_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m,weather_code&timezone=auto&forecast_days=12`
     );
 
     const { current_units, current, daily, hourly } = weatherInfo;
@@ -76,6 +87,7 @@ async function fetchWeather() {
     maxTempEl.textContent = `H: ${Math.round(maxTemp)}°`;
     minTempEl.textContent = `T: ${Math.round(minTemp)}°`;
     renderHourlyForecast(hourly);
+    renderDailyForecast(weatherInfo.daily);
   } catch (error) {
     console.error("Fehler beim Abrufen der Wetterdaten:", error);
     cityEl.textContent = "Standort nicht verfügbar";
@@ -141,6 +153,174 @@ function renderHourlyForecast(hourlyData) {
       hourItem.appendChild(progressBar);
     }
   }
+}
+
+// Функция для 10-дневного прогноза
+function renderDailyForecast(dailyData) {
+  dailyContainer.innerHTML = "";
+
+  // Получаем текущую дату
+  const today = new Date();
+
+  // Проходим по всем дням (максимум 10)
+  for (let i = 0; i < dailyData.time.length; i++) {
+    const date = new Date(dailyData.time[i]);
+    const dayName = getDayName(date, i, today);
+
+    const dailyItem = document.createElement("div");
+    dailyItem.className = "daily-item";
+
+    // Форматируем дату
+    const dateElement = document.createElement("div");
+    dateElement.className = "daily-date";
+    dateElement.textContent = dayName;
+
+    // Иконка погоды
+    const iconElement = document.createElement("div");
+    iconElement.className = "daily-icon";
+    iconElement.innerHTML = getWeatherIcon(dailyData.weather_code[i]);
+
+    // Температуры
+    const tempContainer = document.createElement("div");
+    tempContainer.className = "daily-temp";
+
+    const maxTempElement = document.createElement("div");
+    maxTempElement.className = "daily-temp-max";
+    maxTempElement.textContent = `${Math.round(
+      dailyData.temperature_2m_max[i]
+    )}°C`;
+
+    const minTempElement = document.createElement("div");
+    minTempElement.className = "daily-temp-min";
+    minTempElement.textContent = `${Math.round(
+      dailyData.temperature_2m_min[i]
+    )}°C`;
+
+    tempContainer.appendChild(maxTempElement);
+    tempContainer.appendChild(minTempElement);
+
+    // Вероятность осадков
+    const precipElement = document.createElement("div");
+    precipElement.className = "daily-precip";
+    precipElement.textContent = `${dailyData.precipitation_probability_max[i]}%`;
+
+    const precipSum = dailyData.precipitation_sum[i];
+
+    // Собираем элементы вместе
+    dailyItem.appendChild(dateElement);
+    dailyItem.appendChild(iconElement);
+    dailyItem.appendChild(tempContainer);
+    dailyItem.appendChild(precipElement);
+
+    if (precipSum > 0) {
+      const precipAmount = document.createElement("div");
+      precipAmount.className = "daily-precip-amount";
+      precipAmount.textContent = `${precipSum}mm`;
+      dailyItem.appendChild(precipAmount);
+    }
+
+    dailyContainer.appendChild(dailyItem);
+
+    dailyItem.addEventListener("click", () => {
+      showDailyDetails(dailyData, i);
+    });
+  }
+}
+
+// Обработчик закрытия модального окна
+closeModal.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Закрытие при клике вне окна
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// Функция для получения подробного прогноза в модальном окне по клику
+function showDailyDetails(dailyData, index) {
+  const date = new Date(dailyData.time[index]);
+  const formattedDate = formatDetailDate(date, index);
+
+  modalTitle.textContent = formattedDate;
+  modalWeatherIcon.innerHTML = getWeatherIcon(dailyData.weather_code[index]);
+  modalWeatherDesc.textContent = interpretWeatherCode(
+    dailyData.weather_code[index]
+  );
+  modalTempMax.textContent = `${Math.round(
+    dailyData.temperature_2m_max[index]
+  )}°C`;
+  modalTempMin.textContent = `${Math.round(
+    dailyData.temperature_2m_min[index]
+  )}°C`;
+  modalPrecipProb.textContent = `${dailyData.precipitation_probability_max[index]}%`;
+  modalPrecipSum.textContent = `${dailyData.precipitation_sum[index]} mm`;
+  modal.style.background = getWeatherImage(dailyData.weather_code[index]);
+  modal.style.display = "block";
+  renderTempChart(dailyData, index);
+}
+
+// Функция для форматирования даты в модальном окне
+function formatDetailDate(date, index) {
+  const days = [
+    "Sonntag",
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "Donnerstag",
+    "Freitag",
+    "Samstag",
+  ];
+  const months = [
+    "Januar",
+    "Februar",
+    "März",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember",
+  ];
+
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  const dayName = days[date.getDay()];
+
+  if (index === 0) {
+    return `Heute - ${dayName}, ${day}. ${month} ${year}`;
+  } else if (index === 1) {
+    return `Morgen - ${dayName}, ${day}. ${month} ${year}`;
+  }
+
+  return `${dayName}, ${day}. ${month} ${year}`;
+}
+
+// Функция для получения названия дня недели сокр.
+function getDayName(date, index, today) {
+  const days = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const year = date.getFullYear();
+
+  // Для сегодняшнего дня
+  if (index === 0) {
+    return "Heute";
+  }
+
+  // Для завтрашнего дня
+  if (index === 1) {
+    return "Morgen";
+  }
+
+  // Остальные дни
+  return `${days[date.getDay()]}, ${day}. ${month}. ${year}`;
 }
 
 // Получаем определение погоды по коду

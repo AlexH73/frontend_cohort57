@@ -97,7 +97,45 @@
           <h2>Stündliche Vorhersage</h2>
           <div class="hourly-container" id="hourly-container"></div>
         </div>
+
+        <div class="daily-forecast">
+          <h2>12-Tage-Vorhersage</h2>
+          <div class="daily-container" id="daily-container"></div>
+        </div>
       </main>
+
+      <div id="daily-detail-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modal-title"></h2>
+          <div class="modal-body">
+            <div id="modal-weather-icon" class="weather-icon-large"></div>
+            <div
+              id="modal-weather-description"
+              class="weather-description-large"
+            ></div>
+
+            <div class="modal-stats">
+              <div class="stat">
+                <span>Höchsttemperatur</span>
+                <span id="modal-temp-max"></span>
+              </div>
+              <div class="stat">
+                <span>Mindesttemperatur</span>
+                <span id="modal-temp-min"></span>
+              </div>
+              <div class="stat">
+                <span>Regenwahrscheinlichkeit</span>
+                <span id="modal-precip-prob"></span>
+              </div>
+              <div class="stat">
+                <span>Niederschlagsmenge</span>
+                <span id="modal-precip-sum"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <footer>
         <p>Daten von Open-Meteo</p>
