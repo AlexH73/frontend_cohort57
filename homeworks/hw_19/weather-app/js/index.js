@@ -257,7 +257,7 @@ function showDailyDetails(dailyData, index) {
   )}°C`;
   modalPrecipProb.textContent = `${dailyData.precipitation_probability_max[index]}%`;
   modalPrecipSum.textContent = `${dailyData.precipitation_sum[index]} mm`;
-  modal.style.background = getWeatherImage(dailyData.weather_code[index]);
+  modal.style.backgroundImage = getWeatherImage(dailyData.weather_code[index]);
   modal.style.display = "block";
   renderTempChart(dailyData, index);
 }
