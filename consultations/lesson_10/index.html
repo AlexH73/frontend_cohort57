@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>JS: Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="app-title">Weather App</h1>
+        
+        <div class="search-container">
+            <input 
+                type="text" 
+                class="search-input" 
+                placeholder="Add your city" 
+                required
+            >
+            <button class="search-btn" type="button">Search</button>
+        </div>
+        
+        <div class="loading">Loading...</div>
+        
+        <div class="weather-card">
+            <h2 class="city-name"></h2>
+            <div class="temperature"></div>
+            <div class="feels-like">FEELS LIKE: <span class="feels-like-temp"></span></div>
+            <div>
+                <img class="weather-icon" src="" alt="Weather Icon">
+            </div>
+            <p class="weather-description"></p>
+            <div class="details">
+                <div class="detail">
+                    <div class="detail-title">HUMIDITY</div>
+                    <div class="detail-value humidity"></div>
+                </div>
+                <div class="detail">
+                    <div class="detail-title">WIND</div>
+                    <div class="detail-value wind"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="error-card">
+            <div class="error-title">API Error</div>
+            <div class="error-message">Something went wrong with API data</div>
+        </div>
+    </div>
+</body>
+</html>
