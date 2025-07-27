@@ -93,11 +93,19 @@ async function fetchWeather() {
     cityEl.textContent = "Standort nicht verfügbar";
     temperature.textContent = "-- °C";
     weatherDescriptionEl.textContent = "Daten nicht verfügbar";
+
+    // Скрываем блоки, которые не можем заполнить
+    hourlyContainer.innerHTML = "";
+    dailyContainer.innerHTML = "";
+    document.querySelector(".hourly-forecast").style.display = "none";
+    document.querySelector(".daily-forecast").style.display = "none";
   }
 }
 
 // Функция прогноза на 24 часа
 function renderHourlyForecast(hourlyData) {
+
+  if (!hourlyData || !hourlyData.temperature_2m) return;
   hourlyContainer.innerHTML = "";
 
   const now = new Date();
@@ -115,7 +123,7 @@ function renderHourlyForecast(hourlyData) {
 
     const timeElement = document.createElement("div");
     timeElement.className = "hourly-time";
-    timeElement.textContent = formatHour(time, i === currentHour);
+    timeElement.textContent = getFormattedDate(time, "hour", i === currentHour);
 
     const iconElement = document.createElement("div");
     iconElement.className = "hourly-icon";
@@ -159,13 +167,18 @@ function renderHourlyForecast(hourlyData) {
 function renderDailyForecast(dailyData) {
   dailyContainer.innerHTML = "";
 
+  // Проверка наличия данных
+  if (!dailyData || !dailyData.time) {
+    console.error("Keine täglichen Daten verfügbar", dailyData);
+    return;
+  }
+
   // Получаем текущую дату
   const today = new Date();
 
-  // Проходим по всем дням (максимум 10)
+  // Проходим по всем дням (максимум 12)
   for (let i = 0; i < dailyData.time.length; i++) {
     const date = new Date(dailyData.time[i]);
-    const dayName = getDayName(date, i, today);
 
     const dailyItem = document.createElement("div");
     dailyItem.className = "daily-item";
@@ -173,7 +186,7 @@ function renderDailyForecast(dailyData) {
     // Форматируем дату
     const dateElement = document.createElement("div");
     dateElement.className = "daily-date";
-    dateElement.textContent = dayName;
+    dateElement.textContent = getFormattedDate(date, "day", i);
 
     // Иконка погоды
     const iconElement = document.createElement("div");
@@ -239,12 +252,16 @@ window.onclick = function (event) {
   }
 };
 
+// Закрытие при нажатии клавиши Escape
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") modal.style.display = "none";
+});
+
 // Функция для получения подробного прогноза в модальном окне по клику
 function showDailyDetails(dailyData, index) {
   const date = new Date(dailyData.time[index]);
-  const formattedDate = formatDetailDate(date, index);
 
-  modalTitle.textContent = formattedDate;
+  modalTitle.textContent = getFormattedDate(date, "option", index);
   modalWeatherIcon.innerHTML = getWeatherIcon(dailyData.weather_code[index]);
   modalWeatherDesc.textContent = interpretWeatherCode(
     dailyData.weather_code[index]
@@ -259,68 +276,58 @@ function showDailyDetails(dailyData, index) {
   modalPrecipSum.textContent = `${dailyData.precipitation_sum[index]} mm`;
   modal.style.backgroundImage = getWeatherImage(dailyData.weather_code[index]);
   modal.style.display = "block";
-  renderTempChart(dailyData, index);
 }
 
-// Функция для форматирования даты в модальном окне
-function formatDetailDate(date, index) {
-  const days = [
-    "Sonntag",
-    "Montag",
-    "Dienstag",
-    "Mittwoch",
-    "Donnerstag",
-    "Freitag",
-    "Samstag",
-  ];
-  const months = [
-    "Januar",
-    "Februar",
-    "März",
-    "April",
-    "Mai",
-    "Juni",
-    "Juli",
-    "August",
-    "September",
-    "Oktober",
-    "November",
-    "Dezember",
-  ];
+// Функция для форматирования даты
+/**
+ * Форматирует дату в соответствии с указанным форматом
+ * @param {Date} date - Объект даты
+ * @param {string} format - Тип формата ('detail', 'day', 'hour')
+ * @param {boolean} [isCurrent=false] - Для формата 'hour': является ли текущим часом
+ * @returns {string} Отформатированная строка с датой/временем
+ */
+function getFormattedDate(date, format, isCurrent = false) {
+    // Проверка валидности даты
+    if (!(date instanceof Date) || isNaN(date)) {
+        console.error("Invalid date:", date);
+        return "--";
+    }
 
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-  const year = date.getFullYear();
-  const dayName = days[date.getDay()];
+    const daysFull = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+    const daysShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+    const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
+    
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const monthNum = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const dayOfWeek = date.getDay();
+    const hour = date.getHours();
 
-  if (index === 0) {
-    return `Heute - ${dayName}, ${day}. ${month} ${year}`;
-  } else if (index === 1) {
-    return `Morgen - ${dayName}, ${day}. ${month} ${year}`;
-  }
+    switch (format) {
+        case 'detail': // Для модального окна
+            return `${option === 0 ? "Heute" : option === 1 ? "Morgen" : ""}${
+              option < 2 ? " - " : ""
+            }${daysFull[dayOfWeek]}, ${day}. ${month} ${year}`;
 
-  return `${dayName}, ${day}. ${month} ${year}`;
-}
+        case 'day': // Для карточки дня
+            const today = new Date();
+            const isToday = date.toDateString() === today.toDateString();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const isTomorrow = date.toDateString() === tomorrow.toDateString();
+            
+            if (isToday) return "Heute";
+            if (isTomorrow) return "Morgen";
+            return `${daysShort[dayOfWeek]}, ${day.toString().padStart(2, '0')}.${monthNum.toString().padStart(2, '0')}`;
 
-// Функция для получения названия дня недели сокр.
-function getDayName(date, index, today) {
-  const days = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
-  const day = date.getDate().toString().padStart(2, "0");
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const year = date.getFullYear();
+        case 'hour': // Для почасового прогноза
+            return isCurrent ? "Jetzt" : `${hour.toString().padStart(2, '0')}:00`;
 
-  // Для сегодняшнего дня
-  if (index === 0) {
-    return "Heute";
-  }
-
-  // Для завтрашнего дня
-  if (index === 1) {
-    return "Morgen";
-  }
-
-  // Остальные дни
-  return `${days[date.getDay()]}, ${day}. ${month}. ${year}`;
+        default:
+            console.warn("Unknown date format:", format);
+            return date.toLocaleDateString('de-DE');
+    }
 }
 
 // Получаем определение погоды по коду
@@ -523,11 +530,6 @@ function getWeatherIcon(code) {
   return icons[code] || "❓";
 }
 
-// Форматируем дату
-function formatHour(date, isCurrent) {
-  const hour = date.getHours();
-  return isCurrent ? "Jetzt" : `${hour}:00`;
-}
 
 // Запуск
 fetchWeather();
