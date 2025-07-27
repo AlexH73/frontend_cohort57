@@ -29,7 +29,7 @@ function showNotification(message, type = "success") {
 
 // Обработчик ошибок для изображения
 function handleImageError() {
-  img.src = "../../../../../assets/images/avatar-placeholder.png";
+  img.src = "../../../../../assets/images/placeholders/avatar-placeholder.png";
   img.alt = "Placeholder avatar";
   img.title = "Placeholder avatar";
 }

@@ -2,6 +2,125 @@
 const productsList = document.getElementById("products-list");
 const loadingEl = document.getElementById("loading");
 
+const sliderTrack = document.getElementById("slider-track");
+const prevBtn = document.querySelector(".slider-btn.prev");
+const nextBtn = document.querySelector(".slider-btn.next");
+const sliderDots = document.getElementById("slider-dots");
+const sliderContainer = document.querySelector(".slider-container");
+
+let categories = [];
+let currentPosition = 0;
+let slideWidth = 300; // Ширина карточки + gap
+let visibleSlides;
+
+// Функция для расчета видимых слайдов
+function calculateVisibleSlides() {
+  const containerWidth = sliderContainer.clientWidth;
+  visibleSlides = Math.floor(containerWidth / slideWidth);
+  return visibleSlides;
+}
+
+// Загрузка категорий с API
+async function loadCategories() {
+  try {
+    const response = await fetch("https://api.escuelajs.co/api/v1/categories");
+    categories = await response.json();
+    renderCategories();
+    setupSlider();
+  } catch (error) {
+    console.error("Error loading categories:", error);
+    sliderTrack.innerHTML =
+      "<p>Failed to load categories. Please try again later.</p>";
+  }
+}
+
+// Отрисовка категорий слайдера
+function renderCategories() {
+  sliderTrack.innerHTML = "";
+
+  categories.forEach((category) => {
+    const card = document.createElement("div");
+    card.className = "category-slider-card";
+    card.innerHTML = `
+            <img src="${category.image}" alt="${category.name}" 
+             referrerpolicy="no-referrer"
+             onerror="replaceBrokenImage(this)"
+             loading="lazy">
+            <h3>${category.name}</h3>
+          `;
+    sliderTrack.appendChild(card);
+  });
+}
+
+// Настройка слайдера
+function setupSlider() {
+  calculateVisibleSlides();
+
+  // Показываем кнопки только если есть что скроллить
+  if (categories.length > visibleSlides) {
+    prevBtn.classList.remove("hidden");
+    nextBtn.classList.remove("hidden");
+    createDots();
+  }
+
+  // Обработчики кнопок
+  prevBtn.addEventListener("click", () => {
+    currentPosition += slideWidth * Math.min(3, visibleSlides);
+    if (currentPosition > 0) currentPosition = 0;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    const maxPosition = -(slideWidth * (categories.length - visibleSlides));
+    currentPosition -= slideWidth * Math.min(3, visibleSlides);
+    if (currentPosition < maxPosition) currentPosition = maxPosition;
+    updateSlider();
+  });
+
+  // Обработка ресайза окна
+  window.addEventListener("resize", () => {
+    calculateVisibleSlides();
+    updateSlider();
+  });
+}
+
+// Создание точек навигации
+function createDots() {
+  sliderDots.innerHTML = "";
+  const dotCount = Math.ceil(categories.length / visibleSlides);
+
+  for (let i = 0; i < dotCount; i++) {
+    const dot = document.createElement("div");
+    dot.className = "dot";
+    if (i === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => {
+      currentPosition = -(i * slideWidth * visibleSlides);
+      updateSlider();
+    });
+
+    sliderDots.appendChild(dot);
+  }
+}
+
+// Обновление позиции слайдера
+function updateSlider() {
+  sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+  updateDots();
+}
+
+// Обновление активной точки
+function updateDots() {
+  const dots = document.querySelectorAll(".dot");
+  const activeIndex = Math.abs(
+    Math.round(currentPosition / (slideWidth * visibleSlides))
+  );
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("active", index === activeIndex);
+  });
+}
+
 // Функция для получения placeholder-изображения
 function getPlaceholderImage() {
   return "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23f0f0f0'/%3E%3Cpath d='M21 5v14H5V5h16m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12H8v-2h10v2zm-4 4H8v-2h6v2zm4-8H8V7h10v2z' fill='%23ccc'/%3E%3C/svg%3E";
@@ -401,4 +520,6 @@ function renderProducts(products) {
 document.addEventListener("DOMContentLoaded", () => {
   // Загрузка товаров
   fetchProducts();
+  // Загрузка слайдера
+  loadCategories();
 });
