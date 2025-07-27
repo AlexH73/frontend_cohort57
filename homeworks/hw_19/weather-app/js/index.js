@@ -159,6 +159,39 @@ function renderHourlyForecast(hourlyData) {
       hourItem.appendChild(progressBar);
     }
   }
+
+  if (!hourlyContainer._dragScrollInited) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    hourlyContainer.addEventListener("mousedown", (e) => {
+      isDown = true;
+      hourlyContainer.classList.add("dragging");
+      startX = e.pageX - hourlyContainer.offsetLeft;
+      scrollLeft = hourlyContainer.scrollLeft;
+    });
+
+    hourlyContainer.addEventListener("mouseleave", () => {
+      isDown = false;
+      hourlyContainer.classList.remove("dragging");
+    });
+
+    hourlyContainer.addEventListener("mouseup", () => {
+      isDown = false;
+      hourlyContainer.classList.remove("dragging");
+    });
+
+    hourlyContainer.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - hourlyContainer.offsetLeft;
+      const walk = (x - startX) * 2;
+      hourlyContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    hourlyContainer._dragScrollInited = true;
+  }
 }
 
 // Функция для 10-дневного прогноза
