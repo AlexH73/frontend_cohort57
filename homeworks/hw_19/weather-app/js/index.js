@@ -261,7 +261,7 @@ window.addEventListener("keydown", (e) => {
 function showDailyDetails(dailyData, index) {
   const date = new Date(dailyData.time[index]);
 
-  modalTitle.textContent = getFormattedDate(date, "option", index);
+  modalTitle.textContent = getFormattedDate(date, "detail", index);
   modalWeatherIcon.innerHTML = getWeatherIcon(dailyData.weather_code[index]);
   modalWeatherDesc.textContent = interpretWeatherCode(
     dailyData.weather_code[index]
@@ -305,28 +305,30 @@ function getFormattedDate(date, format, isCurrent = false) {
     const hour = date.getHours();
 
     switch (format) {
-        case 'detail': // Для модального окна
-            return `${option === 0 ? "Heute" : option === 1 ? "Morgen" : ""}${
-              option < 2 ? " - " : ""
-            }${daysFull[dayOfWeek]}, ${day}. ${month} ${year}`;
+      case "detail": // Для модального окна
+        return `${isCurrent === 0 ? "Heute" : isCurrent === 1 ? "Morgen" : ""}${
+          isCurrent < 2 ? " - " : ""
+        }${daysFull[dayOfWeek]}, ${day}. ${month} ${year}`;
 
-        case 'day': // Для карточки дня
-            const today = new Date();
-            const isToday = date.toDateString() === today.toDateString();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            const isTomorrow = date.toDateString() === tomorrow.toDateString();
-            
-            if (isToday) return "Heute";
-            if (isTomorrow) return "Morgen";
-            return `${daysShort[dayOfWeek]}, ${day.toString().padStart(2, '0')}.${monthNum.toString().padStart(2, '0')}`;
+      case "day": // Для карточки дня
+        const today = new Date();
+        const isToday = date.toDateString() === today.toDateString();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const isTomorrow = date.toDateString() === tomorrow.toDateString();
 
-        case 'hour': // Для почасового прогноза
-            return isCurrent ? "Jetzt" : `${hour.toString().padStart(2, '0')}:00`;
+        if (isToday) return "Heute";
+        if (isTomorrow) return "Morgen";
+        return `${daysShort[dayOfWeek]}, ${day
+          .toString()
+          .padStart(2, "0")}.${monthNum.toString().padStart(2, "0")}`;
 
-        default:
-            console.warn("Unknown date format:", format);
-            return date.toLocaleDateString('de-DE');
+      case "hour": // Для почасового прогноза
+        return isCurrent ? "Jetzt" : `${hour.toString().padStart(2, "0")}:00`;
+
+      default:
+        console.warn("Unknown date format:", format);
+        return date.toLocaleDateString("de-DE");
     }
 }
 
