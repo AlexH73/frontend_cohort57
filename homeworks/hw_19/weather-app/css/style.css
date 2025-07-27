@@ -367,7 +367,7 @@ h1 {
 }
 
 .weather-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   padding: 30px;
@@ -530,7 +530,7 @@ h1 {
 }
 
 .hourly-forecast {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   padding: 25px;
@@ -631,12 +631,11 @@ h1 {
 }
 
 .daily-forecast {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   padding: 25px;
   margin-top: 25px;
-  backdrop-filter: blur(5px);
 }
 
 .daily-forecast h2 {
@@ -747,7 +746,7 @@ h1 {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgba(255, 255, 255, 0.75);
   margin: 10% auto;
   padding: 30px;
   border-radius: 20px;
