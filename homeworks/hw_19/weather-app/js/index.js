@@ -82,8 +82,7 @@ async function fetchWeather() {
     } else {
       windArrowEl.classList.remove("animated");
     }
-    weatherBg.style.backgroundImage = getWeatherImage(weather_code);
-    weatherCart.style.background = getWeatherBackground(weather_code);
+    updateWeatherClasses(weather_code);
     maxTempEl.textContent = `H: ${Math.round(maxTemp)}°`;
     minTempEl.textContent = `T: ${Math.round(minTemp)}°`;
     renderHourlyForecast(hourly);
@@ -104,7 +103,6 @@ async function fetchWeather() {
 
 // Функция прогноза на 24 часа
 function renderHourlyForecast(hourlyData) {
-
   if (!hourlyData || !hourlyData.temperature_2m) return;
   hourlyContainer.innerHTML = "";
 
@@ -274,7 +272,7 @@ function showDailyDetails(dailyData, index) {
   )}°C`;
   modalPrecipProb.textContent = `${dailyData.precipitation_probability_max[index]}%`;
   modalPrecipSum.textContent = `${dailyData.precipitation_sum[index]} mm`;
-  modal.style.backgroundImage = getWeatherImage(dailyData.weather_code[index]);
+  updateWeatherClasses(dailyData.weather_code[index]);
   modal.style.display = "block";
 }
 
@@ -287,49 +285,70 @@ function showDailyDetails(dailyData, index) {
  * @returns {string} Отформатированная строка с датой/временем
  */
 function getFormattedDate(date, format, isCurrent = false) {
-    // Проверка валидности даты
-    if (!(date instanceof Date) || isNaN(date)) {
-        console.error("Invalid date:", date);
-        return "--";
-    }
+  // Проверка валидности даты
+  if (!(date instanceof Date) || isNaN(date)) {
+    console.error("Invalid date:", date);
+    return "--";
+  }
 
-    const daysFull = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-    const daysShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
-    const months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"];
-    
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const monthNum = date.getMonth() + 1;
-    const year = date.getFullYear();
-    const dayOfWeek = date.getDay();
-    const hour = date.getHours();
+  const daysFull = [
+    "Sonntag",
+    "Montag",
+    "Dienstag",
+    "Mittwoch",
+    "Donnerstag",
+    "Freitag",
+    "Samstag",
+  ];
+  const daysShort = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+  const months = [
+    "Januar",
+    "Februar",
+    "März",
+    "April",
+    "Mai",
+    "Juni",
+    "Juli",
+    "August",
+    "September",
+    "Oktober",
+    "November",
+    "Dezember",
+  ];
 
-    switch (format) {
-      case "detail": // Для модального окна
-        return `${isCurrent === 0 ? "Heute" : isCurrent === 1 ? "Morgen" : ""}${
-          isCurrent < 2 ? " - " : ""
-        }${daysFull[dayOfWeek]}, ${day}. ${month} ${year}`;
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const monthNum = date.getMonth() + 1;
+  const year = date.getFullYear();
+  const dayOfWeek = date.getDay();
+  const hour = date.getHours();
 
-      case "day": // Для карточки дня
-        const today = new Date();
-        const isToday = date.toDateString() === today.toDateString();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        const isTomorrow = date.toDateString() === tomorrow.toDateString();
+  switch (format) {
+    case "detail": // Для модального окна
+      return `${isCurrent === 0 ? "Heute" : isCurrent === 1 ? "Morgen" : ""}${
+        isCurrent < 2 ? " - " : ""
+      }${daysFull[dayOfWeek]}, ${day}. ${month} ${year}`;
 
-        if (isToday) return "Heute";
-        if (isTomorrow) return "Morgen";
-        return `${daysShort[dayOfWeek]}, ${day
-          .toString()
-          .padStart(2, "0")}.${monthNum.toString().padStart(2, "0")}`;
+    case "day": // Для карточки дня
+      const today = new Date();
+      const isToday = date.toDateString() === today.toDateString();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const isTomorrow = date.toDateString() === tomorrow.toDateString();
 
-      case "hour": // Для почасового прогноза
-        return isCurrent ? "Jetzt" : `${hour.toString().padStart(2, "0")}:00`;
+      if (isToday) return "Heute";
+      if (isTomorrow) return "Morgen";
+      return `${daysShort[dayOfWeek]}, ${day
+        .toString()
+        .padStart(2, "0")}.${monthNum.toString().padStart(2, "0")}`;
 
-      default:
-        console.warn("Unknown date format:", format);
-        return date.toLocaleDateString("de-DE");
-    }
+    case "hour": // Для почасового прогноза
+      return isCurrent ? "Jetzt" : `${hour.toString().padStart(2, "0")}:00`;
+
+    default:
+      console.warn("Unknown date format:", format);
+      return date.toLocaleDateString("de-DE");
+  }
 }
 
 // Получаем определение погоды по коду
@@ -425,77 +444,27 @@ function getWindDirection(degrees) {
   return directions[index];
 }
 
-// Создаем фон по коду
-function getWeatherBackground(code) {
-  const backgrounds = {
-    0: "linear-gradient(135deg, rgb(135 206 235 / 60%), rgb(30 144 255 / 29%))", // ясно
-    1: "linear-gradient(135deg, rgb(182 142 105 / 25%), rgb(244 239 221))", // преимущественно ясно
-    2: "linear-gradient(135deg, rgb(25 89 110 / 24%), rgb(119 136 153 / 37%))", // частично облачно
-    3: "linear-gradient(135deg, rgb(119 136 153 / 27%), rgb(105 105 105 / 35%))", // облачно
-    45: "linear-gradient(135deg, rgb(211 211 211 / 55%), rgb(169, 169, 169))", // туман
-    48: "linear-gradient(135deg, rgb(211 211 211 / 31%), rgb(169 169 169 / 67%))", // инейный туман
-    51: "linear-gradient(135deg, rgb(70 130 180 / 62%), rgb(95 158 160 / 34%))", // слабая морось
-    53: "linear-gradient(135deg, rgb(70 130 180 / 11%), rgb(95 158 160 / 43%))", // умеренная морось
-    55: "linear-gradient(135deg, rgb(210 223 235 / 62%), rgb(105 128 129 / 75%))", // сильная морось
-    56: "linear-gradient(135deg, rgb(146 146 146 / 41%), rgb(77 101 83 / 65%))",
-    57: "linear-gradient(135deg, rgb(181 188 205 / 59%), rgb(122 129 117 / 71%))",
-    61: "linear-gradient(135deg, rgb(65 62 34 / 50%), rgb(211 196 165 / 78%))", // слабый дождь
-    63: "linear-gradient(135deg, rgb(77 108 109 / 44%), rgb(178 197 200 / 74%))", // умеренный дождь
-    65: "linear-gradient(135deg, rgb(71 92 89 / 61%), rgb(133 170 165 / 64%))", // сильный дождь
-    66: "linear-gradient(135deg, rgb(159 166 178 / 57%), rgb(137 143 158 / 38%))",
-    67: "linear-gradient(135deg, rgb(61 99 101 / 58%), rgb(183 202 208 / 54%))",
-    71: "linear-gradient(135deg, rgb(97 106 106 / 22%), rgb(191 195 203 / 61%))", // слабый снег
-    73: "linear-gradient(135deg, rgb(25 27 79 / 64%), rgb(114 129 134 / 62%))", // умеренный снег
-    75: "linear-gradient(135deg, rgb(193 219 251 / 89%), rgb(141 158 211 / 65%))", // сильный снег
-    77: "linear-gradient(135deg, rgb(230 233 234 / 61%), rgb(181 189 200 / 65%))",
-    80: "linear-gradient(135deg, rgb(193 200 204 / 27%), rgb(80 135 150 / 82%))", // слабые ливни
-    81: "linear-gradient(135deg, rgb(135 129 135 / 75%), rgb(148 143 145 / 69%))", // умеренные ливни
-    82: "linear-gradient(135deg, rgb(190 189 191 / 85%), rgb(119 119 95 / 55%))", // сильные ливни
-    85: "linear-gradient(135deg, rgb(202 224 245 / 74%), rgb(130 142 172 / 45%))", // снегопады
-    86: "linear-gradient(135deg, rgb(82 87 94 / 50%), rgb(117 156 191 / 46%))", // сильные снегопады
-    95: "linear-gradient(135deg, rgb(78 79 73 / 51%), rgb(231 173 105 / 52%))", // гроза
-    96: "linear-gradient(135deg, rgb(126 132 156 / 61%), rgb(43 44 48 / 51%))", // гроза с градом
-    99: "linear-gradient(135deg, rgb(178 177 185 / 47%), rgb(51 49 55 / 48%))", // сильная гроза с градом
+// Управление классами погоды
+function updateWeatherClasses(code) {
+  // Удаляем предыдущие классы
+  const removeClasses = (element, prefix) => {
+    const classes = Array.from(element.classList).filter((c) =>
+      c.startsWith(prefix)
+    );
+    classes.forEach((c) => element.classList.remove(c));
   };
 
-  return backgrounds[code] || "linear-gradient(135deg, #6e8efb, #a777e3)";
-}
+  // Обновляем классы для карточки
+  removeClasses(weatherCart, "weather-bg-");
+  weatherCart.classList.add(`weather-bg-${code}`);
 
-// Получаем изображения по коду
-function getWeatherImage(code) {
-  const bgImgUrlPath = "../../../assets/weather-app/images/";
-  const images = {
-    0: `url("${bgImgUrlPath}0.jpeg")`,
-    1: `url("${bgImgUrlPath}1.jpeg")`,
-    2: `url("${bgImgUrlPath}2.jpeg")`,
-    3: `url("${bgImgUrlPath}3.jpeg")`,
-    45: `url("${bgImgUrlPath}45.jpeg")`,
-    48: `url("${bgImgUrlPath}48.jpeg")`,
-    51: `url("${bgImgUrlPath}51.jpeg")`,
-    53: `url("${bgImgUrlPath}53.jpeg")`,
-    55: `url("${bgImgUrlPath}55.jpeg")`,
-    56: `url("${bgImgUrlPath}56.jpeg")`,
-    57: `url("${bgImgUrlPath}57.jpeg")`,
-    61: `url("${bgImgUrlPath}61.jpeg")`,
-    63: `url("${bgImgUrlPath}63.jpeg")`,
-    65: `url("${bgImgUrlPath}65.jpeg")`,
-    66: `url("${bgImgUrlPath}66.jpeg")`,
-    67: `url("${bgImgUrlPath}63.jpeg")`,
-    71: `url("${bgImgUrlPath}71.jpeg")`,
-    73: `url("${bgImgUrlPath}73.jpeg")`,
-    75: `url("${bgImgUrlPath}75.jpeg")`,
-    77: `url("${bgImgUrlPath}77.jpeg")`,
-    80: `url("${bgImgUrlPath}80.jpeg")`,
-    81: `url("${bgImgUrlPath}81.jpeg")`,
-    82: `url("${bgImgUrlPath}82.jpeg")`,
-    85: `url("${bgImgUrlPath}85.jpeg")`,
-    86: `url("${bgImgUrlPath}86.jpeg")`,
-    95: `url("${bgImgUrlPath}95.jpeg")`,
-    96: `url("${bgImgUrlPath}96.jpeg")`,
-    99: `url("${bgImgUrlPath}99.jpeg")`,
-  };
+  // Обновляем классы для фона
+  removeClasses(weatherBg, "weather-image-");
+  weatherBg.classList.add(`weather-image-${code}`);
 
-  return images[code] || images[0];
+  // Обновляем классы для модального окна
+  removeClasses(modal, "weather-image-");
+  modal.classList.add(`weather-image-${code}`);
 }
 
 // Получаем иконки по коду
@@ -532,7 +501,6 @@ function getWeatherIcon(code) {
   };
   return icons[code] || "❓";
 }
-
 
 // Запуск
 fetchWeather();

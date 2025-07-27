@@ -46,6 +46,293 @@ body {
   z-index: 1;
 }
 
+/* Градиенты для карточек */
+.weather-bg-0 {
+  background: linear-gradient(
+    135deg,
+    rgb(135 206 235 / 60%),
+    rgb(30 144 255 / 29%)
+  ) !important;
+}
+.weather-bg-1 {
+  background: linear-gradient(
+    135deg,
+    rgb(182 142 105 / 25%),
+    rgb(244 239 221)
+  ) !important;
+}
+.weather-bg-2 {
+  background: linear-gradient(
+    135deg,
+    rgb(25 89 110 / 24%),
+    rgb(119 136 153 / 37%)
+  ) !important;
+}
+.weather-bg-3 {
+  background: linear-gradient(
+    135deg,
+    rgb(119 136 153 / 27%),
+    rgb(105 105 105 / 35%)
+  ) !important;
+}
+.weather-bg-45 {
+  background: linear-gradient(
+    135deg,
+    rgb(211 211 211 / 55%),
+    rgb(169, 169, 169)
+  ) !important;
+}
+.weather-bg-48 {
+  background: linear-gradient(
+    135deg,
+    rgb(211 211 211 / 31%),
+    rgb(169 169 169 / 67%)
+  ) !important;
+}
+.weather-bg-51 {
+  background: linear-gradient(
+    135deg,
+    rgb(70 130 180 / 62%),
+    rgb(95 158 160 / 34%)
+  ) !important;
+}
+.weather-bg-53 {
+  background: linear-gradient(
+    135deg,
+    rgb(70 130 180 / 11%),
+    rgb(95 158 160 / 43%)
+  ) !important;
+}
+.weather-bg-55 {
+  background: linear-gradient(
+    135deg,
+    rgb(210 223 235 / 62%),
+    rgb(105 128 129 / 75%)
+  ) !important;
+}
+.weather-bg-56 {
+  background: linear-gradient(
+    135deg,
+    rgb(146 146 146 / 41%),
+    rgb(77 101 83 / 65%)
+  ) !important;
+}
+.weather-bg-57 {
+  background: linear-gradient(
+    135deg,
+    rgb(181 188 205 / 59%),
+    rgb(122 129 117 / 71%)
+  ) !important;
+}
+.weather-bg-61 {
+  background: linear-gradient(
+    135deg,
+    rgb(65 62 34 / 50%),
+    rgb(211 196 165 / 78%)
+  ) !important;
+}
+.weather-bg-63 {
+  background: linear-gradient(
+    135deg,
+    rgb(77 108 109 / 44%),
+    rgb(178 197 200 / 74%)
+  ) !important;
+}
+.weather-bg-65 {
+  background: linear-gradient(
+    135deg,
+    rgb(71 92 89 / 61%),
+    rgb(133 170 165 / 64%)
+  ) !important;
+}
+.weather-bg-66 {
+  background: linear-gradient(
+    135deg,
+    rgb(159 166 178 / 57%),
+    rgb(137 143 158 / 38%)
+  ) !important;
+}
+.weather-bg-67 {
+  background: linear-gradient(
+    135deg,
+    rgb(61 99 101 / 58%),
+    rgb(183 202 208 / 54%)
+  ) !important;
+}
+.weather-bg-71 {
+  background: linear-gradient(
+    135deg,
+    rgb(97 106 106 / 22%),
+    rgb(191 195 203 / 61%)
+  ) !important;
+}
+.weather-bg-73 {
+  background: linear-gradient(
+    135deg,
+    rgb(25 27 79 / 64%),
+    rgb(114 129 134 / 62%)
+  ) !important;
+}
+.weather-bg-75 {
+  background: linear-gradient(
+    135deg,
+    rgb(193 219 251 / 89%),
+    rgb(141 158 211 / 65%)
+  ) !important;
+}
+.weather-bg-77 {
+  background: linear-gradient(
+    135deg,
+    rgb(230 233 234 / 61%),
+    rgb(181 189 200 / 65%)
+  ) !important;
+}
+.weather-bg-80 {
+  background: linear-gradient(
+    135deg,
+    rgb(193 200 204 / 27%),
+    rgb(80 135 150 / 82%)
+  ) !important;
+}
+.weather-bg-81 {
+  background: linear-gradient(
+    135deg,
+    rgb(135 129 135 / 75%),
+    rgb(148 143 145 / 69%)
+  ) !important;
+}
+.weather-bg-82 {
+  background: linear-gradient(
+    135deg,
+    rgb(190 189 191 / 85%),
+    rgb(119 119 95 / 55%)
+  ) !important;
+}
+.weather-bg-85 {
+  background: linear-gradient(
+    135deg,
+    rgb(202 224 245 / 74%),
+    rgb(130 142 172 / 45%)
+  ) !important;
+}
+.weather-bg-86 {
+  background: linear-gradient(
+    135deg,
+    rgb(82 87 94 / 50%),
+    rgb(117 156 191 / 46%)
+  ) !important;
+}
+.weather-bg-95 {
+  background: linear-gradient(
+    135deg,
+    rgb(78 79 73 / 51%),
+    rgb(231 173 105 / 52%)
+  ) !important;
+}
+.weather-bg-96 {
+  background: linear-gradient(
+    135deg,
+    rgb(126 132 156 / 61%),
+    rgb(43 44 48 / 51%)
+  ) !important;
+}
+.weather-bg-99 {
+  background: linear-gradient(
+    135deg,
+    rgb(178 177 185 / 47%),
+    rgb(51 49 55 / 48%)
+  ) !important;
+}
+
+/* Фоновые изображения */
+.weather-image-0 {
+  background-image: url("../../../../assets/weather-app/images/0.jpeg") !important;
+}
+.weather-image-1 {
+  background-image: url("../../../../assets/weather-app/images/1.jpeg") !important;
+}
+.weather-image-2 {
+  background-image: url("../../../../assets/weather-app/images/2.jpeg") !important;
+}
+.weather-image-3 {
+  background-image: url("../../../../assets/weather-app/images/3.jpeg") !important;
+}
+.weather-image-45 {
+  background-image: url("../../../../assets/weather-app/images/45.jpeg") !important;
+}
+.weather-image-48 {
+  background-image: url("../../../../assets/weather-app/images/48.jpeg") !important;
+}
+.weather-image-51 {
+  background-image: url("../../../../assets/weather-app/images/51.jpeg") !important;
+}
+.weather-image-53 {
+  background-image: url("../../../../assets/weather-app/images/53.jpeg") !important;
+}
+.weather-image-55 {
+  background-image: url("../../../../assets/weather-app/images/55.jpeg") !important;
+}
+.weather-image-56 {
+  background-image: url("../../../../assets/weather-app/images/56.jpeg") !important;
+}
+.weather-image-57 {
+  background-image: url("../../../../assets/weather-app/images/56.jpeg") !important;
+}
+.weather-image-57 {
+  background-image: url("../../../../assets/weather-app/images/57.jpeg") !important;
+}
+.weather-image-61 {
+  background-image: url("../../../../assets/weather-app/images/61.jpeg") !important;
+}
+.weather-image-63 {
+  background-image: url("../../../../assets/weather-app/images/63.jpeg") !important;
+}
+.weather-image-65 {
+  background-image: url("../../../../assets/weather-app/images/65.jpeg") !important;
+}
+.weather-image-66 {
+  background-image: url("../../../../assets/weather-app/images/66.jpeg") !important;
+}
+.weather-image-67 {
+  background-image: url("../../../../assets/weather-app/images/67.jpeg") !important;
+}
+.weather-image-71 {
+  background-image: url("../../../../assets/weather-app/images/71.jpeg") !important;
+}
+.weather-image-73 {
+  background-image: url("../../../../assets/weather-app/images/73.jpeg") !important;
+}
+.weather-image-75 {
+  background-image: url("../../../../assets/weather-app/images/75.jpeg") !important;
+}
+.weather-image-77 {
+  background-image: url("../../../../assets/weather-app/images/77.jpeg") !important;
+}
+.weather-image-80 {
+  background-image: url("../../../../assets/weather-app/images/80.jpeg") !important;
+}
+.weather-image-81 {
+  background-image: url("../../../../assets/weather-app/images/81.jpeg") !important;
+}
+.weather-image-82 {
+  background-image: url("../../../../assets/weather-app/images/82.jpeg") !important;
+}
+.weather-image-85 {
+  background-image: url("../../../../assets/weather-app/images/85.jpeg") !important;
+}
+.weather-image-86 {
+  background-image: url("../../../../assets/weather-app/images/86.jpeg") !important;
+}
+.weather-image-95 {
+  background-image: url("../../../../assets/weather-app/images/95.jpeg") !important;
+}
+.weather-image-96 {
+  background-image: url("../../../../assets/weather-app/images/96.jpeg") !important;
+}
+.weather-image-99 {
+  background-image: url("../../../../assets/weather-app/images/99.jpeg") !important;
+}
+
 /* Для дождя */
 .rain-effect {
   background-image: url("../../../../assets/weather-app/images/rain-pattern.png");
@@ -593,11 +880,12 @@ footer {
 
   .location-info h2 {
     font-size: 1.4rem;
-}
+  }
 }
 
 @media (max-width: 400px) {
-  .container, .modal-content {
+  .container,
+  .modal-content {
     padding: 10px;
     font-size: 0.9rem;
   }
