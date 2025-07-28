@@ -73,8 +73,8 @@ async function fetchWeather() {
     windDirectionEl.textContent = getWindDirection(wind_direction_10m);
     weatherDescriptionEl.textContent = interpretWeatherCode(weather_code);
     weatherDescriptionEl.innerHTML = `
-    ${interpretWeatherCode(weather_code)}
-    <div class="weather-icon">${getWeatherIcon(weather_code)}</div>`;
+  ${interpretWeatherCode(weather_code)}
+  <div class="weather-icon">${getWeatherIcon(weather_code, new Date())}</div>`;
 
     // Анимация стрелки
     if (wind_speed_10m > 15) {
@@ -125,7 +125,7 @@ function renderHourlyForecast(hourlyData) {
 
     const iconElement = document.createElement("div");
     iconElement.className = "hourly-icon";
-    iconElement.innerHTML = getWeatherIcon(weatherCode);
+    iconElement.innerHTML = getWeatherIcon(weatherCode, time);
 
     const tempElement = document.createElement("div");
     tempElement.className = "hourly-temp";
@@ -274,18 +274,21 @@ function renderDailyForecast(dailyData) {
 // Обработчик закрытия модального окна
 closeModal.onclick = function () {
   modal.style.display = "none";
+  fetchWeather();
 };
 
 // Закрытие при клике вне окна
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    fetchWeather();
   }
 };
 
 // Закрытие при нажатии клавиши Escape
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") modal.style.display = "none";
+  fetchWeather();
 });
 
 // Функция для получения подробного прогноза в модальном окне по клику
@@ -360,7 +363,7 @@ function getFormattedDate(date, format, isCurrent = false) {
     case "detail": // Для модального окна
       return `${isCurrent === 0 ? "Heute" : isCurrent === 1 ? "Morgen" : ""}${
         isCurrent < 2 ? " - " : ""
-      }${daysFull[dayOfWeek]}, ${day}. ${month} ${year}`;
+      }${day}. ${month} ${year}`;
 
     case "day": // Для карточки дня
       const today = new Date();
@@ -500,39 +503,54 @@ function updateWeatherClasses(code) {
   modal.classList.add(`weather-image-${code}`);
 }
 
-// Получаем иконки по коду
-function getWeatherIcon(code) {
-  const icons = {
-    0: "☀️",
-    1: "🌤️",
-    2: "⛅",
-    3: "☁️",
-    45: "🌫️",
-    48: "🌫️",
-    51: "🌧️",
-    53: "🌧️",
-    55: "🌧️",
-    56: "🌧️",
-    57: "🌧️",
-    61: "🌧️",
-    63: "🌧️",
-    65: "⛈️",
-    66: "🌧️",
-    67: "🌧️",
-    71: "❄️",
-    73: "❄️",
-    75: "❄️",
-    77: "❄️",
-    80: "🌧️",
-    81: "🌧️",
-    82: "⛈️",
-    85: "❄️",
-    86: "❄️",
-    95: "⛈️",
-    96: "⛈️",
-    99: "⛈️",
+// Получаем иконки по коду с учетом времени суток
+function getWeatherIcon(code, date = new Date()) {
+  const hour = date.getHours();
+  const isNight = hour >= 20 || hour < 6;
+  
+  const nightIcons = {
+    0: "🌙", // Ясная ночь
+    1: "🌙", // Преимущественно ясно (ночь)
+    2: "☁️", // Переменная облачность (ночь)
   };
-  return icons[code] || "❓";
+
+  const dayIcons = {
+    0: "☀️",     // Ясно
+    1: "🌤️",     // Преимущественно ясно
+    2: "⛅",     // Переменная облачность
+    3: "☁️",     // Пасмурно
+    45: "🌫️",    // Туман
+    48: "🌫️",    // Иней
+    51: "🌧️",    // Легкий дождь
+    53: "🌧️",    // Умеренный дождь
+    55: "🌧️",    // Сильный дождь
+    56: "🌧️",    // Ледяной дождь (легкий)
+    57: "🌧️",    // Ледяной дождь (сильный)
+    61: "🌧️",    // Дождь
+    63: "🌧️",    // Умеренный дождь
+    65: "⛈️",    // Сильный дождь с грозой
+    66: "🌧️",    // Ледяной дождь
+    67: "🌧️",    // Сильный ледяной дождь
+    71: "❄️",    // Легкий снег
+    73: "❄️",    // Умеренный снег
+    75: "❄️",    // Сильный снег
+    77: "❄️",    // Снежная крупа
+    80: "🌧️",    // Ливень (легкий)
+    81: "🌧️",    // Ливень (умеренный)
+    82: "⛈️",    // Ливень (сильный)
+    85: "❄️",    // Снегопад (легкий)
+    86: "❄️",    // Снегопад (сильный)
+    95: "⛈️",    // Гроза
+    96: "⛈️",    // Гроза с градом
+    99: "⛈️",    // Сильная гроза с градом
+  };
+
+  // Для ночного времени используем специальные иконки
+  if (isNight && nightIcons.hasOwnProperty(code)) {
+    return nightIcons[code];
+  }
+  
+  return dayIcons[code] || "❓";
 }
 
 // Запуск
