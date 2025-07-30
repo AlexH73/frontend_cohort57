@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍🏫</text></svg>">
+    <link rel="stylesheet" href="../../consultations/lesson_05/style.css">
+    <title>Homework 20</title>
+</head>
+<body>
+    <h1>Homework 20 👨‍🏫</h1>
+    <a class="tasks" href="https://ejudge.179.ru/tasks/training/recursion.html" target="_blank">Условия</a>
+    <h2>Решение:</h2>
+    <pre id="code-block"><code>Загрузка кода...</code></pre>
+    <script>
+        fetch('./js/recursions.js')
+            .then(res => res.text())
+            .then(text => {
+                // Экранируем спецсимволы для HTML
+                const escaped = text
+                  .replace(/&/g, '&amp;')
+                  .replace(/</g, '&lt;')
+                  .replace(/>/g, '&gt;');
+                document.getElementById('code-block').innerHTML = `<code>${escaped}</code>`;
+            });
+    </script>
+    <script src="./js/recursions.js"></script>
+</body>
+</html>
