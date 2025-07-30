@@ -18,7 +18,6 @@ recursivePrintA(5);
 //  5      5 4 3 2 1
 //  1
 
-
 function recursivePrintB(a, b) {
   console.log(`B: ${a}`);
   if (a === b) {
@@ -33,7 +32,6 @@ function recursivePrintB(a, b) {
 
 recursivePrintB(5, 1); // выведет: 5 4 3 2 1
 // recursivePrintB(1, 5); // выведет: 1 2 3 4 5
-
 
 // C: Функция Аккермана
 // В теории вычислимости важную роль играет функция Аккермана A(m,n), определенная следующим образом:
@@ -57,5 +55,46 @@ function recursivePrintC(m, n) {
   }
 }
 
-console.log(`C: ${recursivePrintC(2, 2)}`); // выведет: 7	
+console.log(`C: ${recursivePrintC(2, 2)}`); // выведет: 7
 
+// D: Точная степень двойки
+// Дано натуральное число N. Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае.
+// Операцией возведения в степень пользоваться нельзя!
+// Ввод 	Вывод
+//  8      YES
+//  3      NO
+
+let i = 0;
+function recursivePrintD(n) {
+  if (2 ** i < n) {
+    i++;
+    recursivePrintD(n);
+  }
+
+  if (2 ** i >= n) {
+    if (2 ** i === n) {
+      return "YES";
+    } else {
+      return "NO";
+    }
+  }
+}
+
+console.log(`D: ${recursivePrintD(8)}`); // выведет: YES
+console.log(`D: ${recursivePrintD(3)}`); // выведет: NO
+
+// E: Сумма цифр числа
+// Дано натуральное число N. Вычислите сумму его цифр.
+// При решении этой задачи нельзя использовать строки, списки, массивы (ну и циклы, разумеется).
+// Ввод 	Вывод
+// 179    17
+
+function recursivePrintE(n) {
+  if (n < 10) {
+    return n;
+  } else {
+    return (n % 10) + recursivePrintE((n - (n % 10)) / 10);
+  }
+}
+
+console.log(`E: ${recursivePrintE(179)}`); // выведет: 17
